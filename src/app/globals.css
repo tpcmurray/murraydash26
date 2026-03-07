@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Dark mode colors only - no light mode */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  
+  /* Dashboard accent colors */
+  --color-terry: #9ca3af;    /* Grey */
+  --color-nicole: #22c55e;   /* Green */
+  --color-skylar: #f472b6;   /* Pink */
+  --color-addison: #60a5fa;  /* Blue */
+  --color-family: #fbbf24;   /* Orange/Yellow */
+  
+  /* Status colors */
+  --color-urgent: #f59e0b;
+  --color-success: #22c55e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-terry: var(--color-terry);
+  --color-nicole: var(--color-nicole);
+  --color-skylar: var(--color-skylar);
+  --color-addison: var(--color-addison);
+  --color-family: var(--color-family);
+  --color-urgent: var(--color-urgent);
+  --color-success: var(--color-success);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* Fixed 1080p dashboard container */
+.dashboard-container {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+/* Calendar grid styles */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  height: 100%;
+}
+
+/* Countdown highlight */
+.countdown-urgent {
+  border-left: 4px solid var(--color-urgent);
+  background: rgba(245, 158, 11, 0.1);
 }
