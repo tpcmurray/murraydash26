@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1920, height=1080">
+<title>MurrayDash — Dashboard Wireframe</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0e0e0e;
+    color: #dddddd;
+    font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+  }
+
+  .dashboard {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.8fr 0.9fr 1fr;
+    grid-template-rows: 1.2fr 1fr 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .panel {
+    border: 1.5px solid #333333;
+    border-radius: 6px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .panel-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+  }
+
+  .panel-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+  }
+
+  /* === CALENDAR === */
+  .calendar-panel {
+    grid-row: 1 / 4;
+    padding: 14px 12px;
+  }
+
+  .allday-strip {
+    flex-shrink: 0;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+
+  .allday-label {
+    font-size: 11px;
+    color: #444444;
+    margin-bottom: 4px;
+    padding-left: 44px;
+  }
+
+  .allday-event {
+    margin-left: 44px;
+    margin-right: 6px;
+    background: #6b6b6b;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 3px 10px;
+    opacity: 0.85;
+  }
+
+  .col-headers {
+    display: flex;
+    padding-left: 44px;
+    flex-shrink: 0;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+
+  .col-header {
+    flex: 1;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .time-grid {
+    flex: 1;
+    position: relative;
+    min-height: 0;
+  }
+
+  .hour-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .hour-label {
+    font-size: 12px;
+    color: #444444;
+    width: 38px;
+    text-align: right;
+    margin-right: 6px;
+    flex-shrink: 0;
+  }
+
+  .hour-rule {
+    flex: 1;
+    height: 1px;
+    background: #1e1e1e;
+  }
+
+  .events-area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 44px;
+    right: 0;
+  }
+
+  .cal-event {
+    position: absolute;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    opacity: 0.9;
+  }
+
+  .time-indicator {
+    position: absolute;
+    left: 38px;
+    right: 0;
+    height: 2.5px;
+    background: #e04040;
+    z-index: 10;
+    border-radius: 1px;
+  }
+
+  .time-indicator-dot {
+    position: absolute;
+    left: -5px;
+    top: -4px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #e04040;
+  }
+
+  /* === CLOCK === */
+  .clock-time {
+    font-size: 72px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -2px;
+    text-align: center;
+  }
+
+  .clock-date {
+    font-size: 22px;
+    color: #aaaaaa;
+    margin-top: 2px;
+    text-align: center;
+  }
+
+  .fact-card {
+    margin-top: 14px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 5px;
+    border-left: 3px solid #5b8a72;
+    text-align: left;
+  }
+
+  .fact-label {
+    color: #5b8a72;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .fact-text {
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.4;
+  }
+
+  /* === WEATHER === */
+  .weather-iframe-placeholder {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #333333;
+    font-size: 16px;
+    color: #555555;
+  }
+
+  /* === COUNTDOWNS === */
+  .countdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .countdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .countdown-name {
+    font-size: 18px;
+    color: #888888;
+  }
+
+  .countdown-value {
+    font-weight: 700;
+    font-size: 18px;
+    color: #666666;
+  }
+
+  .countdown-value.urgent {
+    font-size: 24px;
+    color: #e8a54b;
+  }
+
+  /* === DINNER === */
+  .dinner-name {
+    font-size: 34px;
+    font-weight: 700;
+    color: #dddddd;
+    text-align: center;
+  }
+
+  .dinner-sub {
+    font-size: 20px;
+    color: #777777;
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  /* === REMINDERS === */
+  .reminder-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .reminder-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 18px;
+  }
+
+  .reminder-bullet {
+    flex-shrink: 0;
+  }
+
+  .reminder-item.urgent { color: #e8a54b; }
+  .reminder-item.normal { color: #888888; }
+  .reminder-item.urgent .reminder-bullet { color: #e8a54b; }
+  .reminder-item.normal .reminder-bullet { color: #444444; }
+
+  /* === COMING UP === */
+  .upcoming-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .upcoming-item {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .upcoming-day {
+    color: #555555;
+    font-weight: 700;
+    width: 40px;
+    flex-shrink: 0;
+  }
+
+  .upcoming-event {
+    color: #999999;
+  }
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- ==================== LEFT: CALENDAR (rows 1-3) ==================== -->
+  <div class="panel calendar-panel" style="grid-row: 1 / 4;">
+    <div class="panel-label">Today — Thursday, March 5</div>
+
+    <div class="allday-strip">
+      <div class="allday-label">ALL DAY</div>
+      <div class="allday-event">Annual Online Auction</div>
+    </div>
+
+    <div class="col-headers">
+      <div class="col-header" style="color: #4a6fa5;">Terry</div>
+      <div class="col-header" style="color: #7b5ea7;">Nicole</div>
+      <div class="col-header" style="color: #5b8a72;">Skylar</div>
+      <div class="col-header" style="color: #c9834e;">Addison</div>
+      <div class="col-header" style="color: #6b6b6b;">Family</div>
+    </div>
+
+    <div class="time-grid" id="timeGrid">
+      <!-- Hour lines injected by JS -->
+      <div class="events-area" id="eventsArea">
+        <!-- Events injected by JS -->
+      </div>
+      <!-- Current time indicator -->
+      <div class="time-indicator" id="timeIndicator" style="top: 24%;">
+        <div class="time-indicator-dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CENTER ROW 1: TIME / DATE / FACT ==================== -->
+  <div class="panel">
+    <div class="panel-label">Time / Date</div>
+    <div class="panel-content">
+      <div class="clock-time" id="clock">10:34</div>
+      <div class="clock-date">Saturday, March 7</div>
+      <div class="fact-card">
+        <div class="fact-label">Science Fact</div>
+        <div class="fact-text">Mercury is the fastest planet in the Solar System, with a speed of about 45 km/second around the Sun.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== RIGHT ROW 1: WEATHER ==================== -->
+  <div class="panel">
+    <div class="panel-label">Weather — Weatheristic</div>
+    <div class="panel-content">
+      <div class="weather-iframe-placeholder">&lt;iframe&gt; weatheristic.com</div>
+    </div>
+  </div>
+
+  <!-- ==================== CENTER ROW 2: COUNTDOWNS ==================== -->
+  <div class="panel">
+    <div class="panel-label">Countdowns</div>
+    <div class="panel-content">
+      <div class="countdown-list">
+        <div class="countdown-item">
+          <span class="countdown-name">School bus</span>
+          <span class="countdown-value urgent">42 min</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-name">Skylar birthday</span>
+          <span class="countdown-value">14 days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-name">Easter</span>
+          <span class="countdown-value">28 days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-name">Summer break</span>
+          <span class="countdown-value">97 days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== RIGHT ROW 2: DINNER ==================== -->
+  <div class="panel">
+    <div class="panel-label">Tonight's Dinner</div>
+    <div class="panel-content">
+      <div class="dinner-name">Spaghetti</div>
+      <div class="dinner-sub">&amp; Garlic Bread</div>
+    </div>
+  </div>
+
+  <!-- ==================== CENTER ROW 3: REMINDERS ==================== -->
+  <div class="panel">
+    <div class="panel-label">Reminders</div>
+    <div class="panel-content">
+      <div class="reminder-list">
+        <div class="reminder-item urgent">
+          <span class="reminder-bullet">●</span>
+          <span>Take out frozen ground beef</span>
+        </div>
+        <div class="reminder-item normal">
+          <span class="reminder-bullet">●</span>
+          <span>Skylar: library books</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== RIGHT ROW 3: COMING UP ==================== -->
+  <div class="panel">
+    <div class="panel-label">Coming Up</div>
+    <div class="panel-content">
+      <div class="upcoming-list">
+        <div class="upcoming-item">
+          <span class="upcoming-day">Fri</span>
+          <span class="upcoming-event">Basketball 3:30pm</span>
+        </div>
+        <div class="upcoming-item">
+          <span class="upcoming-day">Fri</span>
+          <span class="upcoming-event">Hip Hop Dance 5:15pm</span>
+        </div>
+        <div class="upcoming-item">
+          <span class="upcoming-day">Sat</span>
+          <span class="upcoming-event">Nasdaq Pay</span>
+        </div>
+        <div class="upcoming-item">
+          <span class="upcoming-day">Sun</span>
+          <span class="upcoming-event">Grocery run</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ====== CALENDAR: Generate hour lines and events ======
+
+  const startHour = 7;
+  const endHour = 22;
+  const totalHours = endHour - startHour;
+
+  function hourToPercent(h, m = 0) {
+    return ((h - startHour + m / 60) / totalHours) * 100;
+  }
+
+  function durationPct(h, m = 0) {
+    return ((h + m / 60) / totalHours) * 100;
+  }
+
+  function formatHour(h) {
+    if (h === 0) return '12am';
+    if (h < 12) return h + 'am';
+    if (h === 12) return '12pm';
+    return (h - 12) + 'pm';
+  }
+
+  // Hour lines
+  const grid = document.getElementById('timeGrid');
+  for (let h = startHour; h <= endHour; h++) {
+    const pct = hourToPercent(h);
+    const line = document.createElement('div');
+    line.className = 'hour-line';
+    line.style.top = pct + '%';
+    line.innerHTML = `<span class="hour-label">${formatHour(h)}</span><div class="hour-rule"></div>`;
+    grid.insertBefore(line, grid.querySelector('.events-area'));
+  }
+
+  // Events
+  const colW = 20; // 100% / 5 columns
+
+  const events = [
+    // Terry (col 0)
+    { col: 0, startH: 9, startM: 0, durH: 0, durM: 30, color: '#4a6fa5', label: 'Standup' },
+    { col: 0, startH: 10, startM: 0, durH: 2, durM: 0, color: '#4a6fa5', label: 'Focus Block' },
+    { col: 0, startH: 14, startM: 0, durH: 1, durM: 0, color: '#4a6fa5', label: 'AI Team Sync' },
+    { col: 0, startH: 20, startM: 30, durH: 2, durM: 30, color: '#4a6fa5', label: 'Voice Chat w/ Bros' },
+
+    // Nicole (col 1)
+    { col: 1, startH: 9, startM: 30, durH: 1, durM: 0, color: '#7b5ea7', label: 'Team Sync' },
+    { col: 1, startH: 14, startM: 0, durH: 0, durM: 30, color: '#7b5ea7', label: '1:1 Manager' },
+
+    // Skylar (col 2) — includes overlap demo
+    { col: 2, startH: 8, startM: 30, durH: 6, durM: 0, color: '#5b8a72', label: 'School' },
+    { col: 2, startH: 15, startM: 30, durH: 1, durM: 0, color: '#5b8a72', label: 'Piano', halfLeft: true },
+    { col: 2, startH: 15, startM: 30, durH: 1, durM: 30, color: '#3d7a5e', label: 'Basketball', halfRight: true },
+    { col: 2, startH: 17, startM: 25, durH: 1, durM: 0, color: '#5b8a72', label: 'Lyrical Dance' },
+
+    // Child 2 (col 3)
+    { col: 3, startH: 13, startM: 0, durH: 1, durM: 30, color: '#c9834e', label: 'Playdate' },
+
+    // Family (col 4)
+    { col: 4, startH: 17, startM: 30, durH: 1, durM: 0, color: '#6b6b6b', label: 'Dinner' },
+  ];
+
+  const eventsArea = document.getElementById('eventsArea');
+
+  events.forEach(e => {
+    const div = document.createElement('div');
+    div.className = 'cal-event';
+
+    const eventW = colW - 2;
+    let left = e.col * colW + 1;
+    let width = eventW;
+
+    if (e.halfLeft) {
+      width = eventW / 2 - 0.3;
+    }
+    if (e.halfRight) {
+      width = eventW / 2 - 0.3;
+      left += colW / 2 - 0.2;
+    }
+
+    div.style.top = hourToPercent(e.startH, e.startM) + '%';
+    div.style.height = Math.max(durationPct(e.durH, e.durM), 2) + '%';
+    div.style.left = left + '%';
+    div.style.width = width + '%';
+    div.style.background = e.color;
+    div.textContent = e.label;
+
+    eventsArea.appendChild(div);
+  });
+
+  // ====== LIVE CLOCK ======
+  function updateClock() {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes().toString().padStart(2, '0');
+    const hour12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
+    document.getElementById('clock').textContent = hour12 + ':' + m;
+
+    // Update time indicator
+    const currentPct = hourToPercent(now.getHours(), now.getMinutes());
+    const indicator = document.getElementById('timeIndicator');
+    if (currentPct >= 0 && currentPct <= 100) {
+      indicator.style.top = currentPct + '%';
+      indicator.style.display = 'block';
+    } else {
+      indicator.style.display = 'none';
+    }
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>

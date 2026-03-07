@@ -1,0 +1,244 @@
+# MurrayDash — Phases and Tasks
+
+A vibe-coded family information dashboard with a read-only dark-mode display and an admin interface for data management.
+
+---
+
+## Phase 1: Project Foundation
+
+**Objective:** Set up the Next.js project with all dependencies and configuration.
+
+- [ ] Initialize Next.js project with App Router in the MurrayDash directory
+- [ ] Install dependencies: Drizzle ORM, NextAuth.js, Tailwind CSS, PostgreSQL driver
+- [ ] Configure Tailwind CSS for dark-mode-only theme
+- [ ] Set up TypeScript with strict mode
+- [ ] Configure project structure: `/app/dashboard`, `/app/admin`, `/app/api`
+- [ ] Create basic layout components and shared UI primitives
+- [ ] Set up environment variable template (.env.example) with all required keys
+
+---
+
+## Phase 2: Database and Schema
+
+**Objective:** Create PostgreSQL database and define all tables with Drizzle ORM.
+
+- [ ] Set up PostgreSQL database on existing Lightsail instance
+- [ ] Create Drizzle configuration for PostgreSQL connection
+- [ ] Define schema files:
+  - [ ] `meals` table
+  - [ ] `ingredients` table
+  - [ ] `meal_ingredients` junction table
+  - [ ] `meal_plan_entries` table
+  - [ ] `meal_reminders` table
+  - [ ] `countdowns` table
+  - [ ] `science_facts` table
+- [ ] Run database migrations to create all tables
+- [ ] Create seed data for testing (sample meals, ingredients, countdowns)
+
+---
+
+## Phase 3: Authentication
+
+**Objective:** Implement Google OAuth for admin access using NextAuth.js.
+
+- [ ] Configure NextAuth.js with Google OAuth provider
+- [ ] Create auth options with session callbacks
+- [ ] Set up Google Cloud project and get OAuth credentials
+- [ ] Create middleware to protect `/admin` routes
+- [ ] Allow unauthenticated access to `/` (dashboard)
+- [ ] Add user authorization check (Terry and Nicole only)
+- [ ] Test authentication flow
+
+---
+
+## Phase 4: Dashboard — Core Layout and Clock
+
+**Objective:** Build the foundational dashboard layout with real-time clock display.
+
+- [ ] Create main dashboard page at `/app/page.tsx`
+- [ ] Implement 3-column grid layout (48%/24%/28%)
+- [ ] Build fixed 1920×1080 dark-mode container
+- [ ] Implement live clock component (HH:MM, updates every second)
+- [ ] Display full date and day of week
+- [ ] Style with dark mode colors (background #0a0a0a, text #ffffff)
+
+---
+
+## Phase 5: Dashboard — Calendar Panel
+
+**Objective:** Build the left-column calendar display with Google Calendar integration.
+
+- [ ] Set up Google Calendar API client with service account or OAuth
+- [ ] Create `/api/dashboard/calendar` endpoint with 5-minute caching
+- [ ] Build calendar grid component:
+  - [ ] Y-axis: hours 7am–10pm
+  - [ ] X-axis: 5 columns (Terry, Nicole, Skylar, Child 2, Family)
+  - [ ] Color-code each person's column
+- [ ] Implement all-day events strip at top
+- [ ] Handle overlapping events (split column width)
+- [ ] Add red current-time indicator line with dot
+- [ ] Display header: "Today — Thursday, March 5"
+
+---
+
+## Dashboard — Science Facts
+
+**Objective:** Display daily rotating science facts.
+
+- [ ] Create `/api/dashboard/science-fact` endpoint
+- [ ] Implement date-seeded random selection query
+- [ ] Build science fact card component with accent bar
+- [ ] Add midnight rotation logic (client-side check on load)
+
+---
+
+## Phase 7: Dashboard — Countdowns
+
+**Objective:** Build countdown timer displays with real-time ticking.
+
+- [ ] Create `/api/dashboard/countdowns` endpoint
+- [ ] Build countdown list component:
+  - [ ] Daily countdowns (tick down in minutes)
+  - [ ] Yearly/one-off countdowns (display days)
+  - [ ] Amber highlight for < 2 hours remaining
+- [ ] Implement client-side JS for real-time updates (every second)
+
+---
+
+## Phase 8: Dashboard — Meals and Reminders
+
+**Objective:** Display tonight's dinner and today's reminders.
+
+- [ ] Create `/api/dashboard/meals` endpoint for today's meal plan
+- [ ] Build "Tonight's Dinner" component (centered text display)
+- [ ] Create `/api/dashboard/reminders` endpoint
+- [ ] Build reminders list component:
+  - [ ] Show active reminders for today
+  - [ ] Apply amber highlight for urgent reminders
+- [ ] Implement timing offset logic (-1 day, -12 hours, morning of)
+
+---
+
+## Phase 9: Dashboard — Coming Up and Weather
+
+**Objective:** Build the right-column weather iframe and coming up list.
+
+- [ ] Create `/api/dashboard/coming-up` endpoint (next 2 days)
+- [ ] Build "Coming Up" component:
+  - [ ] Day abbreviation, event name, time
+  - [ ] Exclude today's events
+- [ ] Add Weatheristic iframe embed in right column
+- [ ] Adjust zoom level to fit panel (or use dedicated route later)
+
+---
+
+## Phase 10: Admin Interface — Core Structure
+
+**Objective:** Build the tab-based admin layout with authentication.
+
+- [ ] Create `/app/admin/page.tsx` as admin landing
+- [ ] Implement tab navigation (Meals, Ingredients, Meal Plan, Reminders, Countdowns)
+- [ ] Create reusable spreadsheet-style grid component
+- [ ] Add auth guard to all admin routes
+- [ ] Style for functionality (no design polish needed)
+
+---
+
+## Phase 11: Admin Interface — Data Management Tabs
+
+**Objective:** Implement CRUD operations for all data entities.
+
+### Meals Tab
+- [ ] Build meals grid: Name, Category, Prep Notes
+- [ ] Add create/edit/delete functionality
+- [ ] Click meal to open ingredient list and reminders
+
+### Ingredients Tab
+- [ ] Build ingredients grid: Name, Storage Type, Department
+- [ ] Add CRUD functionality
+
+### Meal Plan Tab
+- [ ] Build meal plan grid: Date, Meal Slot, Meal
+- [ ] Support variable duration (14, 21, days)
+- [ ] Add CRUD for date/meal assignments
+
+### Meal Ingredients Tab
+- [ ] Build meal-ingredients junction grid
+- [ ] Columns: Meal, Ingredient, Amount, Unit
+- [ ] Add CRUD for ingredient links
+
+### Reminders Tab
+- [ ] Build reminders grid: Meal, Reminder Text, Timing Offset, Active
+- [ ] Add CRUD for reminder management
+
+### Countdowns Tab
+- [ ] Build countdowns grid: Name, Target DateTime, Recurrence Type
+- [ ] Add CRUD for countdown management
+
+---
+
+## Phase 12: Shopping List Generator
+
+**Objective:** Build auto-generated shopping list view.
+
+- [ ] Create `/app` page
+- [/admin/shopping-list ] Add "Next ___ days" dropdown (default 7)
+- [ ] Implement aggregation query:
+  - [ ] Sum ingredient amounts
+  - [ ] Group by ingredient
+  - [ ] Sort by store department
+- [ ] Make printable and mobile-friendly
+- [ ] Create `/api/admin/shopping-list` endpoint
+
+---
+
+## Phase 13: Science Facts Scraper
+
+**Objective:** Populate science_facts table with scraped data.
+
+- [ ] Create one-time scraper script
+- [ ] Scrape 5 categories: astronomy, mathematics, physics, chemistry, biology
+- [ ] Handle pagination through category pages
+- [ ] Extract fact text, image URL, category
+- [ ] Download and store images as BYTEA
+- [ ] Store source URLs for attribution
+- [ ] Run script to populate database
+
+---
+
+## Phase 14: Deployment
+
+**Objective:** Deploy to AWS Lightsail alongside existing services.
+
+- [ ] Configure Nginx reverse proxy for MurrayDash
+- [ ] Set up domain (subdirectory or subdomain)
+- [ ] Configure environment variables on production
+- [ ] Run database migrations on production
+- [ ] Run science facts scraper on production
+- [ ] Test dashboard on Raspberry Pi browser
+- [ ] Verify all components load correctly
+
+---
+
+## Phase 15: Post-Deployment Verification
+
+**Objective:** Verify all features work in production.
+
+- [ ] Test clock and countdown ticking (client-side JS)
+- [ ] Test calendar refresh (5-minute polling)
+- [ ] Test weather iframe loads
+- [ ] Test admin CRUD operations
+- [ ] Test shopping list generation
+- [ ] Verify dark mode displays correctly
+- [ ] Monitor Raspberry Pi stability over 24 hours
+
+---
+
+## Out of Scope (Future Phases)
+
+- Weatheristic dedicated dashboard mode
+- Nicole and kids feedback integration
+- LLM-powered reminders
+- Photo rotation widget
+- School closure alerts
+- Night mode
