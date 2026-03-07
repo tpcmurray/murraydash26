@@ -8,13 +8,13 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Set up the Next.js project with all dependencies and configuration.
 
-- [ ] Initialize Next.js project with App Router in the MurrayDash directory
-- [ ] Install dependencies: Drizzle ORM, NextAuth.js, Tailwind CSS, PostgreSQL driver
-- [ ] Configure Tailwind CSS for dark-mode-only theme
-- [ ] Set up TypeScript with strict mode
-- [ ] Configure project structure: `/app/dashboard`, `/app/admin`, `/app/api`
-- [ ] Create basic layout components and shared UI primitives
-- [ ] Set up environment variable template (.env.example) with all required keys
+- [x] Initialize Next.js project with App Router in the MurrayDash directory
+- [x] Install dependencies: Drizzle ORM, NextAuth.js, Tailwind CSS, PostgreSQL driver
+- [x] Configure Tailwind CSS for dark-mode-only theme
+- [x] Set up TypeScript with strict mode
+- [x] Configure project structure: `/app/dashboard`, `/app/admin`, `/app/api`
+- [x] Create basic layout components and shared UI primitives
+- [x] Set up environment variable template (.env.example) with all required keys
 
 ---
 
@@ -22,18 +22,18 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Create PostgreSQL database and define all tables with Drizzle ORM.
 
-- [ ] Set up PostgreSQL database on existing Lightsail instance
-- [ ] Create Drizzle configuration for PostgreSQL connection
-- [ ] Define schema files:
-  - [ ] `meals` table
-  - [ ] `ingredients` table
-  - [ ] `meal_ingredients` junction table
-  - [ ] `meal_plan_entries` table
-  - [ ] `meal_reminders` table
-  - [ ] `countdowns` table
-  - [ ] `science_facts` table
-- [ ] Run database migrations to create all tables
-- [ ] Create seed data for testing (sample meals, ingredients, countdowns)
+- [x] Set up PostgreSQL database on existing Lightsail instance
+- [x] Create Drizzle configuration for PostgreSQL connection
+- [x] Define schema files:
+  - [x] `meals` table
+  - [x] `ingredients` table
+  - [x] `meal_ingredients` junction table
+  - [x] `meal_plan_entries` table
+  - [x] `meal_reminders` table
+  - [x] `countdowns` table
+  - [x] `science_facts` table
+- [x] Run database migrations to create all tables
+- [x] Create seed data for testing (sample meals, ingredients, countdowns)
 
 ---
 
@@ -41,13 +41,13 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Implement Google OAuth for admin access using NextAuth.js.
 
-- [ ] Configure NextAuth.js with Google OAuth provider
-- [ ] Create auth options with session callbacks
-- [ ] Set up Google Cloud project and get OAuth credentials
-- [ ] Create middleware to protect `/admin` routes
-- [ ] Allow unauthenticated access to `/` (dashboard)
-- [ ] Add user authorization check (Terry and Nicole only)
-- [ ] Test authentication flow
+- [x] Configure NextAuth.js with Google OAuth provider
+- [x] Create auth options with session callbacks
+- [x] Set up Google Cloud project and get OAuth credentials
+- [x] Create middleware to protect `/admin` routes
+- [x] Allow unauthenticated access to `/` (dashboard)
+- [x] Add user authorization check (Terry and Nicole only)
+- [x] Test authentication flow
 
 ---
 
@@ -55,12 +55,12 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build the foundational dashboard layout with real-time clock display.
 
-- [ ] Create main dashboard page at `/app/page.tsx`
-- [ ] Implement 3-column grid layout (48%/24%/28%)
-- [ ] Build fixed 1920×1080 dark-mode container
-- [ ] Implement live clock component (HH:MM, updates every second)
-- [ ] Display full date and day of week
-- [ ] Style with dark mode colors (background #0a0a0a, text #ffffff)
+- [x] Create main dashboard page at `/app/page.tsx`
+- [x] Implement 3-column grid layout (48%/24%/28%)
+- [x] Build fixed 1920×1080 dark-mode container
+- [x] Implement live clock component (HH:MM, updates every second)
+- [x] Display full date and day of week
+- [x] Style with dark mode colors (background #0a0a0a, text #ffffff)
 
 ---
 
@@ -68,16 +68,16 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build the left-column calendar display with Google Calendar integration.
 
-- [ ] Set up Google Calendar API client with service account or OAuth
-- [ ] Create `/api/dashboard/calendar` endpoint with 5-minute caching
-- [ ] Build calendar grid component:
-  - [ ] Y-axis: hours 7am–10pm
-  - [ ] X-axis: 5 columns (Terry, Nicole, Skylar, Child 2, Family)
-  - [ ] Color-code each person's column
-- [ ] Implement all-day events strip at top
-- [ ] Handle overlapping events (split column width)
-- [ ] Add red current-time indicator line with dot
-- [ ] Display header: "Today — Thursday, March 5"
+- [x] Set up Google Calendar API client with service account or OAuth
+- [x] Create `/api/dashboard/calendar` endpoint with 5-minute caching
+- [x] Build calendar grid component:
+  - [x] Y-axis: hours 7am–10pm
+  - [x] X-axis: 5 columns (Terry, Nicole, Skylar, Addison, Family)
+  - [x] Color-code each person's column
+- [x] Implement all-day events strip at top
+- [x] Handle overlapping events (split column width)
+- [x] Add red current-time indicator line with dot
+- [x] Display header: "Today — Thursday, March 5"
 
 ---
 

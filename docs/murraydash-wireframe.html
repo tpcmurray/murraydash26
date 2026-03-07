@@ -77,7 +77,7 @@
   .allday-event {
     margin-left: 44px;
     margin-right: 6px;
-    background: #6b6b6b;
+    background: #fbbf24;
     border-radius: 4px;
     font-size: 13px;
     color: #ffffff;
@@ -329,11 +329,11 @@
     </div>
 
     <div class="col-headers">
-      <div class="col-header" style="color: #4a6fa5;">Terry</div>
-      <div class="col-header" style="color: #7b5ea7;">Nicole</div>
-      <div class="col-header" style="color: #5b8a72;">Skylar</div>
-      <div class="col-header" style="color: #c9834e;">Addison</div>
-      <div class="col-header" style="color: #6b6b6b;">Family</div>
+      <div class="col-header" style="color: #9ca3af;">Terry</div>
+      <div class="col-header" style="color: #22c55e;">Nicole</div>
+      <div class="col-header" style="color: #f472b6;">Skylar</div>
+      <div class="col-header" style="color: #60a5fa;">Addison</div>
+      <div class="col-header" style="color: #fbbf24;">Family</div>
     </div>
 
     <div class="time-grid" id="timeGrid">
@@ -485,26 +485,26 @@
 
   const events = [
     // Terry (col 0)
-    { col: 0, startH: 9, startM: 0, durH: 0, durM: 30, color: '#4a6fa5', label: 'Standup' },
-    { col: 0, startH: 10, startM: 0, durH: 2, durM: 0, color: '#4a6fa5', label: 'Focus Block' },
-    { col: 0, startH: 14, startM: 0, durH: 1, durM: 0, color: '#4a6fa5', label: 'AI Team Sync' },
-    { col: 0, startH: 20, startM: 30, durH: 2, durM: 30, color: '#4a6fa5', label: 'Voice Chat w/ Bros' },
+    { col: 0, startH: 9, startM: 0, durH: 0, durM: 30, color: '#9ca3af', label: 'Standup' },
+    { col: 0, startH: 10, startM: 0, durH: 2, durM: 0, color: '#9ca3af', label: 'Focus Block' },
+    { col: 0, startH: 14, startM: 0, durH: 1, durM: 0, color: '#9ca3af', label: 'AI Team Sync' },
+    { col: 0, startH: 20, startM: 30, durH: 2, durM: 30, color: '#9ca3af', label: 'Voice Chat w/ Bros' },
 
     // Nicole (col 1)
-    { col: 1, startH: 9, startM: 30, durH: 1, durM: 0, color: '#7b5ea7', label: 'Team Sync' },
-    { col: 1, startH: 14, startM: 0, durH: 0, durM: 30, color: '#7b5ea7', label: '1:1 Manager' },
+    { col: 1, startH: 9, startM: 30, durH: 1, durM: 0, color: '#22c55e', label: 'Team Sync' },
+    { col: 1, startH: 14, startM: 0, durH: 0, durM: 30, color: '#22c55e', label: '1:1 Manager' },
 
     // Skylar (col 2) — includes overlap demo
-    { col: 2, startH: 8, startM: 30, durH: 6, durM: 0, color: '#5b8a72', label: 'School' },
-    { col: 2, startH: 15, startM: 30, durH: 1, durM: 0, color: '#5b8a72', label: 'Piano', halfLeft: true },
-    { col: 2, startH: 15, startM: 30, durH: 1, durM: 30, color: '#3d7a5e', label: 'Basketball', halfRight: true },
-    { col: 2, startH: 17, startM: 25, durH: 1, durM: 0, color: '#5b8a72', label: 'Lyrical Dance' },
+    { col: 2, startH: 8, startM: 30, durH: 6, durM: 0, color: '#f472b6', label: 'School' },
+    { col: 2, startH: 15, startM: 30, durH: 1, durM: 0, color: '#f472b6', label: 'Piano', halfLeft: true },
+    { col: 2, startH: 15, startM: 30, durH: 1, durM: 30, color: '#db2777', label: 'Basketball', halfRight: true },
+    { col: 2, startH: 17, startM: 25, durH: 1, durM: 0, color: '#f472b6', label: 'Lyrical Dance' },
 
-    // Child 2 (col 3)
-    { col: 3, startH: 13, startM: 0, durH: 1, durM: 30, color: '#c9834e', label: 'Playdate' },
+    // Addison (col 3)
+    { col: 3, startH: 13, startM: 0, durH: 1, durM: 30, color: '#60a5fa', label: 'Playdate' },
 
     // Family (col 4)
-    { col: 4, startH: 17, startM: 30, durH: 1, durM: 0, color: '#6b6b6b', label: 'Dinner' },
+    { col: 4, startH: 17, startM: 30, durH: 1, durM: 0, color: '#fbbf24', label: 'Dinner' },
   ];
 
   const eventsArea = document.getElementById('eventsArea');

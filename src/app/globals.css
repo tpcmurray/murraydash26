@@ -13,7 +13,7 @@
   --color-family: #fbbf24;   /* Orange/Yellow */
   
   /* Status colors */
-  --color-urgent: #f59e0b;
+  --color-urgent: #e8a54b;
   --color-success: #22c55e;
 }
 
@@ -32,8 +32,317 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ibm-plex), 'IBM Plex Sans', 'Segoe UI', sans-serif;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dashboard Grid Layout */
+.dashboard {
+  width: 1920px;
+  height: 1080px;
+  display: grid;
+  grid-template-columns: 1.8fr 0.9fr 1fr;
+  grid-template-rows: 1.2fr 1fr 1fr;
+  gap: 12px;
+  padding: 14px;
+  background: #0e0e0e;
+}
+
+/* Panel base styles */
+.panel {
+  border: 1.5px solid #333333;
+  border-radius: 6px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.panel-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #555555;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.panel-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+}
+
+/* ==================== CALENDAR PANEL ==================== */
+.calendar-panel {
+  padding: 14px 12px;
+}
+
+.allday-strip {
+  flex-shrink: 0;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.allday-label {
+  font-size: 11px;
+  color: #444444;
+  margin-bottom: 4px;
+  padding-left: 44px;
+}
+
+.allday-event {
+  margin-left: 44px;
+  margin-right: 6px;
+  background: #6b6b6b;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 3px 10px;
+  opacity: 0.85;
+}
+
+.col-headers {
+  display: flex;
+  padding-left: 44px;
+  flex-shrink: 0;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.col-header {
+  flex: 1;
+  font-size: 13px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.time-grid {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}
+
+.hour-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.hour-label {
+  font-size: 12px;
+  color: #444444;
+  width: 38px;
+  text-align: right;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.hour-rule {
+  flex: 1;
+  height: 1px;
+  background: #1e1e1e;
+}
+
+.events-area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 44px;
+  right: 0;
+}
+
+.cal-event {
+  position: absolute;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+}
+
+.time-indicator {
+  position: absolute;
+  left: 38px;
+  right: 0;
+  height: 2.5px;
+  background: #e04040;
+  z-index: 10;
+  border-radius: 1px;
+}
+
+.time-indicator-dot {
+  position: absolute;
+  left: -5px;
+  top: -4px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #e04040;
+}
+
+/* ==================== CLOCK ==================== */
+.clock-time {
+  font-size: 72px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.clock-date {
+  font-size: 22px;
+  color: #aaaaaa;
+  margin-top: 2px;
+  text-align: center;
+}
+
+/* ==================== SCIENCE FACT ==================== */
+.fact-card {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+  border-left: 3px solid #5b8a72;
+  text-align: left;
+}
+
+.fact-label {
+  color: #5b8a72;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.fact-text {
+  font-size: 15px;
+  color: #999999;
+  line-height: 1.4;
+}
+
+/* ==================== WEATHER ==================== */
+.weather-iframe-placeholder {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #333333;
+  font-size: 16px;
+  color: #555555;
+}
+
+/* ==================== COUNTDOWNS ==================== */
+.countdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.countdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.countdown-name {
+  font-size: 18px;
+  color: #888888;
+}
+
+.countdown-value {
+  font-weight: 700;
+  font-size: 18px;
+  color: #666666;
+}
+
+.countdown-value.urgent {
+  font-size: 24px;
+  color: #e8a54b;
+}
+
+/* ==================== DINNER ==================== */
+.dinner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dinner-name {
+  font-size: 34px;
+  font-weight: 700;
+  color: #dddddd;
+  text-align: center;
+}
+
+.dinner-sub {
+  font-size: 20px;
+  color: #777777;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ==================== REMINDERS ==================== */
+.reminder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reminder-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 18px;
+}
+
+.reminder-bullet {
+  flex-shrink: 0;
+}
+
+.reminder-item.urgent { color: #e8a54b; }
+.reminder-item.normal { color: #888888; }
+.reminder-item.urgent .reminder-bullet { color: #e8a54b; }
+.reminder-item.normal .reminder-bullet { color: #444444; }
+
+/* ==================== COMING UP ==================== */
+.upcoming-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upcoming-item {
+  display: flex;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.upcoming-day {
+  color: #555555;
+  font-weight: 700;
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.upcoming-event {
+  color: #999999;
 }
 
 /* Fixed 1080p dashboard container */
