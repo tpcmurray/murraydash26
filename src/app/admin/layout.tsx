@@ -65,7 +65,7 @@ export default function AdminLayout({
       </nav>
 
       {/* Main Content */}
-      <main className="p-6">
+      <main className="p-6" style={{ height: 'calc(100vh - 130px)', overflowY: 'auto' }}>
         {children}
       </main>
     </div>

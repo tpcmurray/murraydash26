@@ -109,6 +109,10 @@ export const mealPlanEntries = pgTable('meal_plan_entries', {
   date: date('date').notNull(),
   mealSlot: mealSlotEnum('meal_slot').notNull(),
   mealId: uuid('meal_id').references(() => meals.id, { onDelete: 'cascade' }).notNull(),
+  // Override fields for temporary changes (e.g., company coming)
+  overrideMealId: uuid('override_meal_id').references(() => meals.id, { onDelete: 'cascade' }),
+  overrideNotes: text('override_notes'),
+  overrideExpiresAt: timestamp('override_expires_at'),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
 });

@@ -105,7 +105,7 @@ export default function ShoppingListPage() {
                 </h3>
                 <ul className="space-y-1">
                   {items.map((item) => (
-                    <li key={item.ingredientId} className="flex justify-between items-center print:text-black">
+                    <li key={`${item.ingredientId}-${item.unit}`} className="flex justify-between items-center print:text-black">
                       <span>{item.ingredientName}</span>
                       <span className="text-gray-400 print:text-gray-600">
                         {Number(item.totalAmount)} {item.unit}

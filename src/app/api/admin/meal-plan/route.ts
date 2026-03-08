@@ -1,17 +1,32 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/db';
 import { mealPlanEntries, meals } from '@/db/schema';
-import { eq, asc } from 'drizzle-orm';
+import { eq, asc, and, sql } from 'drizzle-orm';
 
 // GET /api/admin/meal-plan - Get all meal plan entries with meal names
 export async function GET() {
   try {
+    // First, clear any expired overrides
+    await db
+      .update(mealPlanEntries)
+      .set({
+        overrideMealId: null,
+        overrideNotes: null,
+        overrideExpiresAt: null,
+      })
+      .where(
+        sql`${mealPlanEntries.overrideExpiresAt} IS NOT NULL AND ${mealPlanEntries.overrideExpiresAt} < NOW()`
+      );
+
     const entries = await db
       .select({
         id: mealPlanEntries.id,
         date: mealPlanEntries.date,
         mealSlot: mealPlanEntries.mealSlot,
         mealId: mealPlanEntries.mealId,
+        overrideMealId: mealPlanEntries.overrideMealId,
+        overrideNotes: mealPlanEntries.overrideNotes,
+        overrideExpiresAt: mealPlanEntries.overrideExpiresAt,
         mealName: meals.name,
         createdAt: mealPlanEntries.createdAt,
         updatedAt: mealPlanEntries.updatedAt,
@@ -64,12 +79,75 @@ export async function POST(request: Request) {
   }
 }
 
-// PUT /api/admin/meal-plan - Update a meal plan entry
+// PUT /api/admin/meal-plan - Update a meal plan entry OR set an override
 export async function PUT(request: Request) {
   try {
     const body = await request.json();
-    const { id, date, mealSlot, mealId } = body;
+    const { action, overrideText, id, date, mealSlot, mealId } = body;
 
+    // Set tonight's dinner override (free-text)
+    if (action === 'setTonightOverride') {
+      if (!overrideText) {
+        return NextResponse.json({ error: 'Override text is required' }, { status: 400 });
+      }
+      const now = new Date();
+      const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+      const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+
+      const todayDinners = await db
+        .select({ id: mealPlanEntries.id })
+        .from(mealPlanEntries)
+        .where(and(eq(mealPlanEntries.date, todayStr), eq(mealPlanEntries.mealSlot, 'dinner')))
+        .limit(1);
+
+      if (todayDinners.length === 0) {
+        return NextResponse.json({ error: 'No dinner entry found for today' }, { status: 404 });
+      }
+
+      const [updatedEntry] = await db
+        .update(mealPlanEntries)
+        .set({
+          overrideMealId: null,
+          overrideNotes: overrideText,
+          overrideExpiresAt: midnight,
+          updatedAt: new Date(),
+        })
+        .where(eq(mealPlanEntries.id, todayDinners[0].id))
+        .returning();
+
+      return NextResponse.json(updatedEntry);
+    }
+
+    // Clear tonight's dinner override
+    if (action === 'clearTonightOverride') {
+      const now = new Date();
+      const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+      const todayDinners = await db
+        .select({ id: mealPlanEntries.id })
+        .from(mealPlanEntries)
+        .where(and(eq(mealPlanEntries.date, todayStr), eq(mealPlanEntries.mealSlot, 'dinner')))
+        .limit(1);
+
+      if (todayDinners.length === 0) {
+        return NextResponse.json({ error: 'No dinner entry found for today' }, { status: 404 });
+      }
+
+      const [updatedEntry] = await db
+        .update(mealPlanEntries)
+        .set({
+          overrideMealId: null,
+          overrideNotes: null,
+          overrideExpiresAt: null,
+          updatedAt: new Date(),
+        })
+        .where(eq(mealPlanEntries.id, todayDinners[0].id))
+        .returning();
+
+      return NextResponse.json(updatedEntry);
+    }
+
+    // Regular update (no override)
     if (!id || !date || !mealSlot || !mealId) {
       return NextResponse.json({ error: 'ID, date, meal slot, and meal are required' }, { status: 400 });
     }

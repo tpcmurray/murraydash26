@@ -8,6 +8,8 @@ type MealPlanEntry = {
   date: string;
   mealSlot: string;
   mealId: string;
+  overrideNotes: string | null;
+  overrideExpiresAt: string | null;
   mealName: string;
   createdAt: string;
   updatedAt: string;
@@ -24,18 +26,12 @@ const mealSlotOptions = [
   { value: 'dinner', label: 'Dinner' },
 ];
 
-const durationOptions = [
-  { value: '1', label: '1 day' },
-  { value: '7', label: '7 days' },
-  { value: '14', label: '14 days' },
-  { value: '21', label: '21 days' },
-  { value: '28', label: '28 days' },
-];
-
 export default function MealPlanPage() {
   const [entries, setEntries] = useState<MealPlanEntry[]>([]);
   const [meals, setMeals] = useState<Meal[]>([]);
   const [loading, setLoading] = useState(true);
+  const [overrideText, setOverrideText] = useState('');
+  const [overrideSaving, setOverrideSaving] = useState(false);
 
   const fetchData = async () => {
     try {
@@ -43,7 +39,7 @@ export default function MealPlanPage() {
         fetch('/api/admin/meal-plan'),
         fetch('/api/admin/meals'),
       ]);
-      
+
       if (entriesRes.ok) {
         const data = await entriesRes.json();
         setEntries(data);
@@ -63,26 +59,67 @@ export default function MealPlanPage() {
     fetchData();
   }, []);
 
+  // Find today's dinner entry
+  const now = new Date();
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const todayDinner = entries.find(e => e.date === todayStr && e.mealSlot === 'dinner');
+  const hasActiveOverride = todayDinner?.overrideNotes != null;
+
+  const handleSetOverride = async () => {
+    if (!overrideText.trim()) return;
+    setOverrideSaving(true);
+    try {
+      const response = await fetch('/api/admin/meal-plan', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'setTonightOverride', overrideText: overrideText.trim() }),
+      });
+      if (response.ok) {
+        setOverrideText('');
+        await fetchData();
+      }
+    } catch (error) {
+      console.error('Error setting override:', error);
+    } finally {
+      setOverrideSaving(false);
+    }
+  };
+
+  const handleClearOverride = async () => {
+    setOverrideSaving(true);
+    try {
+      const response = await fetch('/api/admin/meal-plan', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'clearTonightOverride' }),
+      });
+      if (response.ok) {
+        await fetchData();
+      }
+    } catch (error) {
+      console.error('Error clearing override:', error);
+    } finally {
+      setOverrideSaving(false);
+    }
+  };
+
   const mealOptions = meals.map(m => ({ value: m.id, label: m.name }));
 
   const columns: Column<MealPlanEntry>[] = [
     { key: 'date', header: 'Date', width: '120px', editable: true },
-    { 
-      key: 'mealSlot', 
-      header: 'Meal Slot', 
-      width: '120px', 
+    {
+      key: 'mealSlot',
+      header: 'Meal Slot',
+      width: '120px',
       editable: true,
       type: 'select',
       options: mealSlotOptions,
     },
-    { 
-      key: 'mealId', 
-      header: 'Meal', 
-      width: '200px', 
-      editable: true,
-      type: 'select',
-      options: mealOptions,
-      render: (row) => row.mealName || row.mealId,
+    {
+      key: 'mealId',
+      header: 'Meal',
+      width: '180px',
+      render: (row) => row.mealName || '',
     },
   ];
 
@@ -132,6 +169,58 @@ export default function MealPlanPage() {
   return (
     <div>
       <h2 className="text-2xl font-bold mb-6">Meal Plan</h2>
+
+      {/* Tonight's Dinner Override */}
+      <div className="mb-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
+        <h3 className="text-lg font-semibold mb-3">Tonight&apos;s Dinner Override</h3>
+        {!todayDinner ? (
+          <p className="text-sm text-gray-400">No dinner planned for today.</p>
+        ) : hasActiveOverride ? (
+          <div className="flex items-center gap-4">
+            <div>
+              <span className="text-sm text-gray-400">Planned: </span>
+              <span className="text-sm line-through text-gray-500">{todayDinner.mealName}</span>
+            </div>
+            <div>
+              <span className="text-sm text-gray-400">Override: </span>
+              <span className="text-sm text-yellow-400 font-medium">{todayDinner.overrideNotes}</span>
+            </div>
+            <span className="text-xs text-gray-500">(clears at midnight)</span>
+            <button
+              onClick={handleClearOverride}
+              disabled={overrideSaving}
+              className="px-3 py-1 text-sm bg-red-600 hover:bg-red-700 rounded disabled:opacity-50"
+            >
+              {overrideSaving ? '...' : 'Clear Override'}
+            </button>
+          </div>
+        ) : (
+          <div>
+            <div className="text-sm text-gray-400 mb-2">
+              Planned: <span className="text-gray-200">{todayDinner.mealName}</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <input
+                type="text"
+                value={overrideText}
+                onChange={(e) => setOverrideText(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSetOverride()}
+                placeholder="e.g., Pulled Pork Sandwiches for 12"
+                className="flex-1 max-w-md px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm"
+              />
+              <button
+                onClick={handleSetOverride}
+                disabled={overrideSaving || !overrideText.trim()}
+                className="px-4 py-2 text-sm bg-yellow-600 hover:bg-yellow-500 rounded disabled:opacity-50"
+              >
+                {overrideSaving ? '...' : 'Set Override'}
+              </button>
+            </div>
+            <p className="text-xs text-gray-500 mt-1">Override clears automatically at midnight.</p>
+          </div>
+        )}
+      </div>
+
       <DataGrid
         data={entries}
         columns={columns}
@@ -141,13 +230,6 @@ export default function MealPlanPage() {
         onAdd={handleAdd}
         loading={loading}
       />
-      <div className="mt-4 p-4 bg-gray-800 rounded-lg">
-        <h3 className="text-sm font-semibold mb-2">Adding meals with duration:</h3>
-        <p className="text-xs text-gray-400">
-          When adding a new meal plan entry, you can set the duration to automatically create 
-          entries for multiple days. Use the "duration" field with values like 7, 14, or 21 days.
-        </p>
-      </div>
     </div>
   );
 }

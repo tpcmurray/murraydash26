@@ -254,7 +254,12 @@ function Countdowns() {
 }
 
 function TonightsDinner() {
-  const [dinner, setDinner] = useState<{ name: string; prepNotes: string | null } | null>(null);
+  const [dinner, setDinner] = useState<{ 
+    name: string; 
+    prepNotes: string | null;
+    isOverride?: boolean;
+    overrideNotes?: string | null;
+  } | null>(null);
 
   useEffect(() => {
     async function fetchDinner() {
@@ -281,8 +286,18 @@ function TonightsDinner() {
 
   return (
     <div className="dinner-content">
+      {dinner.isOverride && (
+        <div className="text-xs bg-yellow-600 text-white px-2 py-1 rounded mb-2 inline-block">
+          Special Override
+        </div>
+      )}
       <div className="dinner-name">{dinner.name}</div>
-      {dinner.prepNotes && <div className="dinner-sub">{dinner.prepNotes}</div>}
+      {dinner.overrideNotes && (
+        <div className="dinner-sub">{dinner.overrideNotes}</div>
+      )}
+      {!dinner.isOverride && dinner.prepNotes && (
+        <div className="dinner-sub">{dinner.prepNotes}</div>
+      )}
     </div>
   );
 }
