@@ -181,14 +181,14 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build auto-generated shopping list view.
 
-- [ ] Create `/app/admin/shopping-list` page
-- [ ] Add "Next ___ days" dropdown (default 7)
-- [ ] Implement aggregation query:
-  - [ ] Sum ingredient amounts
-  - [ ] Group by ingredient
-  - [ ] Sort by store department
-- [ ] Make printable and mobile-friendly
-- [ ] Create `/api/admin/shopping-list` endpoint
+- [x] Create `/admin/shopping-list` page
+- [x] Add "Next ___ days" dropdown (default 7)
+- [x] Implement aggregation query:
+  - [x] Sum ingredient amounts
+  - [x] Group by ingredient
+  - [x] Sort by store department
+- [x] Make printable and mobile-friendly
+- [x] Create `/api/admin/shopping-list` endpoint
 
 ---
 

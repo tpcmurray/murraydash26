@@ -1,0 +1,129 @@
+{
+  "meals": [
+    {
+      "name": "Pancakes",
+      "category": "breakfast",
+      "prepNotes": "Flip when bubbles form on surface",
+      "ingredients": [
+        { "name": "All-purpose flour", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" },
+        { "name": "Milk", "storageType": "fridge", "department": "dairy", "amount": 1.5, "unit": "cup" },
+        { "name": "Eggs", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "piece" },
+        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 3, "unit": "tbsp" },
+        { "name": "Sugar", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tbsp" },
+        { "name": "Baking powder", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tsp" }
+      ]
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "category": "lunch",
+      "prepNotes": "Medium heat, flip once",
+      "ingredients": [
+        { "name": "Bread", "storageType": "pantry", "department": "bakery", "amount": 2, "unit": "piece" },
+        { "name": "Cheddar cheese", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "piece" },
+        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "name": "Spaghetti Bolognese",
+      "category": "dinner",
+      "prepNotes": "Simmer sauce for at least 30 minutes",
+      "ingredients": [
+        { "name": "Spaghetti", "storageType": "pantry", "department": "dry_goods", "amount": 400, "unit": "g" },
+        { "name": "Ground beef", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Tomato sauce", "storageType": "pantry", "department": "canned", "amount": 400, "unit": "ml" },
+        { "name": "Onion", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" },
+        { "name": "Olive oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "name": "Caesar Salad",
+      "category": "lunch",
+      "prepNotes": "Toss dressing just before serving",
+      "ingredients": [
+        { "name": "Romaine lettuce", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Parmesan cheese", "storageType": "fridge", "department": "dairy", "amount": 0.5, "unit": "cup" },
+        { "name": "Croutons", "storageType": "pantry", "department": "bakery", "amount": 1, "unit": "cup" },
+        { "name": "Caesar dressing", "storageType": "fridge", "department": "condiments", "amount": 0.5, "unit": "cup" }
+      ]
+    },
+    {
+      "name": "Chicken Stir Fry",
+      "category": "dinner",
+      "prepNotes": "High heat, keep moving",
+      "ingredients": [
+        { "name": "Chicken breast", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Bell peppers", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Broccoli", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "cup" },
+        { "name": "Soy sauce", "storageType": "pantry", "department": "condiments", "amount": 3, "unit": "tbsp" },
+        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Rice", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" }
+      ]
+    },
+    {
+      "name": "Oatmeal with Berries",
+      "category": "breakfast",
+      "prepNotes": "Cook for 5 minutes, stir occasionally",
+      "ingredients": [
+        { "name": "Oats", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "cup" },
+        { "name": "Milk", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "cup" },
+        { "name": "Mixed berries", "storageType": "frozen", "department": "frozen", "amount": 0.5, "unit": "cup" },
+        { "name": "Honey", "storageType": "pantry", "department": "condiments", "amount": 1, "unit": "tbsp" }
+      ]
+    },
+    {
+      "name": "Peanut Butter Toast",
+      "category": "breakfast",
+      "prepNotes": "Best with smooth peanut butter",
+      "ingredients": [
+        { "name": "Bread", "storageType": "pantry", "department": "bakery", "amount": 2, "unit": "piece" },
+        { "name": "Peanut butter", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "name": "Tomato Soup",
+      "category": "lunch",
+      "prepNotes": "Serve with grilled cheese",
+      "ingredients": [
+        { "name": "Canned tomatoes", "storageType": "pantry", "department": "canned", "amount": 400, "unit": "g" },
+        { "name": "Onion", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Vegetable broth", "storageType": "pantry", "department": "canned", "amount": 500, "unit": "ml" },
+        { "name": "Heavy cream", "storageType": "fridge", "department": "dairy", "amount": 0.25, "unit": "cup" }
+      ]
+    },
+    {
+      "name": "Fish and Chips",
+      "category": "dinner",
+      "prepNotes": "Fry at 375°F for best results",
+      "ingredients": [
+        { "name": "Cod fillet", "storageType": "frozen", "department": "frozen", "amount": 400, "unit": "g" },
+        { "name": "Potatoes", "storageType": "pantry", "department": "produce", "amount": 4, "unit": "piece" },
+        { "name": "Flour", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "cup" },
+        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 4, "unit": "cup" }
+      ]
+    },
+    {
+      "name": "Fruit Smoothie",
+      "category": "snack",
+      "prepNotes": "Blend until smooth",
+      "ingredients": [
+        { "name": "Banana", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Strawberries", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "cup" },
+        { "name": "Yogurt", "storageType": "fridge", "department": "dairy", "amount": 1, "unit": "cup" },
+        { "name": "Milk", "storageType": "fridge", "department": "dairy", "amount": 0.5, "unit": "cup" }
+      ]
+    }
+  ],
+  "mealPlan": [
+    { "date": "2026-03-08", "mealSlot": "breakfast", "mealName": "Pancakes" },
+    { "date": "2026-03-08", "mealSlot": "lunch", "mealName": "Grilled Cheese Sandwich" },
+    { "date": "2026-03-08", "mealSlot": "dinner", "mealName": "Spaghetti Bolognese" },
+    { "date": "2026-03-09", "mealSlot": "breakfast", "mealName": "Oatmeal with Berries" },
+    { "date": "2026-03-09", "mealSlot": "lunch", "mealName": "Caesar Salad" },
+    { "date": "2026-03-09", "mealSlot": "dinner", "mealName": "Chicken Stir Fry" },
+    { "date": "2026-03-10", "mealSlot": "breakfast", "mealName": "Peanut Butter Toast" },
+    { "date": "2026-03-10", "mealSlot": "lunch", "mealName": "Tomato Soup" },
+    { "date": "2026-03-10", "mealSlot": "dinner", "mealName": "Fish and Chips" }
+  ]
+}

@@ -39,6 +39,11 @@ export default function AdminPage() {
           description="Manage countdown timers and events."
           href="/admin/countdowns"
         />
+        <AdminCard
+          title="Shopping List"
+          description="Generate shopping list from meal plan."
+          href="/admin/shopping-list"
+        />
       </div>
     </div>
   );
