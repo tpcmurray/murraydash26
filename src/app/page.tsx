@@ -198,29 +198,66 @@ function Countdowns() {
   );
 }
 
-// Tonight's Dinner placeholder component
 function TonightsDinner() {
-  // TODO: Fetch from API - /api/dashboard/meals
+  const [dinner, setDinner] = useState<{ name: string; prepNotes: string | null } | null>(null);
+
+  useEffect(() => {
+    async function fetchDinner() {
+      try {
+        const res = await fetch('/api/dashboard/meals');
+        const data = await res.json();
+        setDinner(data.dinner || null);
+      } catch (error) {
+        console.error('Error fetching dinner:', error);
+      }
+    }
+    fetchDinner();
+    const poll = setInterval(fetchDinner, 5 * 60 * 1000);
+    return () => clearInterval(poll);
+  }, []);
+
+  if (!dinner) {
+    return (
+      <div className="dinner-content">
+        <div className="dinner-name" style={{ opacity: 0.5, fontSize: '20px' }}>No dinner planned</div>
+      </div>
+    );
+  }
+
   return (
     <div className="dinner-content">
-      <div className="dinner-name">Spaghetti</div>
-      <div className="dinner-sub">& Garlic Bread</div>
+      <div className="dinner-name">{dinner.name}</div>
+      {dinner.prepNotes && <div className="dinner-sub">{dinner.prepNotes}</div>}
     </div>
   );
 }
 
-// Reminders placeholder component
 function Reminders() {
-  // TODO: Fetch from API - /api/dashboard/reminders
-  const reminders = [
-    { text: "Take out frozen ground beef", urgent: true },
-    { text: "Skylar: library books", urgent: false },
-  ];
+  const [reminders, setReminders] = useState<{ id: string; text: string; mealName: string; urgent: boolean }[]>([]);
+
+  useEffect(() => {
+    async function fetchReminders() {
+      try {
+        const res = await fetch('/api/dashboard/reminders');
+        const data = await res.json();
+        setReminders(data.reminders || []);
+      } catch (error) {
+        console.error('Error fetching reminders:', error);
+      }
+    }
+    fetchReminders();
+    const poll = setInterval(fetchReminders, 5 * 60 * 1000);
+    return () => clearInterval(poll);
+  }, []);
+
+  if (reminders.length === 0) {
+    return <div className="reminder-list" style={{ opacity: 0.5 }}>No reminders</div>;
+  }
 
   return (
     <div className="reminder-list">
-      {reminders.map((item, i) => (
-        <div key={i} className={`reminder-item ${item.urgent ? "urgent" : "normal"}`}>
+      {reminders.map(item => (
+        <div key={item.id} className={`reminder-item ${item.urgent ? "urgent" : "normal"}`}>
           <span className="reminder-bullet">●</span>
           <span>{item.text}</span>
         </div>

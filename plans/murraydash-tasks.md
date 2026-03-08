@@ -109,13 +109,13 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Display tonight's dinner and today's reminders.
 
-- [ ] Create `/api/dashboard/meals` endpoint for today's meal plan
-- [ ] Build "Tonight's Dinner" component (centered text display)
-- [ ] Create `/api/dashboard/reminders` endpoint
-- [ ] Build reminders list component:
-  - [ ] Show active reminders for today
-  - [ ] Apply amber highlight for urgent reminders
-- [ ] Implement timing offset logic (-1 day, -12 hours, morning of)
+- [x] Create `/api/dashboard/meals` endpoint for today's meal plan
+- [x] Build "Tonight's Dinner" component (centered text display)
+- [x] Create `/api/dashboard/reminders` endpoint
+- [x] Build reminders list component:
+  - [x] Show active reminders for today
+  - [x] Apply amber highlight for urgent reminders
+- [x] Implement timing offset logic (-1 day, -12 hours, morning of)
 
 ---
 
