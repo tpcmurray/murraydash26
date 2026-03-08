@@ -16,10 +16,12 @@ function Clock() {
 
   if (!time) return <div className="clock-time">--:--</div>;
 
-  const hours = time.getHours().toString().padStart(2, "0");
+  const h = time.getHours();
+  const hour12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
   const minutes = time.getMinutes().toString().padStart(2, "0");
+  const ampm = h < 12 ? "AM" : "PM";
 
-  return <div className="clock-time">{hours}:{minutes}</div>;
+  return <div className="clock-time">{hour12}:{minutes} <span className="clock-ampm">{ampm}</span></div>;
 }
 
 // Full date display component
@@ -47,40 +49,151 @@ function DateDisplay() {
 
 // Science Fact placeholder component
 function ScienceFact() {
-  // TODO: Fetch from API - /api/dashboard/science-fact
-  const fact = {
-    category: "Astronomy",
-    text: "Mercury is the fastest planet in the Solar System, with a speed of about 45 km/second around the Sun."
-  };
+  const [fact, setFact] = useState<{ category: string; text: string; imageUrl: string | null } | null>(null);
+
+  useEffect(() => {
+    async function fetchFact() {
+      try {
+        const res = await fetch('/api/dashboard/science-fact');
+        const data = await res.json();
+        if (data.fact) {
+          setFact({ category: data.fact.category, text: data.fact.text, imageUrl: data.fact.imageUrl });
+        }
+      } catch (error) {
+        console.error('Error fetching science fact:', error);
+      }
+    }
+    fetchFact();
+
+    // Check every minute if the date has changed (midnight rotation)
+    let currentDate = new Date().toDateString();
+    const interval = setInterval(() => {
+      const now = new Date().toDateString();
+      if (now !== currentDate) {
+        currentDate = now;
+        fetchFact();
+      }
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!fact) {
+    return (
+      <div className="fact-card">
+        <div className="fact-label">Science Fact</div>
+        <div className="fact-text" style={{ opacity: 0.5 }}>Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="fact-card">
-      <div className="fact-label">Science Fact</div>
-      <div className="fact-text">{fact.text}</div>
+      <div className="fact-label">Science Fact — {fact.category}</div>
+      <div className="fact-body">
+        {fact.imageUrl && (
+          <img src={fact.imageUrl} alt="" className="fact-image" />
+        )}
+        <div className="fact-text">{fact.text}</div>
+      </div>
     </div>
   );
 }
 
-// Countdowns placeholder component
+interface CountdownData {
+  id: string;
+  name: string;
+  targetTime: string; // HH:MM for daily, full datetime for others
+  targetDate: string | null;
+  recurrence: string;
+}
+
 function Countdowns() {
-  // TODO: Fetch from API - /api/dashboard/countdowns
-  const countdowns = [
-    { name: "School bus", value: "42 min", urgent: true },
-    { name: "Skylar birthday", value: "14 days", urgent: false },
-    { name: "Easter", value: "28 days", urgent: false },
-    { name: "Summer break", value: "97 days", urgent: false },
-  ];
+  const [countdowns, setCountdowns] = useState<CountdownData[]>([]);
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    async function fetchCountdowns() {
+      try {
+        const res = await fetch('/api/dashboard/countdowns');
+        const data = await res.json();
+        setCountdowns(data.countdowns || []);
+      } catch (error) {
+        console.error('Error fetching countdowns:', error);
+      }
+    }
+    fetchCountdowns();
+    const poll = setInterval(fetchCountdowns, 5 * 60 * 1000);
+    return () => clearInterval(poll);
+  }, []);
+
+  // Tick every second for live countdown
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getCountdownInfo = (cd: CountdownData): { value: string; urgent: boolean } => {
+    if (cd.recurrence === 'daily') {
+      // targetTime is HH:MM — compute time until next occurrence today
+      const [h, m] = cd.targetTime.split(':').map(Number);
+      const target = new Date(now);
+      target.setHours(h, m, 0, 0);
+      if (target <= now) {
+        // Already passed today — show for tomorrow
+        target.setDate(target.getDate() + 1);
+      }
+      const diffMs = target.getTime() - now.getTime();
+      const diffMin = Math.floor(diffMs / 60000);
+      const diffHours = Math.floor(diffMin / 60);
+      const remMin = diffMin % 60;
+      const urgent = diffMs < 2 * 60 * 60 * 1000; // < 2 hours
+      if (diffHours > 0) {
+        return { value: `${diffHours}h ${remMin}m`, urgent };
+      }
+      return { value: `${diffMin} min`, urgent };
+    }
+
+    // yearly or once — targetDate is a date string
+    if (!cd.targetDate) return { value: '—', urgent: false };
+
+    let target: Date;
+    if (cd.recurrence === 'yearly') {
+      // Use this year's occurrence
+      const [, month, day] = cd.targetDate.split('-').map(Number);
+      target = new Date(now.getFullYear(), month - 1, day);
+      if (target < new Date(now.getFullYear(), now.getMonth(), now.getDate())) {
+        target = new Date(now.getFullYear() + 1, month - 1, day);
+      }
+    } else {
+      target = new Date(cd.targetDate + 'T00:00:00');
+    }
+
+    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const diffDays = Math.ceil((target.getTime() - todayStart.getTime()) / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 0) return { value: 'passed', urgent: false };
+    if (diffDays === 0) return { value: 'today!', urgent: true };
+    if (diffDays === 1) return { value: 'tomorrow', urgent: true };
+    return { value: `${diffDays} days`, urgent: false };
+  };
+
+  if (countdowns.length === 0) {
+    return <div className="countdown-list" style={{ opacity: 0.5 }}>No countdowns</div>;
+  }
 
   return (
     <div className="countdown-list">
-      {countdowns.map((item, i) => (
-        <div key={i} className="countdown-item">
-          <span className="countdown-name">{item.name}</span>
-          <span className={`countdown-value ${item.urgent ? "urgent" : ""}`}>
-            {item.value}
-          </span>
-        </div>
-      ))}
+      {countdowns.map(cd => {
+        const { value, urgent } = getCountdownInfo(cd);
+        return (
+          <div key={cd.id} className="countdown-item">
+            <span className="countdown-name">{cd.name}</span>
+            <span className={`countdown-value ${urgent ? "urgent" : ""}`}>
+              {value}
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -116,21 +229,34 @@ function Reminders() {
   );
 }
 
-// Coming Up placeholder component
 function ComingUp() {
-  // TODO: Fetch from API - /api/dashboard/coming-up
-  const events = [
-    { day: "Fri", event: "Basketball 3:30pm" },
-    { day: "Fri", event: "Hip Hop Dance 5:15pm" },
-    { day: "Sat", event: "Nasdaq Pay" },
-    { day: "Sun", event: "Grocery run" },
-  ];
+  const [events, setEvents] = useState<{ id: string; day: string; event: string; calendarName: string; color: string }[]>([]);
+
+  useEffect(() => {
+    async function fetchComingUp() {
+      try {
+        const res = await fetch('/api/dashboard/coming-up');
+        const data = await res.json();
+        setEvents(data.events || []);
+      } catch (error) {
+        console.error('Error fetching coming up:', error);
+      }
+    }
+    fetchComingUp();
+    const poll = setInterval(fetchComingUp, 5 * 60 * 1000);
+    return () => clearInterval(poll);
+  }, []);
+
+  if (events.length === 0) {
+    return <div className="upcoming-list" style={{ opacity: 0.5 }}>Nothing coming up</div>;
+  }
 
   return (
     <div className="upcoming-list">
-      {events.map((item, i) => (
-        <div key={i} className="upcoming-item">
+      {events.map(item => (
+        <div key={item.id} className="upcoming-item">
           <span className="upcoming-day">{item.day}</span>
+          <span className="upcoming-name" style={{ color: item.color }}>{item.calendarName}</span>
           <span className="upcoming-event">{item.event}</span>
         </div>
       ))}
@@ -138,11 +264,14 @@ function ComingUp() {
   );
 }
 
-// Weather placeholder component
 function Weather() {
   return (
-    <div className="weather-iframe-placeholder">
-      [Weatheristic iframe]
+    <div className="weather-iframe-container">
+      <iframe
+        src="https://weatheristic.com/"
+        className="weather-iframe"
+        title="Weatheristic"
+      />
     </div>
   );
 }
@@ -164,10 +293,16 @@ function Calendar() {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [currentTimePct, setCurrentTimePct] = useState<number>(0);
   const [loading, setLoading] = useState(true);
+  const [dayOffset, setDayOffset] = useState(0);
 
   const START_HOUR = 7;
   const END_HOUR = 22;
   const TOTAL_HOURS = END_HOUR - START_HOUR;
+
+  // The date we're viewing (use local date, not UTC)
+  const viewDate = new Date();
+  viewDate.setDate(viewDate.getDate() + dayOffset);
+  const viewDateStr = `${viewDate.getFullYear()}-${String(viewDate.getMonth() + 1).padStart(2, '0')}-${String(viewDate.getDate()).padStart(2, '0')}`;
 
   // Fetch calendar events
   useEffect(() => {
@@ -178,19 +313,13 @@ function Calendar() {
         setEvents(data.events || []);
       } catch (error) {
         console.error('Error fetching calendar:', error);
-        // Fallback demo data
-        setEvents([
-          { id: '1', summary: 'Annual Online Auction', start: '', end: '', allDay: true, calendarId: 'family', calendarName: 'Family', color: '#fbbf24' },
-          { id: '2', summary: 'Standup', start: '2024-03-07T09:00:00', end: '2024-03-07T09:30:00', allDay: false, calendarId: 'terry', calendarName: 'Terry', color: '#9ca3af' },
-          { id: '3', summary: 'Focus Block', start: '2024-03-07T10:00:00', end: '2024-03-07T12:00:00', allDay: false, calendarId: 'terry', calendarName: 'Terry', color: '#9ca3af' },
-          { id: '4', summary: 'School', start: '2024-03-07T08:30:00', end: '2024-03-07T14:30:00', allDay: false, calendarId: 'skylar', calendarName: 'Skylar', color: '#f472b6' },
-        ]);
+        setEvents([]);
       } finally {
         setLoading(false);
       }
     }
     fetchEvents();
-    
+
     // Poll every 5 minutes
     const pollInterval = setInterval(fetchEvents, 5 * 60 * 1000);
     return () => clearInterval(pollInterval);
@@ -214,13 +343,14 @@ function Calendar() {
     return () => clearInterval(interval);
   }, []);
 
-  // Get today's date string for comparison
-  const todayStr = new Date().toISOString().split('T')[0];
-
-  // Filter events for today
+  // Filter events for the viewed date
   const todayEvents = events.filter(e => {
+    if (e.allDay) {
+      // All-day events use date strings like "2026-03-09"
+      return e.start === viewDateStr || e.end === viewDateStr;
+    }
     const eventDate = e.start.split('T')[0];
-    return eventDate === todayStr || (e.allDay && e.start.includes(todayStr.slice(0, 7)));
+    return eventDate === viewDateStr;
   });
 
   // Get all-day events
@@ -228,6 +358,32 @@ function Calendar() {
 
   // Get timed events
   const timedEvents = todayEvents.filter(e => !e.allDay);
+
+  // Format time for event display (e.g., "2pm", "3:30pm")
+  const formatTime = (dateStr: string) => {
+    const d = new Date(dateStr);
+    const h = d.getHours();
+    const m = d.getMinutes();
+    const hour12 = h === 0 ? 12 : h > 12 ? h - 12 : h;
+    const suffix = h < 12 ? 'am' : 'pm';
+    return m === 0 ? `${hour12}${suffix}` : `${hour12}:${m.toString().padStart(2, '0')}${suffix}`;
+  };
+
+  // Format time range, collapsing shared am/pm (e.g., "2 – 4pm")
+  const formatTimeRange = (startStr: string, endStr: string) => {
+    const s = new Date(startStr);
+    const e = new Date(endStr);
+    const sH = s.getHours();
+    const eH = e.getHours();
+    const samePeriod = (sH < 12) === (eH < 12);
+    if (samePeriod) {
+      const sH12 = sH === 0 ? 12 : sH > 12 ? sH - 12 : sH;
+      const sM = s.getMinutes();
+      const startPart = sM === 0 ? `${sH12}` : `${sH12}:${sM.toString().padStart(2, '0')}`;
+      return `${startPart} – ${formatTime(endStr)}`;
+    }
+    return `${formatTime(startStr)} – ${formatTime(endStr)}`;
+  };
 
   // Calculate event position in the grid
   const getEventPosition = (event: CalendarEvent) => {
@@ -240,9 +396,10 @@ function Calendar() {
     const endMin = endDate.getMinutes();
     
     const top = ((startHour - START_HOUR + startMin / 60) / TOTAL_HOURS) * 100;
-    const height = ((endHour - startHour + (endMin - startMin) / 60) / TOTAL_HOURS) * 100;
-    
-    return { top, height: Math.max(height, 2) };
+    const rawHeight = ((endHour - startHour + (endMin - startMin) / 60) / TOTAL_HOURS) * 100;
+    // Subtract a small gap so back-to-back events don't touch
+    const gap = 0.3;
+    return { top, height: Math.max(rawHeight - gap, 2) };
   };
 
   // Get column index for a calendar
@@ -253,8 +410,8 @@ function Calendar() {
 
   if (loading) {
     return (
-      <div className="calendar-panel">
-        <div className="panel-label">Today — {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</div>
+      <div className="panel calendar-panel" style={{ gridRow: '1 / 4' }}>
+        <div className="panel-label">{dayOffset === 0 ? 'Today' : viewDate.toLocaleDateString('en-US', { weekday: 'long' })} — {viewDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</div>
         <div className="flex items-center justify-center h-full">
           <span className="text-gray-500">Loading calendar...</span>
         </div>
@@ -263,9 +420,18 @@ function Calendar() {
   }
 
   return (
-    <div className="calendar-panel">
-      <div className="panel-label">Today — {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</div>
-      
+    <div className="panel calendar-panel" style={{ gridRow: '1 / 4' }}>
+      <div className="panel-label" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span>{dayOffset === 0 ? 'Today' : viewDate.toLocaleDateString('en-US', { weekday: 'long' })} — {viewDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</span>
+        <span style={{ display: 'flex', gap: '8px' }}>
+          <button onClick={() => setDayOffset(d => d - 1)} style={{ cursor: 'pointer', background: 'none', border: '1px solid #444', borderRadius: '4px', color: '#888', padding: '2px 8px', fontSize: '14px' }}>◀</button>
+          {dayOffset !== 0 && (
+            <button onClick={() => setDayOffset(0)} style={{ cursor: 'pointer', background: 'none', border: '1px solid #444', borderRadius: '4px', color: '#888', padding: '2px 8px', fontSize: '12px' }}>today</button>
+          )}
+          <button onClick={() => setDayOffset(d => d + 1)} style={{ cursor: 'pointer', background: 'none', border: '1px solid #444', borderRadius: '4px', color: '#888', padding: '2px 8px', fontSize: '14px' }}>▶</button>
+        </span>
+      </div>
+
       {/* All-day events strip */}
       <div className="allday-strip">
         <div className="allday-label">ALL DAY</div>
@@ -284,7 +450,7 @@ function Calendar() {
         )}
       </div>
 
-      // Column headers
+      {/* Column headers */}
       <div className="col-headers">
         <div className="col-header" style={{ color: '#9ca3af' }}>Terry</div>
         <div className="col-header" style={{ color: '#22c55e' }}>Nicole</div>
@@ -331,14 +497,15 @@ function Calendar() {
                   backgroundColor: event.color,
                 }}
               >
-                {event.summary}
+                <div className="cal-event-title">{event.summary}</div>
+                <div className="cal-event-time">{formatTimeRange(event.start, event.end)}</div>
               </div>
             );
           })}
         </div>
         
-        {/* Current time indicator */}
-        {currentTimePct > 0 && (
+        {/* Current time indicator — only on today */}
+        {dayOffset === 0 && currentTimePct > 0 && (
           <div className="time-indicator" style={{ top: `${currentTimePct}%` }}>
             <div className="time-indicator-dot"></div>
           </div>
@@ -352,9 +519,7 @@ export default function Home() {
   return (
     <div className="dashboard">
       {/* ==================== LEFT: CALENDAR (rows 1-3) ==================== */}
-      <div className="panel calendar-panel" style={{ gridRow: "1 / 4" }}>
-        <Calendar />
-      </div>
+      <Calendar />
 
       {/* ==================== CENTER ROW 1: TIME / DATE / FACT ==================== */}
       <div className="panel">

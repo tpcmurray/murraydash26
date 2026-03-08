@@ -5,6 +5,6 @@ export default {
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
-    url: process.env.DATABASE_URL || 'postgresql://user:password@localhost:5432/murraydash',
+    url: process.env.DATABASE_URL || 'postgresql://murraydash:murraydash2026!@localhost:5434/murraydash',
   },
 } satisfies Config;

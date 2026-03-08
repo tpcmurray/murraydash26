@@ -85,10 +85,10 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Display daily rotating science facts.
 
-- [ ] Create `/api/dashboard/science-fact` endpoint
-- [ ] Implement date-seeded random selection query
-- [ ] Build science fact card component with accent bar
-- [ ] Add midnight rotation logic (client-side check on load)
+- [x] Create `/api/dashboard/science-fact` endpoint
+- [x] Implement date-seeded random selection query
+- [x] Build science fact card component with accent bar
+- [x] Add midnight rotation logic (client-side check on load)
 
 ---
 
@@ -96,12 +96,12 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build countdown timer displays with real-time ticking.
 
-- [ ] Create `/api/dashboard/countdowns` endpoint
-- [ ] Build countdown list component:
-  - [ ] Daily countdowns (tick down in minutes)
-  - [ ] Yearly/one-off countdowns (display days)
-  - [ ] Amber highlight for < 2 hours remaining
-- [ ] Implement client-side JS for real-time updates (every second)
+- [x] Create `/api/dashboard/countdowns` endpoint
+- [x] Build countdown list component:
+  - [x] Daily countdowns (tick down in minutes)
+  - [x] Yearly/one-off countdowns (display days)
+  - [x] Amber highlight for < 2 hours remaining
+- [x] Implement client-side JS for real-time updates (every second)
 
 ---
 
@@ -123,12 +123,12 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build the right-column weather iframe and coming up list.
 
-- [ ] Create `/api/dashboard/coming-up` endpoint (next 2 days)
-- [ ] Build "Coming Up" component:
-  - [ ] Day abbreviation, event name, time
-  - [ ] Exclude today's events
-- [ ] Add Weatheristic iframe embed in right column
-- [ ] Adjust zoom level to fit panel (or use dedicated route later)
+- [x] Create `/api/dashboard/coming-up` endpoint (next 2 days)
+- [x] Build "Coming Up" component:
+  - [x] Day abbreviation, event name, time
+  - [x] Exclude today's events
+- [x] Add Weatheristic iframe embed in right column
+- [x] Adjust zoom level to fit panel (or use dedicated route later)
 
 ---
 

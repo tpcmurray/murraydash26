@@ -1,4 +1,19 @@
-import { pgTable, uuid, text, timestamp, date, decimal, boolean, pgEnum, primaryKey, integer } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp, date, decimal, boolean, pgEnum, primaryKey, integer, customType } from 'drizzle-orm/pg-core';
+
+// Custom type for bytea (binary data for images)
+const bytea = customType<{ data: Buffer }>({
+  dataType() {
+    return 'bytea';
+  },
+  toDriver(value: Buffer) {
+    return value;
+  },
+  fromDriver(value: unknown) {
+    if (Buffer.isBuffer(value)) return value;
+    if (typeof value === 'string') return Buffer.from(value, 'hex');
+    return Buffer.from(value as any);
+  },
+});
 
 // NextAuth tables required by DrizzleAdapter
 export const users = pgTable('user', {
@@ -120,15 +135,15 @@ export const countdowns = pgTable('countdowns', {
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
-// Science Facts table
 export const scienceFacts = pgTable('science_facts', {
   id: uuid('id').primaryKey().defaultRandom(),
   category: scienceCategoryEnum('category').notNull(),
   factText: text('fact_text').notNull(),
-  imageUrl: text('image_url'),
-  imageData: text('image_data'),
+  imageUrl: text('image_url'),                // original URL from sciensational.com
+  imageFilename: text('image_filename'),      // local filename in data/images/
+  imageData: bytea('image_data'),             // binary image stored in DB as backup
   sourceUrl: text('source_url'),
-  createdAt: timestamp('created_at').defaultNow(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
 // Type exports for use in queries

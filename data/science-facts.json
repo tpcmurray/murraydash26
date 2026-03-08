@@ -1,0 +1,3674 @@
+[
+  {
+    "id": "a2ed0506-911a-44b2-ba86-1bf9837c002c",
+    "category": "astronomy",
+    "factText": "Mercury is the fastest planet in the Solar System, with a speed of about 45 km/second around the Sun.",
+    "imageFilename": "astronomy-001.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mercury.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "2ef9bc99-21b2-4311-a01a-e42c3c50566b",
+    "category": "astronomy",
+    "factText": "Our nearest black hole — supermassive Sagittarius A* — is 26,000 light years away, right in the middle of Milky Way Galaxy.",
+    "imageFilename": "astronomy-002.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/black-hole-sagittarius-a_31133936.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "40ac2f8c-9317-4c17-9eef-64d6f4312e7f",
+    "category": "astronomy",
+    "factText": "The largest galaxy is IC 1101 — extending 2 million light years from its core, with over 100 trillion stars.",
+    "imageFilename": "astronomy-003.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ic-1101_16155352.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "b00c5f3e-9d78-405d-9489-9725130cffad",
+    "category": "astronomy",
+    "factText": "The largest star discovered in Milky Way galaxy is UY Scuti (17,000 times bigger & 100,000 more luminous than the Sun).",
+    "imageFilename": "astronomy-004.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/uy-scuti_14110649.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "f6025a8a-739d-40b3-ade1-60c2cd46de14",
+    "category": "astronomy",
+    "factText": "The farthest star ever seen is Icarus.",
+    "imageFilename": "astronomy-005.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/icarus_08162035.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "dd5d9cd7-94df-42d3-8cfc-b35d7d0482e7",
+    "category": "astronomy",
+    "factText": "The Earth's inner core of solid iron is almost the same size as the Moon.",
+    "imageFilename": "astronomy-006.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/earth-core_07152755.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "b57c1b1f-9a12-4bf9-9bb5-194a904cde47",
+    "category": "astronomy",
+    "factText": "Solar System moons that have water are Jupiter’s Europa, Callisto & Ganymede and Saturn’s Enceladus & Titan.",
+    "imageFilename": "astronomy-007.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/water-moons_07152027.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "c3fd2a0c-00e6-4e76-adde-983b9f47f23c",
+    "category": "astronomy",
+    "factText": "The fastest star by rotation is VFTS 102 in Tarantula Nebula (spinning 1.6 million km/h.)",
+    "imageFilename": "astronomy-008.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/vfts-102_04152935.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "2e76f9a9-e4e1-4627-b213-f923dffe1d2a",
+    "category": "astronomy",
+    "factText": "It rains diamonds on Jupiter and Saturn.",
+    "imageFilename": "astronomy-009.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/diamond-rain_02114018.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "d53881f4-485a-40d0-aa53-c133f858f44d",
+    "category": "astronomy",
+    "factText": "The largest moon in the Solar System – Jupiter's Ganymede – is even bigger than planet Mercury.",
+    "imageFilename": "astronomy-010.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ganymede.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "eb48d03f-00fb-4987-a5dd-2314814b25a4",
+    "category": "astronomy",
+    "factText": "After helium and hydrogen, the most common element on the Sun is oxygen.",
+    "imageFilename": "astronomy-011.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/sun.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "2c4ce1bf-669f-47a9-899e-6bfafd515bea",
+    "category": "astronomy",
+    "factText": "Boomerang Nebula is the coldest known place in the universe.",
+    "imageFilename": "astronomy-012.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/boomerang-nebula.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "61b53f85-7a48-4611-adf5-a02cfc48c6bd",
+    "category": "astronomy",
+    "factText": "The Moon is moving away from the Earth 3.8 cm every year.",
+    "imageFilename": "astronomy-013.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/earth-moon.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "3886e1b8-a2b8-415e-b5f4-bffb39185b93",
+    "category": "astronomy",
+    "factText": "The entire surface area of Pluto is smaller than Russia.",
+    "imageFilename": "astronomy-014.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pluto.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "c5bd0948-5acd-4ffe-a0f8-95be4bbdd0ad",
+    "category": "astronomy",
+    "factText": "There are three golf balls on the Moon (left by Apollo 14 astronaut Alan Shepard in 1971.)",
+    "imageFilename": "astronomy-015.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/golf-balls-moon.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "4f89592e-45c7-40d3-bcd8-3ecf144e8c18",
+    "category": "astronomy",
+    "factText": "With the strongest winds, Neptune is the windiest planet in the Solar System.",
+    "imageFilename": "astronomy-016.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/neptune.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "c22b45d3-3561-429a-a3f2-ffcfccf32ffc",
+    "category": "astronomy",
+    "factText": "The largest known star – Westerlund 1-26 – is 2000 times bigger than the Sun.",
+    "imageFilename": "astronomy-017.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/westerlund-1-26.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "ef0e0cc6-8f6c-4800-a5aa-4fd7ae6ab1bd",
+    "category": "astronomy",
+    "factText": "95% of all matter in the universe is invisible, and is called the Dark Matter.",
+    "imageFilename": "astronomy-018.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dark-matter.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "f72c59fe-435e-438f-bd3a-6ff3ceaed0fc",
+    "category": "astronomy",
+    "factText": "The Sun is growing: In 5 billion years it will be 250 times bigger and close enough to swallow up the Earth.",
+    "imageFilename": "astronomy-019.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/sun.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "3d5e303c-db0d-4679-99e1-69cc4166716f",
+    "category": "astronomy",
+    "factText": "Proxima Centauri is the nearest star to us after the Sun.",
+    "imageFilename": "astronomy-020.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/proxima-centauri.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy.html"
+  },
+  {
+    "id": "23a3a910-3aa6-4f48-91ac-c8a5caf82599",
+    "category": "astronomy",
+    "factText": "The star Epsilon Aurigae dims every 27 years due to a mysterious dark object eclipsing it periodically.",
+    "imageFilename": "astronomy-021.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/epsilon-aurigae.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "3a9e86d9-e918-479c-aea0-8b09da5dc691",
+    "category": "astronomy",
+    "factText": "The 'Great Red Spot' - a storm on Jupiter that has been going on for 300 years - is so big that dozens of Earths would fit into it.",
+    "imageFilename": "astronomy-022.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/jupiter-great-red-spot.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "0e244b54-3144-46b0-a160-3b6f0ee4e91f",
+    "category": "astronomy",
+    "factText": "A supermassive blackhole is believed to be present in the centre of nearly every galaxy, including our own Milky Way.",
+    "imageFilename": "astronomy-023.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/supermassive-blackhole.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "4c0a9ef5-b1e9-4b1f-b72c-640c162ecc97",
+    "category": "astronomy",
+    "factText": "On Mercury during the day, the Sun rises, stops, about-turns and eventually sets where it rose.",
+    "imageFilename": "astronomy-024.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mercury-sunrise-sunset.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "ca5f7ff5-ab1f-434f-852d-b94a055d5ef8",
+    "category": "astronomy",
+    "factText": "Everything moves: Planets move within the Solar System, which moves within Milky Way Galaxy, which moves within The Local Group of Galaxies, which moves towards Virgo Cluster.",
+    "imageFilename": "astronomy-025.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/galaxies.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "6c2fc97e-1f65-431b-a116-014291c41992",
+    "category": "astronomy",
+    "factText": "Venus and Uranus are the only planets that rotate clockwise (retrograde rotation.)",
+    "imageFilename": "astronomy-026.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/venus.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "564e8b27-89a7-4e11-bf79-9ac2af34c339",
+    "category": "astronomy",
+    "factText": "All 27 of Uranus moons are named after William Shakespeare and Alexander Pope characters.",
+    "imageFilename": "astronomy-027.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/uranus.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "b83ae204-d9b3-4be1-a439-6b391367c73d",
+    "category": "astronomy",
+    "factText": "With 63 moons, Jupiter has the largest number of moons.",
+    "imageFilename": "astronomy-028.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/jupiter.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "14f964b7-00ee-40f2-ab3f-25e774ac0a2a",
+    "category": "astronomy",
+    "factText": "Jupiter, Saturn, Uranus and Neptune are made up of just gas with no solid surface to land on.",
+    "imageFilename": "astronomy-029.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/jupiter-saturn-uranus-neptune.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "244b125c-5a9f-4042-9f46-9cf7aee66af3",
+    "category": "astronomy",
+    "factText": "The temperature on Mercury varies so extremely that it will rise up to 430C during the day and drop as low as -140C at night.",
+    "imageFilename": "astronomy-030.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mercury.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "bebfc0b0-6e77-4b1c-a763-4706c26c9c67",
+    "category": "astronomy",
+    "factText": "The largest known star VY Canis Majoris is so big that if our Sun were a ball 117 cm (46 in) wide, Canis Majoris would be 2.25 kilometres (1.3 miles) wide.",
+    "imageFilename": "astronomy-031.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/canis-majoris.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "6da83519-89f0-49ba-96f7-2cd157c8dd24",
+    "category": "astronomy",
+    "factText": "The Pistol Star is the most luminous star known - 10 million times the power of the Sun and as big as the size of Earth's entire orbit around the Sun.",
+    "imageFilename": "astronomy-032.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pistol-star.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "9a861e1b-0a7e-464c-81d7-46bfb12037a4",
+    "category": "astronomy",
+    "factText": "Mars is red because its soil is very rusty (iron oxide.)",
+    "imageFilename": "astronomy-033.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mars.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "1c2414bc-563a-4ebd-967d-ac65988fc36d",
+    "category": "astronomy",
+    "factText": "Crux is the smallest of modern constellations, with only 4 bright stars.",
+    "imageFilename": "astronomy-034.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/constellation-crux.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "98dd006e-43f2-4c78-af22-c77cc786fa58",
+    "category": "astronomy",
+    "factText": "The largest of modern constellations is Hydra.",
+    "imageFilename": "astronomy-035.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/constellation-hydra.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "9ee11b1f-adcd-4676-a75d-7ec95774d3f8",
+    "category": "astronomy",
+    "factText": "Earth is the only planet not named after a Roman or Greek god.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "362056b5-d361-42b3-9004-9c467755d8c5",
+    "category": "astronomy",
+    "factText": "Saturn's moon Titan has hundreds of times more oil and natural gas than all the known reserves on Earth.",
+    "imageFilename": "astronomy-037.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/titan.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "194f730a-29d9-45a8-b7fb-55d80ef53521",
+    "category": "astronomy",
+    "factText": "Interstellar space is not complete vacuum: there are a few hydrogen atoms per cubic centimetre.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "153bccc8-eadb-4280-856a-a4e954bbdc1c",
+    "category": "astronomy",
+    "factText": "If a pinhead-size piece of the Sun were placed on Earth, one would have to stand as far as 145 kilometres (90 miles) away to be safe.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "e7b36263-7f5f-4982-9201-41b4b06bb6a4",
+    "category": "astronomy",
+    "factText": "The star \"Lucy\" in constellation Centaurus is actually a huge cosmic diamond of 10 billion trillion trillion carats.",
+    "imageFilename": "astronomy-040.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/diamond-star-lucy.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg2.html"
+  },
+  {
+    "id": "65608ab9-39cb-4106-b2ce-b292bc1a6e79",
+    "category": "astronomy",
+    "factText": "A neutron star has such density that a teaspoonful of its matter would weigh more than all the people on Earth.",
+    "imageFilename": "astronomy-041.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/neutron-star.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "3542cd38-896d-4215-9b97-c30e5637cf4e",
+    "category": "astronomy",
+    "factText": "Even though it is closest to the Sun, Mercury has ice in its craters.",
+    "imageFilename": "astronomy-042.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mercury-craters.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "ce148d68-d623-4695-ae65-688a126542f6",
+    "category": "astronomy",
+    "factText": "Due to its size, Pluto's moon Charon is also considered to be a double dwarf planet (two planets orbiting each other), rather than a moon orbiting its planet.",
+    "imageFilename": "astronomy-043.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pluto-charon.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "60340d4c-c117-47d0-9949-847e56a1044d",
+    "category": "astronomy",
+    "factText": "Jupiter is so big that twice the mass of the rest of our Solar System's planets combined would still not be enough to equal its mass.",
+    "imageFilename": "astronomy-044.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/jupiter.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "be6cada0-6ddd-4a0a-9344-20414b5ca270",
+    "category": "astronomy",
+    "factText": "Made up of billions of pieces of ice, the average thickness of each of Saturn's seven giant rings only ranges from about 200 to 3000 metres.",
+    "imageFilename": "astronomy-045.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/saturn.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "25a2d870-6b58-4cc1-a4d8-8d9579120834",
+    "category": "astronomy",
+    "factText": "The deepest surface point on Mars is Hellas, about 3 km deep.",
+    "imageFilename": "astronomy-046.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mars-hellas.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "a43c4690-8e68-413e-9fbb-ded3c6b84e2f",
+    "category": "astronomy",
+    "factText": "Pluto is no longer considered a planet. It is now known as a \"Dwarf Planet\".",
+    "imageFilename": "astronomy-047.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pluto.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "fb5fe339-b69c-4a21-98cc-2aa876ecb106",
+    "category": "astronomy",
+    "factText": "The full Moon always rises at sunset and sets at sunrise.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "e06ac6f3-980b-44a2-ae4e-24d4cd3892a0",
+    "category": "astronomy",
+    "factText": "About 1000 Earths would fit inside Jupiter - and the Sun could hold about 1000 Jupiters.",
+    "imageFilename": "astronomy-049.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/sun-jupiter-earth.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "f79f62a8-5d96-46b8-aefa-659c3b00d7b0",
+    "category": "astronomy",
+    "factText": "Voyager 1 spacecraft is the farthest human-made object in the universe.",
+    "imageFilename": "astronomy-050.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/voyager-1.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "e4f7c247-1c1a-409a-b1e7-ee27d4fcc946",
+    "category": "astronomy",
+    "factText": "The speed of light - 299 million metres a second - would still take about 26 billion years to reach one end of the visible universe to the other.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "af772f5e-1b14-43c5-a2b2-3fde237acfaf",
+    "category": "astronomy",
+    "factText": "Our sky is blue because when sunlight collides with our atmosphere, colours of the shortest wavelengths (violet and blue) are scattered - and our eyes are more sensitive to see blue.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "e1c0b4d1-92d0-41cb-b7ca-34be5cea2c68",
+    "category": "astronomy",
+    "factText": "One of Jupiter's moons is believed to grow and shrink because of the water beneath its frozen surface.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "1f2a0874-b69d-48b8-beaf-d5a1a2cf239f",
+    "category": "astronomy",
+    "factText": "A dwarf star is so dense that it would take 8 men to lift a teaspoon full of its matter.",
+    "imageFilename": "astronomy-054.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dwarf-star.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "26f1adaf-7b28-408e-b0ef-e91b575d24f3",
+    "category": "astronomy",
+    "factText": "The number of neuron cells in our brain is more than the total number of stars in our galaxy.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "a527bb0e-8edb-4245-9304-0e80236f31ea",
+    "category": "astronomy",
+    "factText": "The planet Venus has the longest day.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "3dc3b2ac-3621-4cef-9d7f-836043ae0ecd",
+    "category": "astronomy",
+    "factText": "The Earth is the densest planet in the Solar System.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "302c47ca-f0ab-433a-abb6-d3401b0ed68f",
+    "category": "astronomy",
+    "factText": "The Moon orbits the Earth every 27.32 days",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "558ece36-818b-4d60-b42f-78fb1c3a03a6",
+    "category": "astronomy",
+    "factText": "Every second, the Sun pumps more than a million tons of material into the space through the solar wind (electrically charged particles.)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "b8fa6823-5b60-4ef1-bf44-1e3006e9e4aa",
+    "category": "astronomy",
+    "factText": "The planet Venus does not tilt as it goes around the Sun, so consequently, it has no seasons.",
+    "imageFilename": "astronomy-060.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/venus.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg3.html"
+  },
+  {
+    "id": "aa68f4bc-680a-4e48-b89c-87df1a2a3596",
+    "category": "astronomy",
+    "factText": "Since Neptune's discovery in 1846, it has made just about three-quarters of one revolution around the Sun.",
+    "imageFilename": "astronomy-061.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/neptune.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "2aa93d4a-400c-4836-9777-0da568e111a9",
+    "category": "astronomy",
+    "factText": "The pressure at the centre of the Earth is 27,000 tons per square inch.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "39a28412-84b7-4555-9495-21259a070045",
+    "category": "astronomy",
+    "factText": "On Uranus, each pole gets around 42 years of continuous sunlight, followed by 42 years of darkness.",
+    "imageFilename": "astronomy-063.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/uranus.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "6babc451-0c1c-4c2f-8050-f6a84411965a",
+    "category": "astronomy",
+    "factText": "Uranus is tipped on its side so that one pole is pointed at the Sun, so its poles are warmer than its equator.",
+    "imageFilename": "astronomy-064.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/uranus.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "5f76b27a-156b-4171-8c0f-7b858e7f6115",
+    "category": "astronomy",
+    "factText": "The smallest planet in our Solar System is Pluto (now called 'dwarf planet' and not a true planet.)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "51804964-c689-48f9-a80b-2c97ea24afcf",
+    "category": "astronomy",
+    "factText": "A cosmic year is the amount of time it takes the Sun to revolve around the center of the Milky Way, about 225 million years.",
+    "imageFilename": "astronomy-066.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/milky-way-galaxy.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "184ec98a-acc8-414f-aba9-6d901a384c93",
+    "category": "astronomy",
+    "factText": "A day on the planet Mercury is twice as long as its year. Mercury rotates very slowly but revolves around the Sun in slightly less than 88 days.",
+    "imageFilename": "astronomy-067.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mercury.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "b954116f-aa44-40f3-b070-f50ea01c1008",
+    "category": "astronomy",
+    "factText": "The star Alpha Herculis is so big that 25 of our entire Solar System would have to be placed end to end to equal the star's diameter.",
+    "imageFilename": "astronomy-068.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/alpha-hercules.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "b206e6b7-81a8-4c0a-8c98-46d27427f634",
+    "category": "astronomy",
+    "factText": "The star Sirius B is so dense, a handful of it weighs about 454,000 kgs (1 million pounds.)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "734dfd31-965a-4ee0-b13e-7f29ebac1c78",
+    "category": "astronomy",
+    "factText": "The Sun contains over 99.8 percent of the total material (mass) in our Solar System, while Jupiter contains most of the rest.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "a9a3620b-afde-43eb-9a57-704aa86feb1f",
+    "category": "astronomy",
+    "factText": "The Sun is 330,330 times larger than Earth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "7a52d4e9-6aec-437e-a2fb-9c031c05a4b7",
+    "category": "astronomy",
+    "factText": "The Sun is about 149 million km (93 million mi) from Earth, yet it's 270,000 times closer than the next nearest star, which is 4.3 light years away.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "6bb92a6f-a52f-42e6-a544-c35dee2bed6f",
+    "category": "astronomy",
+    "factText": "A neutron star is the strongest magnet in the universe.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "1a5a758c-0d88-476d-ad41-105006e81b11",
+    "category": "astronomy",
+    "factText": "A new star is born in our galaxy every 18 days.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "da2a47cb-f8ee-44b5-be35-a7cab6776084",
+    "category": "astronomy",
+    "factText": "If a pulsar's (small star made up of densely packed neutrons) piece the size of a small coin landed on Earth, it would weigh approximately 100 million tons.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "43d38bd5-96a1-4cdc-8b60-4ab6316666fc",
+    "category": "astronomy",
+    "factText": "A day on Mercury, from sunrise to sunset, lasts about six Earth months.",
+    "imageFilename": "astronomy-076.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mercury.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "1e2fe998-37c6-49cd-ad8c-377482880342",
+    "category": "astronomy",
+    "factText": "A space vehicle must move at a rate of at least 27.35 km (17 mi) per second to escape Earth's gravity.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "b88962db-3019-4e45-8c73-c854800579d6",
+    "category": "astronomy",
+    "factText": "The Sun loses 360 million tonnes of material each day.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "53528c7c-cf31-4392-a64c-c24873e4240c",
+    "category": "astronomy",
+    "factText": "The Earth-Moon size ratio is the largest in our Solar System, excepting Pluto-Charon.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "656d0db6-8ca1-46e5-a7f1-edc478066de6",
+    "category": "astronomy",
+    "factText": "The Sun travels at a speed of 250 km (155 mi) per second, but it still takes 230 million years for it to complete a single revolution of the galaxy.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg4.html"
+  },
+  {
+    "id": "6b8ce1d8-db81-40de-94f8-74f93cc42f4d",
+    "category": "astronomy",
+    "factText": "Olympus Mons on Mars is the largest volcano in our Solar System, almost three times taller than Mount Everest on Earth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "891f3000-8e1d-4f2c-99f0-895ffcef8f2f",
+    "category": "astronomy",
+    "factText": "Jupiter's core is non-metal, but due to the immense pressure inside Jupiter, the core has become a metal. This metal is liquid metallic hydrogen.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "cf8519d3-f657-4376-93fb-396db1d3885c",
+    "category": "astronomy",
+    "factText": "Despite being closest to the sun, Mercury is not the hottest planet. The hottest planet is Venus (at 462 Celsius).",
+    "imageFilename": "astronomy-083.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/venus.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "3118a360-651b-494a-a040-d53127796e7d",
+    "category": "astronomy",
+    "factText": "The cosmos contains approximately 50,000,000,000 galaxies.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "eb0341aa-bb04-4708-a269-3ffa36c37f10",
+    "category": "astronomy",
+    "factText": "A large sunspot can last for about a week.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "d3e48b1c-3fc6-4889-9ce1-c9b3fb0a5ffb",
+    "category": "astronomy",
+    "factText": "The Earth orbits the sun at an average speed of 107,220 km/h.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "a6821c7c-9d5e-4a42-a379-22f7e8c9cb3b",
+    "category": "astronomy",
+    "factText": "There is a high and low tide because of our The Moon and the Sun.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "b4d1b408-c52d-40b7-b6a1-b1a8f2d52578",
+    "category": "astronomy",
+    "factText": "The moon is one million times drier than the Gobi Desert.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "2683a4be-7ace-4174-a26d-616af0c685f5",
+    "category": "astronomy",
+    "factText": "The planet Saturn has a density lower than water. So, if placed in water it would float.",
+    "imageFilename": "astronomy-089.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/saturn.jpg",
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "428e35ae-d809-4ee5-bcf0-4a828380da3e",
+    "category": "astronomy",
+    "factText": "The Moon is 27% the size of the Earth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "2442884a-6574-4dd2-875b-5978e4e7fcb2",
+    "category": "astronomy",
+    "factText": "Sunlight takes about 8 minutes & 20 seconds to reach the Earth at 299,792 km/s (186,282 mi/s).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "8202cf8e-cce0-4adf-9354-4de85ad70757",
+    "category": "astronomy",
+    "factText": "An Astronaut can be up to 2 inches taller returning from space. The cartilage disks in the spine expand in the absence of gravity.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/astronomy-facts-pg5.html"
+  },
+  {
+    "id": "dac618f3-9350-4002-97f3-5c44ea299b14",
+    "category": "mathematics",
+    "factText": "4 is the only number with the same number of letters in English (\"four\").",
+    "imageFilename": "mathematics-001.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/four_14113147.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "4ebb1385-2ebd-4bc8-934d-ce6bb70eafb5",
+    "category": "mathematics",
+    "factText": "2520 is the smallest number divisible by 1 to 10 (Least Common Multiple of 1, 2, 3, 4, 5, 6, 7, 8, 9, 10).",
+    "imageFilename": "mathematics-002.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/2520_14111541.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "ad340aaf-63f1-4a19-aaea-755fca85c66b",
+    "category": "mathematics",
+    "factText": "A 3-digit result of any number multiplied by 11 has its middle digit the sum of other two, like: 21 × 11 = 231 (2+1=3)13 × 11 = 143 (1+3=4)44 × 11 = 484 (4+4=8) ... etc.",
+    "imageFilename": "mathematics-003.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/eleven.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "725cde9b-76e4-4358-9f7b-06325a4ec207",
+    "category": "mathematics",
+    "factText": "The value of zero was first used by the ancient Indian mathematician Aryabhata.",
+    "imageFilename": "mathematics-004.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/zero.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "7477746b-6010-4396-99eb-f3ab8ffceac3",
+    "category": "mathematics",
+    "factText": "The sum of the digits of a number which is a multiple of 9 is always 9, ie, 45 : 4+5 = 9 1980 : 1+9+8+0=18 : 1+8 = 9214164 : 2+1+4+1+6+4=18 : 1+8 = 9etc.",
+    "imageFilename": "mathematics-005.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/nine.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "708b186f-afff-4298-ae30-d07ca93ca7b2",
+    "category": "mathematics",
+    "factText": "9 × 9 + 7 = 88 98 × 9 + 6 = 888 987 × 9 + 5 = 8888 9876 × 9 + 4 = 88888 98765 × 9 + 3 = 888888 ... (Multiplication & Succession.)",
+    "imageFilename": "mathematics-006.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/eight.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "ee656e3d-6482-4a20-8d56-1c605b8751fe",
+    "category": "mathematics",
+    "factText": "The implicit curve equation (x2+y2-1)3-x2y3=0 produces the heart shape.",
+    "imageFilename": "mathematics-007.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/heart-equation.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "6b59393c-ad16-432c-9cfd-40b09b9a19b1",
+    "category": "mathematics",
+    "factText": "The term Googol (10100, ie, 10 followed by 100 zeros) was invented by a 9-year old boy Milton Sirotta.",
+    "imageFilename": "mathematics-008.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/googol.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "49d85a70-f49a-41c8-ae04-563372d97080",
+    "category": "mathematics",
+    "factText": "The Reuleaux Triangle is a shape of constant width other than a circle.",
+    "imageFilename": "mathematics-009.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/reuleaux-triangle.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "ea2e166b-036f-4ad8-9157-bc2467cec385",
+    "category": "mathematics",
+    "factText": "17 689 = 1332 177 6889 = 13332 1777 68889 = 13333217777 688889 = 1333332 ...",
+    "imageFilename": "mathematics-010.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/1333.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "389adc17-df3d-48fa-a08c-1912e42233eb",
+    "category": "mathematics",
+    "factText": "The Seven Unsolved Millennium Prize Math Problems are:1. P versus NP problem2. Hodge Conjecture3. Poincaré conjecture (solved in 2002)4. Riemann Hypothesis5. Yang-Mills Existence and Mass Gap6. Navier-Stokes Existence and Smoothness7. Birch and Swinnerton-Dyer Conjecture",
+    "imageFilename": "mathematics-011.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/millennium-prize-maths.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "6b9a099c-dc7a-410c-89ba-d48796954c9b",
+    "category": "mathematics",
+    "factText": "The Fibonacci sequence are numbers where each following number is the sum of the previous two:0 1 1 2 3 5 8 13 21 34 55 89 ...",
+    "imageFilename": "mathematics-012.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/fibonacci-sequence-drawn.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "8a916765-4e99-4287-aa04-7dcd08cfee6e",
+    "category": "mathematics",
+    "factText": "A Palindrome Number is a number that reads the same backwards and forward, e.g. 13431.",
+    "imageFilename": "mathematics-013.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/palindrome-number.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "3f64d7ce-a661-4544-ac12-dbef21e24883",
+    "category": "mathematics",
+    "factText": "A US dollar can be made into small change in 293 ways.",
+    "imageFilename": "mathematics-014.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dollar-293-change.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "0fc8ad04-ca65-4ac4-900d-3b304e3fed57",
+    "category": "mathematics",
+    "factText": "You can remember the value of Pi (3.1415926) by counting each word's letters in \"May I have a large container of coffee?\"",
+    "imageFilename": "mathematics-015.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pi.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "614222cc-77f3-4aa3-ab1e-99c63cb95796",
+    "category": "mathematics",
+    "factText": "1 × 8 + 1 = 9 12 × 8 + 2 = 98 123 × 8 + 3 = 987 1234 × 8 + 4 = 9876 12345 × 8 + 5 = 98765123456 × 8 + 6 = 987654 ... (Multiplication & Succession.)",
+    "imageFilename": "mathematics-016.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/multiplication.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "cfa055ba-fb0d-454b-b024-109afab9ffcc",
+    "category": "mathematics",
+    "factText": "142857 is a cyclic number, i.e., its digits are rotated around when multiplied by any number from 1 to 6. Like this: 142857 × 1 = 142857 142857 × 5 = 7 14285 142857 × 4 = 57 1428 142857 × 6 = 857 142 142857 × 2 = 2857 14 142857 × 3 = 42857 1",
+    "imageFilename": "mathematics-017.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/142857.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "0283653d-c4f5-4df5-9ff1-1005cb3a0cff",
+    "category": "mathematics",
+    "factText": "1089 multiplied by 9 gives an exact reverse: 9801.",
+    "imageFilename": "mathematics-018.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/1089-9801.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "830845d1-be18-47b7-a78a-5542f05f30ca",
+    "category": "mathematics",
+    "factText": "From 0 to 1000, the letter \"A\" only appears in 1000 (\"one thousand\").",
+    "imageFilename": "mathematics-019.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/one-thousand.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "383c77b7-7fbe-4d00-bf0b-55bd8ca5d62a",
+    "category": "mathematics",
+    "factText": "2 is called the \"oddest\" Even-Prime number. 2 is a unique Even-Prime because while all Evens are divisible by 2, any number apart from 2 that is divisible by 2, is not a Prime.",
+    "imageFilename": "mathematics-020.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/two.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths.html"
+  },
+  {
+    "id": "888323cc-7a4d-4dc5-bb5b-483e91cacbec",
+    "category": "mathematics",
+    "factText": "1 × 9 + 2 = 11 12 × 9 + 3 = 111 123 × 9 + 4 = 1111 1234 × 9 + 5 = 11111 12345 × 9 + 6 = 111111 ... (Multiplication & Succession.)",
+    "imageFilename": "mathematics-021.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/1111.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "c2e48daa-22bd-4342-a1f5-27f95d0d2675",
+    "category": "mathematics",
+    "factText": "40 when written \"forty\" is the only number with letters in alphabetical order, while \"one\" is the only one with letters in reverse order.",
+    "imageFilename": "mathematics-022.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/forty.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "d6b957c3-5ebf-4f86-8d1c-0aa8aba96553",
+    "category": "mathematics",
+    "factText": "1 googol = 101001 googolplex = 10googol = 1010100(The \"Google\" website name was inspired by \"Googol\".)",
+    "imageFilename": "mathematics-023.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/googol.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "fbba5b75-d11f-48a1-9333-4e38c497e11b",
+    "category": "mathematics",
+    "factText": "111 111 111 × 111 111 111 = 12345678 9 87654321 (Multiplication patterns)",
+    "imageFilename": "mathematics-024.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/1111.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "23f050b3-277a-4e1e-b99b-9fc989f211ed",
+    "category": "mathematics",
+    "factText": "Pi (3.14159...) is a number that cannot be written as a fraction.",
+    "imageFilename": "mathematics-025.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pi.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "b72b78a8-cc27-4a5d-a198-5c4fd104d1b9",
+    "category": "mathematics",
+    "factText": "The opposite sides of a dice cube always add up to seven.",
+    "imageFilename": "mathematics-026.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dice-cube.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "c632ac43-bb1d-43d4-91de-6669e22f3747",
+    "category": "mathematics",
+    "factText": "21978 when multiplied by 4 is the same number with digits in reverse order: 21978 × 4 = 87912",
+    "imageFilename": "mathematics-027.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/21978-87912.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "449aaa80-e42e-461c-af6f-c39c866293fe",
+    "category": "mathematics",
+    "factText": "If you add up the numbers 1-100 consecutively (1+2+3+4+5...) the total is 5050.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "25dc55bf-a759-40f8-ba8d-de7eb5a48a6c",
+    "category": "mathematics",
+    "factText": "The billionth digit of Pi is 9.",
+    "imageFilename": "mathematics-029.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pi.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "9f010af1-9e16-4f35-8367-4c5f75abe3c5",
+    "category": "mathematics",
+    "factText": "1 and 2 are the only numbers where they are the values of the numbers of factors they have.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "eaeb04ff-30f0-4f91-b107-82fae993aa35",
+    "category": "mathematics",
+    "factText": "2 and 5 are the only prime numbers that end in 2 or 5.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "312aad5a-222e-4641-badd-8e4835d78005",
+    "category": "mathematics",
+    "factText": "The largest known prime number (so far) is 17,425,170 digits long.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "1c2fffc5-e0a6-4a8f-a77b-ccf4462c693c",
+    "category": "mathematics",
+    "factText": "The digits to the right of the Pi's (3.141...) decimal point can keep going forever, and there is no pattern to these digits at all.",
+    "imageFilename": "mathematics-033.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pi.jpg",
+    "sourceUrl": "https://www.sciensational.com/maths-facts-pg2.html"
+  },
+  {
+    "id": "d56a84c8-8748-4ff2-8ea1-cf14b12889c4",
+    "category": "physics",
+    "factText": "A coal power plant's waste (coal ash) is more radioactive than a nuclear plant's.",
+    "imageFilename": "physics-001.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/coal-waste_04134218.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "add642ac-9f67-40c4-ba5c-da0ec5e8b0af",
+    "category": "physics",
+    "factText": "The most slippery substance in the world – polytetrafluoroethene (PTFE, or Teflon) – was discovered accidentally.",
+    "imageFilename": "physics-002.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/polytetrafluoroethene.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "b61a891f-ce26-4f0d-9853-3d37b9b32e9b",
+    "category": "physics",
+    "factText": "A rubber band shrinks when heated and expands when cooled because of the change in its Entropy state.",
+    "imageFilename": "physics-003.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/rubber-band.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "98daa52e-37e7-4dce-80ea-93577364736c",
+    "category": "physics",
+    "factText": "Due to the effect of Thermal Expansion, the Eiffel Tower is upto 15 cm taller in summer.",
+    "imageFilename": "physics-004.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/eiffel-tower.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "911dedfb-8f6c-4b4c-966c-5531bee4890e",
+    "category": "physics",
+    "factText": "Radar is an abbreviation of Radio Detection And Ranging.",
+    "imageFilename": "physics-005.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/radar.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "18bb7cac-1fbe-454a-b398-07b431c6c789",
+    "category": "physics",
+    "factText": "If an atom were the size of a stadium, its electrons would be as small as bees.",
+    "imageFilename": "physics-006.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/atom-electron-mist.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "d81f9d7c-d799-4f19-ac37-d0dd75c5028c",
+    "category": "physics",
+    "factText": "At 25, Lawrence Bragg is the youngest person to receive a physics Nobel Prize.",
+    "imageFilename": "physics-007.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lawrence-bragg.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "0e55194a-55b3-495d-96ad-b3f90e8061d5",
+    "category": "physics",
+    "factText": "Light does not age.",
+    "imageFilename": "physics-008.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/light.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "c8ae0cae-4091-461a-a52f-ebabe6fef504",
+    "category": "physics",
+    "factText": "Atom is over 99.9% empty space.",
+    "imageFilename": "physics-009.gif",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/atom.gif",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "9ad62692-09e7-48dd-a653-b2fed2e9d4d2",
+    "category": "physics",
+    "factText": "Sunlight exerts pressure (solar radiation pressure).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "79829c3e-2a13-43f8-b9d6-cdd7cfa63ef3",
+    "category": "physics",
+    "factText": "The effect of Relativity made Astronaut Sergei Avdeyev a fraction of a second younger upon his return to Earth after 747 days in space.",
+    "imageFilename": "physics-011.gif",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/relativity-emc2.gif",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "9311096b-d05a-4a59-af91-44e569acdaa7",
+    "category": "physics",
+    "factText": "The Dead Sea is so dense with salt, you can easily float on it without drowning.",
+    "imageFilename": "physics-012.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dead-sea-float.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "9277711d-f279-47aa-b025-5b726b9d5f3f",
+    "category": "physics",
+    "factText": "Lake Baikal in Russia contains more water than all the North American Great Lakes combined.",
+    "imageFilename": "physics-013.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lake-baikal.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "ea6d27b1-a413-4ed0-91f7-07d4ab08fb39",
+    "category": "physics",
+    "factText": "The world's densest wood, the Black Ironwood (Olea laurifolia), does not float on water and therefore sinks.",
+    "imageFilename": "physics-014.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/black-ironwood-tree.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "c83e0f62-676d-43ff-b226-2f210c221275",
+    "category": "physics",
+    "factText": "The mass of our entire atmosphere is estimated to be some 5.5 quadrillion tons (55 followed by 14 zeros).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "aae76faa-ceae-4eb1-9c02-5fd2ac4a905b",
+    "category": "physics",
+    "factText": "The diameter of a proton is approximately 0.000000000001 mm (1/25,000,000,000,000 in).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "38e0c0d5-9dcc-400c-bf41-d31b42e72cc6",
+    "category": "physics",
+    "factText": "Laser is an abbreviation of Light Amplification by Stimulated Emission of Radiation.",
+    "imageFilename": "physics-017.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/laser-beam.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "9b6c95bd-1ddf-41b3-a78d-528f0f6b66d4",
+    "category": "physics",
+    "factText": "The amount of water beneath our ground soil is 50 times as much as all the water in the rivers and lakes combined.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "207c9158-6e95-4f67-b288-ba89c70babb7",
+    "category": "physics",
+    "factText": "The first ten feet of the ocean hold as much heat as the Earth's entire atmosphere.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "6968e269-dd8a-4761-9cea-2599b8e95e06",
+    "category": "physics",
+    "factText": "On average, our bodies constantly resist an atmospheric pressure of about 1 kg per square cm.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics.html"
+  },
+  {
+    "id": "c527c9c4-3f91-426b-b298-84726b90bf21",
+    "category": "physics",
+    "factText": "The deepest location on Earth is Mariana Trench, about 11 km deep in the North Pacific ocean.",
+    "imageFilename": "physics-021.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mariana-trench.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "50f69781-db0e-420f-96c7-3011f6a5b4a2",
+    "category": "physics",
+    "factText": "The bark of the redwood tree is fireproof.",
+    "imageFilename": "physics-022.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/redwood-tree.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "377ebfa5-c81f-46a2-a921-375b51020407",
+    "category": "physics",
+    "factText": "If Mount Everest were placed at the bottom of the deepest part of the ocean, its peak would still be a mile underwater.",
+    "imageFilename": "physics-023.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/everest-mariana-trench.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "1ea1a251-0189-4738-9fd6-164b7e4f4f32",
+    "category": "physics",
+    "factText": "If given the same mass, our body would actually be hotter than the Sun.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "f98fcf72-bd81-4c8d-ac9f-3b5490fb45e8",
+    "category": "physics",
+    "factText": "Many physicists believe wormholes (a \"shortcut\" through space and time) exist all around us but they are smaller than atoms.",
+    "imageFilename": "physics-025.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/wormhole.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "47297f1c-1258-4d70-9013-ff0236124171",
+    "category": "physics",
+    "factText": "A solar panel 100 miles by 100 miles (161 × 161 km) in the Mojave Desert (USA) could replace all the coal now burned to generate electricity in the entire United States.",
+    "imageFilename": "physics-026.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mojave-desert.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "0ea677b2-8be3-4d93-81bd-5239e4771fc8",
+    "category": "physics",
+    "factText": "The Atlantic Ocean grows at about the same rate as your fingernails.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "f785bcad-a23d-4442-82db-d1ce526049db",
+    "category": "physics",
+    "factText": "If you yelled for 8 years, 7 months and 6 days, you would have produced just enough sound energy to heat up one cup of coffee.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "fca44b6e-b832-40d0-bf3d-526e41db9567",
+    "category": "physics",
+    "factText": "The average ice berg weighs 20,000,000 tons.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "5fd9ff18-3b92-413d-99df-8eb3dd612a27",
+    "category": "physics",
+    "factText": "Lightning strikes about 6,000 times per minute on our planet.",
+    "imageFilename": "physics-030.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lightning.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "b11a973e-763a-41a8-98d5-0f7b305c0df7",
+    "category": "physics",
+    "factText": "A gallon of water weighs 3.8 kg (8.34 lb).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "9ce0ca88-4fc9-4ae5-9e6f-7923cad45aa9",
+    "category": "physics",
+    "factText": "If an item moves very, very fast, it becomes smaller and heavier.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "040504cc-972a-4339-ba16-e70f43ae9228",
+    "category": "physics",
+    "factText": "Minus 40 degrees Celsius is exactly the same temperature as minus 40 degrees Fahrenheit.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "09408ab9-f5b5-4f94-a00f-d487a2f019b4",
+    "category": "physics",
+    "factText": "The most powerful lasers are made with Neodymium-doped Yttrium crystals. In a fraction of a second, they produce more power than the whole United States.",
+    "imageFilename": "physics-034.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/most-powerful-laser.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "5c5a4aa7-25a8-4203-b0cd-22bccdd0b215",
+    "category": "physics",
+    "factText": "The only rock that floats in water is pumice.",
+    "imageFilename": "physics-035.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pumice.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "2824b005-b2e8-422b-89d1-9e2e9c975972",
+    "category": "physics",
+    "factText": "Mexico City is sinking at a rate of 46 cm (18 in) per year as a result of draining water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "914a1441-0b2c-4ea3-b6f0-98b9193b67fb",
+    "category": "physics",
+    "factText": "25mm (1 in) of rain water is equivalent to 381 mm (15 in) of dry, powdery snow.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "387f0ec1-b762-4986-b8b5-d7dc9dceb432",
+    "category": "physics",
+    "factText": "The oldest and largest clearly visible meteorite crater site in the world is The Vredefort Dome in Free State, South Africa. It is 380 km across.",
+    "imageFilename": "physics-038.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/vredefort-dome.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "7efd5bb3-fc0f-440c-ba97-aaeadf331e8c",
+    "category": "physics",
+    "factText": "The greatest tide change on earth occurs in the Bay of Fundy. The difference between low tide and high tide can be as great as 16.6 m (54 ft).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "9afb5910-f25f-4496-8664-76372bbca6e5",
+    "category": "physics",
+    "factText": "The temperature in fahrenheit can be determined by counting the number of cricket chirps in 14 seconds and adding 40.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg2.html"
+  },
+  {
+    "id": "43da4fdd-c105-448b-8340-1e053683b98c",
+    "category": "physics",
+    "factText": "The average ocean floor is about 3,600 m deep (12000 ft).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "380dee62-93a5-4824-a69b-5c83963ede01",
+    "category": "physics",
+    "factText": "Sunlight can penetrate clean ocean water to a depth of 73 m (240 ft)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "7951225c-76a1-424f-8244-8a0663dc760a",
+    "category": "physics",
+    "factText": "The lightning bolt is 3 times hotter than the Sun.",
+    "imageFilename": "physics-043.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lightning.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "aefa8c01-48d2-4ca3-9724-594469f341ec",
+    "category": "physics",
+    "factText": "The North Atlantic gets 2.5 cm (1 in) wider every year.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "5b4f3eca-a821-4fd9-adf8-2991d6f42dca",
+    "category": "physics",
+    "factText": "Hawaii is moving toward Japan 10 cm (4 in) every year.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "cdc24226-4252-4777-acb7-9d97b1ebddfb",
+    "category": "physics",
+    "factText": "Due to gravitational effects, you weigh slightly less when the Moon is directly overhead.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "ea1c1ae8-8f15-46dd-97f8-c94d25cf73a0",
+    "category": "physics",
+    "factText": "Lake Baikal is the deepest lake in the world.",
+    "imageFilename": "physics-047.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lake-baikal.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "65fefede-ba0c-412c-bb5a-a3939ace9f1d",
+    "category": "physics",
+    "factText": "When hydrogen burns in the air, water is formed.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "5bc62005-7edf-48aa-ae71-8c91a4db0621",
+    "category": "physics",
+    "factText": "Diamonds are the hardest known substance.",
+    "imageFilename": "physics-049.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/diamond.jpg",
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "fdf07d30-f361-4ab4-ac66-2a90e3c4e2c3",
+    "category": "physics",
+    "factText": "Most gemstones contain several elements, except diamond which is all carbon.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "0c4076f6-6429-41aa-86b8-8dd85b7f96cb",
+    "category": "physics",
+    "factText": "The Earth weighs 6.6 sextillion tons, or 5.97 x 1024 kg.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "13049933-3b5f-40ea-a00d-7be8ee917db2",
+    "category": "physics",
+    "factText": "Sound travels about 4 times faster in water than in air.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "518b17a9-ff3d-4aca-88f3-a1fb569101ba",
+    "category": "physics",
+    "factText": "When glass breaks, the cracks move at speeds of more than 4,500 km/h (3,000 mi/h).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "78e6c842-4b4f-4295-b309-dbd48e110e76",
+    "category": "physics",
+    "factText": "If you could throw a snowball fast enough, it would totally vaporize when it hit a brick wall.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "2b540b10-f0eb-41bb-8a1c-0160602adbe6",
+    "category": "physics",
+    "factText": "On a clear day, a beam of sunlight can be reflected off a mirror and seen up to 40 km away.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "4df98212-7ccb-4fe2-9e86-bc89055fca7b",
+    "category": "physics",
+    "factText": "At the ocean's deepest point, due to immense pressure, an iron ball would take more than an hour to sink to the ocean floor.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "df8331c7-cd36-4422-8bfd-841231d372a5",
+    "category": "physics",
+    "factText": "There is enough fuel in a full tank of a jumbo jet to drive an average car around the world four times.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "c3f6d719-830f-4802-b305-694a3c2af954",
+    "category": "physics",
+    "factText": "A car travelling at 80 km/h uses half its fuel to overcome wind resistance.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/physics-facts-pg3.html"
+  },
+  {
+    "id": "ef2213a3-dcae-41f8-ba6e-f2eed25044b7",
+    "category": "chemistry",
+    "factText": "Bromine (Br), Mercury (Hg), Caesium (Cs), Rubidium (Rb), Francium (Fr) and Gallium (Ga) are the only 6 elements that are liquid at around room temperature.",
+    "imageFilename": "chemistry-001.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/six-liquid-metals_03162101.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "6a8acadd-facb-4df2-bf3b-a2e6ae938a38",
+    "category": "chemistry",
+    "factText": "The oceans contain enough salt to cover the entire land surface with 180 m thick layer.",
+    "imageFilename": "chemistry-002.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ocean-salt_19161419.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "91febb35-8a5f-4f71-ac94-e4984d6c7863",
+    "category": "chemistry",
+    "factText": "Phosphorus is the first element to be discovered that was not already known since antiquity.",
+    "imageFilename": "chemistry-003.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/phosphorus_16160347.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "be58290f-92aa-4fd3-81b3-93c08c835a57",
+    "category": "chemistry",
+    "factText": "Ice made from sea water is salt-free.",
+    "imageFilename": "chemistry-004.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/sea-ice_04152516.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "c8b2c478-9c09-4bd0-a98a-dcc939f75807",
+    "category": "chemistry",
+    "factText": "The most common element in the Earth's crust is Silicon (after Oxygen).",
+    "imageFilename": "chemistry-005.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/silicon_04151525.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "0268e44d-4584-4a72-b8bc-8dd0a4782454",
+    "category": "chemistry",
+    "factText": "There is about 13 billionth of a gram of gold in each litre of sea water.",
+    "imageFilename": "chemistry-006.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/gold-seawater.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "2ff65c4d-c3c3-45d3-8402-a3860154a08b",
+    "category": "chemistry",
+    "factText": "The hottest chilli pepper in the world is the Trinidad Moruga Scorpion (1.2 million Scoville Heat Units.)",
+    "imageFilename": "chemistry-007.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/trinidad-moruga-scorpion.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "f5f7cecd-367d-42d0-a372-eb273c8528b3",
+    "category": "chemistry",
+    "factText": "Copper is the only metal that is naturally antibacterial.",
+    "imageFilename": "chemistry-008.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/copper.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "698690a0-e6aa-4250-adba-733ef784a61a",
+    "category": "chemistry",
+    "factText": "DNA is flame retardant (does not catch fire.)",
+    "imageFilename": "chemistry-009.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dna.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "fd2d34fa-ac4a-4dea-8c59-0b57462b7bd2",
+    "category": "chemistry",
+    "factText": "Osmium is the densest known stable element on Earth.",
+    "imageFilename": "chemistry-010.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/osmium.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "f6e25adc-e35f-4bde-9c5e-e6cac963744c",
+    "category": "chemistry",
+    "factText": "The heaviest element found so far is Ununoctium (Uuo) with atomic number 118.",
+    "imageFilename": "chemistry-011.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ununoctium.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "71f1c286-b3cd-42d6-b322-00bf8cef28ab",
+    "category": "chemistry",
+    "factText": "The eight 'Noble metals' — ruthenium, rhodium, palladium, silver, osmium, iridium, platinum and gold — do not rust.",
+    "imageFilename": "chemistry-012.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/noble-metals.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "39d72d6c-cec6-4f7c-9a36-c9e02896250a",
+    "category": "chemistry",
+    "factText": "Tabletop \"volcanoes\" can be created using 'Vesuvian Fire' compound Ammonium dichromate.",
+    "imageFilename": "chemistry-013.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ammonium-dichromate-volcano.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "b664a506-32da-4be7-b2d2-78901fcd87d2",
+    "category": "chemistry",
+    "factText": "Just one atomic layer thick, the 'miracle material' Graphene is a better conductor of electricity and heat than any material.",
+    "imageFilename": "chemistry-014.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/graphene.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "fac08dff-cd95-40ca-9419-623b35d4801d",
+    "category": "chemistry",
+    "factText": "Graphite can be transformed into diamond by applying a temperature of 3000°C and pressure of 100,000 atm.",
+    "imageFilename": "chemistry-015.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/diamond.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "b25669a1-28b0-4729-9da9-90b27e901529",
+    "category": "chemistry",
+    "factText": "The coldest state of matter — Bose-Einstein Condensate superfluid — defies gravity and instead of flowing down, it flows upward.",
+    "imageFilename": "chemistry-016.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/bose-einstein-condensate-superfluid.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "0bf696f7-1eb9-4d18-a1de-15a00bb02c84",
+    "category": "chemistry",
+    "factText": "The element Californium is often called the most expensive substance in the world (as much as $68 million for one gram.)",
+    "imageFilename": "chemistry-017.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/californium.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "ec620fc6-ddfb-4f17-944a-5557552f76f5",
+    "category": "chemistry",
+    "factText": "Aluminium is the most common metal in the Earth's crust (8 percent of its weight.)",
+    "imageFilename": "chemistry-018.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/aluminium.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "e8cb885e-e2d9-4eff-96dc-0af231ec4559",
+    "category": "chemistry",
+    "factText": "Unlike any other element, helium does not solidify.",
+    "imageFilename": "chemistry-019.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/helium.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "59e881cf-2274-4910-90d5-c06fd8586a08",
+    "category": "chemistry",
+    "factText": "Hot water freezes faster than cold water (the Mpemba effect.)",
+    "imageFilename": "chemistry-020.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/water-freezing-mpemba.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry.html"
+  },
+  {
+    "id": "569e8ec3-5736-4d2e-b438-f3c7d0cba738",
+    "category": "chemistry",
+    "factText": "Astatine is the rarest element on Earth (approx 28 g in the Earth's entire crust.)",
+    "imageFilename": "chemistry-021.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/astatine.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "de3595c4-bf3b-400f-958f-8cf36c7a2e2a",
+    "category": "chemistry",
+    "factText": "The six states of matter are: Plasmas, Gases, Liquids, Solids, Bose-Einstein Condensates and Fermionic Condensates.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "a99be75e-5dce-494a-b242-d4d03f4fedc1",
+    "category": "chemistry",
+    "factText": "Chalk is made of trillions of microscopic skeleton fossils of plankton (a tiny sea creature.)",
+    "imageFilename": "chemistry-023.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/chalk.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "a7977cf6-344e-48d1-a9d4-e45c5c1e70b4",
+    "category": "chemistry",
+    "factText": "A bucket full of water contains more atoms than there are bucketfuls of water in the Atlantic Ocean.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "67fafe82-5bc9-4ef6-a94f-eef525162efd",
+    "category": "chemistry",
+    "factText": "A rubber tyre is actually one single giant molecule.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "ac010405-56e4-4230-ae67-39ba5f6e9fae",
+    "category": "chemistry",
+    "factText": "Dynamite contains peanuts as an ingredient.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "9fb590e0-ae1c-4676-a356-a17972df2ce2",
+    "category": "chemistry",
+    "factText": "Talc is the softest known substance.",
+    "imageFilename": "chemistry-027.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/talc.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "74e80f57-745b-4751-a8b1-9c2116246379",
+    "category": "chemistry",
+    "factText": "Gallium is a metal which melts on palm of the hand, due to its low melting point (29.76 °C).",
+    "imageFilename": "chemistry-028.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/gallium.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "ebe1edd7-884c-4a45-8d44-fc7a89d6cc6f",
+    "category": "chemistry",
+    "factText": "Twenty percent of Earth's oxygen is produced by the Amazon forest.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "a1b6f8e4-dd46-4a8f-9b59-61c1b1975447",
+    "category": "chemistry",
+    "factText": "The noble gas Xenon lasers can cut through materials that are so tough even diamond tipped blades will not cut.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "58df41e6-a7ef-4720-807e-ea7c570ae28a",
+    "category": "chemistry",
+    "factText": "Gold and Copper are the only two non-white metals.",
+    "imageFilename": "chemistry-031.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/gold-copper.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "fd013037-6229-4260-917b-5279c3a4d8db",
+    "category": "chemistry",
+    "factText": "The burning sensation we get from chilli peppers is because of a chemical called Capsaicin.",
+    "imageFilename": "chemistry-032.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/chilli-pepper.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "b898e5d8-8917-4fd9-b9ba-ab9f1a4f96c9",
+    "category": "chemistry",
+    "factText": "The lighter was invented before the match (in 1816 by J.W. Dobereiner).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "63f39aeb-1a28-435c-a8d9-d82c52ef9361",
+    "category": "chemistry",
+    "factText": "Each time lightning strikes, some Ozone gas is produced, thus strengthening the Ozone Layer in the Earth's atmosphere.",
+    "imageFilename": "chemistry-034.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lightning.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "0571a7ca-1ec0-4977-83ff-c13ed86e4448",
+    "category": "chemistry",
+    "factText": "Honey does not spoil.",
+    "imageFilename": "chemistry-035.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/honey.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "6a1333ff-fb50-4205-b062-f0931e9e1764",
+    "category": "chemistry",
+    "factText": "There's enough gold in the Earth's crust to cover the entire land surface knee-deep.",
+    "imageFilename": "chemistry-036.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pure-gold.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "c876d924-75c3-4968-9e40-576fc4af2fb3",
+    "category": "chemistry",
+    "factText": "An average adult body contains around 250 g (1/2 lb) of salt.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "11084d0a-1a7c-40bc-8655-65d170554518",
+    "category": "chemistry",
+    "factText": "The metal with the highest melting point is tungsten, at 3410 degrees Celsius (6170F).",
+    "imageFilename": "chemistry-038.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/tungsten.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "69189ec9-aba1-4e34-a022-16cea9411280",
+    "category": "chemistry",
+    "factText": "One inch (2.5 cm) of rain is equal to 10 inches (25 cm) of snow.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "555296ea-5f62-45dc-acae-2bc0efda16c5",
+    "category": "chemistry",
+    "factText": "Mosquitoes like the scent of estrogen, hence, women get bitten by mosquitoes more often than men do.",
+    "imageFilename": "chemistry-040.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mosquito.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg2.html"
+  },
+  {
+    "id": "4c047689-e902-4112-a9dc-fa1ddf3d1de4",
+    "category": "chemistry",
+    "factText": "An ounce of gold can be stretched into a wire 80 km (50 mi) long.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "b1561a2b-a102-4211-93f8-ac12ae00a4d2",
+    "category": "chemistry",
+    "factText": "Natural gas has no odour. The smell is added artificially so that leaks can be detected.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "7e6f525f-4d54-48b9-8e75-db2ddea23bcb",
+    "category": "chemistry",
+    "factText": "Air becomes liquid at about minus 190 degrees Celsius.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "cfa7824f-e372-48d2-b554-03901cebd83e",
+    "category": "chemistry",
+    "factText": "Mercury is the only metal that is liquid at room temperature.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "645a7c52-0de1-4373-aecf-10c654f5df02",
+    "category": "chemistry",
+    "factText": "Absolutely pure gold is so soft that it can be moulded with the hands.",
+    "imageFilename": "chemistry-045.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pure-gold.jpg",
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "215e46e0-363c-45de-8827-b97a7212d886",
+    "category": "chemistry",
+    "factText": "Water expands by about 10% as it freezes.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "3535ba12-7b87-4899-a709-ef29f51d1b68",
+    "category": "chemistry",
+    "factText": "It is estimated that a plastic container can resist decomposition for as long as 50,000 years.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "f79fc4f1-1e30-4cd9-813c-872738e3f905",
+    "category": "chemistry",
+    "factText": "If you slowly pour a handful of salt into a totally full glass of water it will not overflow. In fact, the water level will go down.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "13a26953-dd30-4875-8235-4dc673d32d06",
+    "category": "chemistry",
+    "factText": "Hydrogen gas is the least dense substance.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "1834aa33-d376-4b8d-8b66-563f1f78d174",
+    "category": "chemistry",
+    "factText": "Liquid air looks like water with a bluish tint.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "4d05116b-2973-492d-bde0-9ed2f6e43493",
+    "category": "chemistry",
+    "factText": "Hydrogen is the most abundant element in the Universe (75%).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "3ffaad3b-137b-4544-81b3-3e3f95f6d092",
+    "category": "chemistry",
+    "factText": "Oxygen is the most abundant element in the Earth's crust, waters, and atmosphere (about 49.5%)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "28c2dc0b-9de1-49bc-bfe2-661da0e97644",
+    "category": "chemistry",
+    "factText": "The only letter not appearing on the Periodic Table is the letter J.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "a3a79075-6a05-41ab-81b6-d9f015847653",
+    "category": "chemistry",
+    "factText": "Hydrofluoric acid will dissolve glass.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "86043c4f-7430-4283-b137-59d9e4d11988",
+    "category": "chemistry",
+    "factText": "The amount of carbon in the human body is enough to fill about 9,000 'lead' pencils.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "1a3b1f9e-5996-4626-a767-32a0f887b92b",
+    "category": "chemistry",
+    "factText": "A bee sting is acidic and a wasp sting is alkali. To treat a sting by one of these you should use the opposite type of chemical.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/chemistry-facts-pg3.html"
+  },
+  {
+    "id": "3d4d2d19-dcd2-4318-a54d-ac8fab30dc79",
+    "category": "biology",
+    "factText": "We are all females in the very first few weeks before birth (the \"male\" Y chromosome activates later than X.)",
+    "imageFilename": "biology-001.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/x-y-chromosomes_30151400.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "5ce7c364-74f0-435a-a142-a2b2ffbfc372",
+    "category": "biology",
+    "factText": "The world's smallest fish is Paedocypris progenetica (7.9 mm long) found in Indonesia.",
+    "imageFilename": "biology-002.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/paedocypris-progenetica-smallest_31132539.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "9e6bbd88-33c7-4c29-be8f-5a79bfab9b0b",
+    "category": "biology",
+    "factText": "The female rattlesnake hatches eggs inside her body, and baby snakes emerge active with no shell (called a viviparous birth.)",
+    "imageFilename": "biology-003.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/rattlesnakes_31155801.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "84191e0e-ce8d-4062-97e4-527a933de9e5",
+    "category": "biology",
+    "factText": "Our tongue is the only muscular organ that is not attached to the skeleton, and works independently.",
+    "imageFilename": "biology-004.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/tongue_09054633.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "c0bd1ccf-2d10-4520-823f-ed6c035c9e15",
+    "category": "biology",
+    "factText": "The tallest known living tree is Hyperion (a Sequoia sempervirens redwood at 115.85 m) in California, USA.",
+    "imageFilename": "biology-005.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/hyperion-tallest-sequoia_31154200.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "ec74c3dd-7709-438c-8089-a38503dce949",
+    "category": "biology",
+    "factText": "The fungi are neither plants nor animals but a life form of their own.",
+    "imageFilename": "biology-006.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/fungi_10124918.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "7bb5f436-cdee-4509-9b4d-cabcaf1f0bf3",
+    "category": "biology",
+    "factText": "Coyotes actually run much faster than Road Runners (70 km/h vs 40 km/h), unlike the cartoons.",
+    "imageFilename": "biology-007.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/coyote_04125933.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "8fecdba9-01c9-46c9-95b0-d0615fc7168d",
+    "category": "biology",
+    "factText": "A dragonfly's eye has over 30,000 separate lenses (human eye has one.)",
+    "imageFilename": "biology-008.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dragonfly-eye-lenses_29123328.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "25885bb9-37ad-48e7-bf1b-ce92aacb05e3",
+    "category": "biology",
+    "factText": "The mistletoe plant is actually a parasite on its host tree.",
+    "imageFilename": "biology-009.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mistletoe-parasite_10124452.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "22a8cbfc-cebb-4196-b2a6-1cf66944a0ae",
+    "category": "biology",
+    "factText": "Cornea is the only part of the body which takes oxygen directly from the air.",
+    "imageFilename": "biology-010.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/cornea_29122606.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "d1a05481-3731-4a73-93e2-c80c8fde717c",
+    "category": "biology",
+    "factText": "Octopuses and squids (cephalopods) have followed an evolutionary path completely different from other animals.",
+    "imageFilename": "biology-011.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/octopus-squid_09060800.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "9fbf811a-6f86-4cee-8bd8-b07563151d3a",
+    "category": "biology",
+    "factText": "We are taller in the morning and shorter in the evening (~1-2cm due to spine compression.)",
+    "imageFilename": "biology-012.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/height_30150139.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "9b09bf66-d540-4d3f-951c-d8bf53b2fee0",
+    "category": "biology",
+    "factText": "Women's bodies have less water than men's. (45-60% vs 50-65% respectively.)",
+    "imageFilename": "biology-013.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/body-water_03161505.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "cd377b3e-cdbf-483b-8215-5254322c9a9f",
+    "category": "biology",
+    "factText": "The largest muscle in the human body is the buttocks (gluteus maximus.)",
+    "imageFilename": "biology-014.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/buttocks.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "e55e6c49-aa1f-4b00-b25d-c6ba4d816af7",
+    "category": "biology",
+    "factText": "Birds are actually theropod dinosaurs, thus being the only direct descendents of dinosaurs living today.",
+    "imageFilename": "biology-015.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/birds-dinosaurs_02131953.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "a2ebc5d9-9ab3-4855-944f-e42debde9bc0",
+    "category": "biology",
+    "factText": "Even a 270 kg (600 lb) Octopus can squeeze through a small coin-size hole.",
+    "imageFilename": "biology-016.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/octopus.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "99c8c771-d1bb-49c4-9a38-38fe97791f0f",
+    "category": "biology",
+    "factText": "Most of us have harmless microscopic mites (Demodex) living in our eyebrows.",
+    "imageFilename": "biology-017.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/demodex-eyebrows.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "9032903b-b9fa-4ae6-9092-f556c20ffb66",
+    "category": "biology",
+    "factText": "The largest organ of the human body is the skin.",
+    "imageFilename": "biology-018.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/skin.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "a0fe8492-e9ad-423b-b05c-000e6646e3ec",
+    "category": "biology",
+    "factText": "The lizard Tuatara has a third eye for ultraviolet light (called a parietal eye.)",
+    "imageFilename": "biology-019.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/tuatara-third-eye.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "bdc6586b-352f-424e-ad78-5031eca29bd0",
+    "category": "biology",
+    "factText": "The biggest seed in the world is the Coco de mer (weighing up to 18 kg.)",
+    "imageFilename": "biology-020.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/coco-de-mer.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology.html"
+  },
+  {
+    "id": "028015ac-f6e8-4dc5-88e9-8171e014cbb0",
+    "category": "biology",
+    "factText": "Babies are born with more bones than adults.",
+    "imageFilename": "biology-021.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/newborn-baby.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "8019daa9-34fb-41ab-b371-3ef0e015b46f",
+    "category": "biology",
+    "factText": "The largest single living organism in the world is the Honey Mushroom fungus in Oregon, USA (covering 8.4 km and growing for 2,400 years.)",
+    "imageFilename": "biology-022.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/honey-mushroom-fungus.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "6c6618c7-ccf8-431f-ab24-6239080c3155",
+    "category": "biology",
+    "factText": "The water animal Hydra never gets old, and can live forever.",
+    "imageFilename": "biology-023.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/animal-hydra.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "949a298c-4a4d-49e2-bb0b-5e4cb2fa2f09",
+    "category": "biology",
+    "factText": "Alligators give birth to females in cold temperatures and to males when it's hot.",
+    "imageFilename": "biology-024.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/baby-alligators.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "db52a2c0-7a03-4860-8f33-d166bf199022",
+    "category": "biology",
+    "factText": "A queen termite can live up to 50 years.",
+    "imageFilename": "biology-025.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/termite-queen.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "8fe4bbb5-6224-46bd-8fbb-e759ca35090e",
+    "category": "biology",
+    "factText": "The Barbados Threadsnake is the smallest snake in the world.",
+    "imageFilename": "biology-026.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/barbados-threadsnake.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "43e796db-d787-4aa8-8c38-f2c44cc89913",
+    "category": "biology",
+    "factText": "The right half of the brain controls the left side of our body muscles, and the left controls the right.",
+    "imageFilename": "biology-027.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/brain.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "b6d0b6e8-71db-44e8-8552-a90aab716fe6",
+    "category": "biology",
+    "factText": "A kangaroo rat (genus dipodomys) can spend its entire life without drinking water.",
+    "imageFilename": "biology-028.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/kangaroo-rat.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "1cc38316-f487-42e9-a605-ff51d2aedad4",
+    "category": "biology",
+    "factText": "The Hairy Horror Frog (Trichobatrachus robustus) breaks its own bones to make a claw for a fight.",
+    "imageFilename": "biology-029.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/hairy-horror-frog.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "485b5ccd-5302-4504-b643-b5fcfef4d199",
+    "category": "biology",
+    "factText": "A red blood cell takes 20 seconds to circulate around the human body.",
+    "imageFilename": "biology-030.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/red-blood-cells.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "9e3cfa59-a757-484a-a3b3-a6cd01cb3a37",
+    "category": "biology",
+    "factText": "The average speed of a sneeze is around 160 km (100 mi) per hour.",
+    "imageFilename": "biology-031.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/sneeze.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "c0e1ae5f-8896-4de2-8732-1cb29b6186e9",
+    "category": "biology",
+    "factText": "Dolphins and whales don't drink water.",
+    "imageFilename": "biology-032.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dolphin-whale.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "d54e21c9-4d1c-4d80-b797-fa74780f77e0",
+    "category": "biology",
+    "factText": "The ovum (female egg cell) is the largest cell in the human body.",
+    "imageFilename": "biology-033.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ovum.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "dba7c7ca-9fb2-4a6f-be0d-3a6b61cffa17",
+    "category": "biology",
+    "factText": "The cause of the popping sound produced by knuckle cracking is largely a mystery.",
+    "imageFilename": "biology-034.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/knuckle-cracking.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "847db848-d8c8-43cc-bca0-2c6c0e18d096",
+    "category": "biology",
+    "factText": "The length of your thumb is about the same as that of your nose.",
+    "imageFilename": "biology-035.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/thumb-nose.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "e4e61992-d064-4de5-be28-dc6e9a190e09",
+    "category": "biology",
+    "factText": "Red blood cells have no nucleus.",
+    "imageFilename": "biology-036.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/red-blood-cell.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "669f1bee-cff1-43f0-9b2b-fef6dae29a52",
+    "category": "biology",
+    "factText": "As much as 70% oxygen in our atmosphere is produced by marine plants and algae.",
+    "imageFilename": "biology-037.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/algae.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "a79c9247-1320-43e3-8297-37f02c5b6259",
+    "category": "biology",
+    "factText": "The biomass of all bacteria on Earth is more than all the plants and animals combined.",
+    "imageFilename": "biology-038.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/bacteria.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "2c8088f3-6c1a-4a16-aeab-03d62d5c0b6d",
+    "category": "biology",
+    "factText": "The synthetic biological cell \"Synthia\" is the first living organism whose parent is not a living thing but a computer.",
+    "imageFilename": "biology-039.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/synthia.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "5a611ea2-b59f-49cb-b3e2-0bf8e20fd20a",
+    "category": "biology",
+    "factText": "Humans share 60% of DNA with a banana.",
+    "imageFilename": "biology-040.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dna.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg2.html"
+  },
+  {
+    "id": "08c1c9cd-f464-4b0a-96d3-400f831f3717",
+    "category": "biology",
+    "factText": "The femur (thigh bone) is the largest and longest bone in the human body.",
+    "imageFilename": "biology-041.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/femur.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "c198a9a5-9141-4db2-9fb8-206c365ad313",
+    "category": "biology",
+    "factText": "The jaw is the strongest muscle in the human body in terms of exerting force.",
+    "imageFilename": "biology-042.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/jaw.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "a15e76ef-ff4f-45f8-a1b3-1d2659cd6e08",
+    "category": "biology",
+    "factText": "An adult Mayfly's life is as short as a few minutes, but its body hatches for about a year.",
+    "imageFilename": "biology-043.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/mayfly.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "5840a5a4-959d-4403-aec3-ffb73f427cf3",
+    "category": "biology",
+    "factText": "The nails on long fingers grow faster than short fingers; and fingernails grow four times faster than toenails.",
+    "imageFilename": "biology-044.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/fingernails.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "b6b62816-5743-4a5f-b7b0-53fa949d78ee",
+    "category": "biology",
+    "factText": "There's about 1.8 m (6 ft) long DNA inside every cell nucleus in our body, and an average adult body contains around 50 trillion (million million) cells.",
+    "imageFilename": "biology-045.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dna.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "6104610a-87d8-497f-97ee-bdea1373810f",
+    "category": "biology",
+    "factText": "Some migratory birds have a \"magnetic compass\" in their body (a sense called Magnetoreception) to help them navigate using Earth's magnetic field.",
+    "imageFilename": "biology-046.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/magnetoreception-bird.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "aaca5af3-0515-4e5d-bcaa-bec692911d54",
+    "category": "biology",
+    "factText": "The catfish father keeps the eggs in his mouth until they are ready to be hatched.",
+    "imageFilename": "biology-047.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/catfish.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "e88e7960-54c3-4d2f-b3b4-4618e2ad5e9c",
+    "category": "biology",
+    "factText": "The tiny Water Bear (Tardigrade) can survive environments extreme enough to kill any other animal - with temperatures as low as -273°C close to Absolute Zero to as high as 151°C.",
+    "imageFilename": "biology-048.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/water-bear-tardigrade.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "e1e7f09f-c06c-4b9f-a70a-3a0aad0c3200",
+    "category": "biology",
+    "factText": "Corneas are the only tissues that don't require blood.",
+    "imageFilename": "biology-049.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/cornea.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "52fcc7c2-2d48-4bf7-80c9-aa4b831f4f38",
+    "category": "biology",
+    "factText": "The Giant Kelp algea (Macrocystis pyrifera) is the fastest growing organism on earth and can grow at a rate of 70 cm (two feet) a day.",
+    "imageFilename": "biology-050.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/giant-kelp.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "fd54ec64-801b-4401-849c-3edf09e6e4f4",
+    "category": "biology",
+    "factText": "Dolphins only \"sleep\" half awake - keeping one eye open while consciously breathing and floating on surface.",
+    "imageFilename": "biology-051.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dolphin-sleeping.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "534b7f48-9e24-436d-b6b3-ecf078b05a6a",
+    "category": "biology",
+    "factText": "The length between your elbow and hand (forearm) equals the length of your foot.",
+    "imageFilename": "biology-052.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/forearm-length.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "0776da8a-330c-4184-b855-003e1a2458ed",
+    "category": "biology",
+    "factText": "If you fully stretch your arms out, the fingertip to fingertip length is almost exactly your body height.",
+    "imageFilename": "biology-053.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/arms-stretched.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "4893fa91-133c-40e1-97fc-f25ea87d2f21",
+    "category": "biology",
+    "factText": "The lightest organ in the human body is the lung.",
+    "imageFilename": "biology-054.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/lungs.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "329cd7f8-d1a3-495c-b6e0-c8cfbedeb6b4",
+    "category": "biology",
+    "factText": "A kind of jellyfish (Turritopsis nutricula) upon reaching adulthood can transform itself back to childhood by converting its cells. It may repeat this to live forever.",
+    "imageFilename": "biology-055.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/turritopsis-nutricula.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "2545a3de-7343-4497-9ad6-08d2e343f0c4",
+    "category": "biology",
+    "factText": "To avoid predators, a mother Slow Loris licks its offspring with poison before sending them off to search for food.",
+    "imageFilename": "biology-056.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/slow_loris.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "cd91ae02-d5cd-4349-9215-2e24183370a6",
+    "category": "biology",
+    "factText": "The fungus Cordyceps is able to \"mind-control\" other insects like ants to climb plants and attach there to become its food.",
+    "imageFilename": "biology-057.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/cordyceps.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "e7e1661b-a7c8-433c-a83d-84ad3796ac51",
+    "category": "biology",
+    "factText": "The biggest egg in the world is the ostrich egg. It could take as many as 30 chicken eggs to equal its volume, and up to 2 hours to hard boil.",
+    "imageFilename": "biology-058.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/ostrich-egg.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "ba9066cf-10fd-41e4-932e-aee506b40f08",
+    "category": "biology",
+    "factText": "The largest frog in the world is The Goliath Frog of Gabon in West Africa and can grow as big as 33 cm long and up to 3 kg heavy.",
+    "imageFilename": "biology-059.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/goliath-frog.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "8f91ad97-229b-400a-9650-19b12eb0ad10",
+    "category": "biology",
+    "factText": "When the queen of a clownfish school dies, a male clownfish changes its gender to become female and takes her place.",
+    "imageFilename": "biology-060.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/clownfish.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg3.html"
+  },
+  {
+    "id": "c3bc2079-bdf6-4c32-87fe-6a7f7ac8d812",
+    "category": "biology",
+    "factText": "The life of an eyelash is about 5 months.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "9a7e4788-1b09-4bb0-8815-ac0efbd68004",
+    "category": "biology",
+    "factText": "The Horseshoe crab has blue blood.",
+    "imageFilename": "biology-062.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/horseshoe-crab.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "0f75e7eb-cef2-4b4f-aed3-09575b3dc733",
+    "category": "biology",
+    "factText": "The nerves in our body are most concentrated in our fingertips.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "0063739c-f8f7-4d88-875a-cc760b859aec",
+    "category": "biology",
+    "factText": "Dolphins cannot stay long underwater because they breathe through their blowholes above water.",
+    "imageFilename": "biology-064.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/dolphin.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "1ec354b8-fdd4-4dcf-a1e0-4d314f9c9222",
+    "category": "biology",
+    "factText": "The most poisonous snake in the world is Belcher's Sea Snake or the Faint-banded Sea Snake (Hydrophis belcheri).",
+    "imageFilename": "biology-065.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/belchers-sea-snake.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "2e6bc691-f49c-434d-b561-a8414a37f63c",
+    "category": "biology",
+    "factText": "Turtles and sea cucumbers can breathe through their butts.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "2d95da9a-3e8d-48d1-bde0-4b52dfd68a06",
+    "category": "biology",
+    "factText": "The cow has four stomachs, as most ruminant mammals do.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "da5c91eb-c41f-459b-baba-a2464870b20b",
+    "category": "biology",
+    "factText": "The little Alaskan Wood Frog is capable of reviving itself back to normal life after staying completely frozen for months, during which its heart, brain and other organs stop functioning.",
+    "imageFilename": "biology-068.gif",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/wood-frog.gif",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "1c5e06f5-c7bf-42b1-9185-42623a3d337c",
+    "category": "biology",
+    "factText": "Some species of earthworm can have as many as 10 hearts.",
+    "imageFilename": "biology-069.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/earthworm.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "c2ddfbfc-b774-4f04-93a5-9e9b67febacd",
+    "category": "biology",
+    "factText": "There are more species of fish in Amazon river than in the entire Atlantic Ocean (Over 2,000).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "2f7c666d-6d2c-43b1-a6cd-3bf4f7087d75",
+    "category": "biology",
+    "factText": "Chameleons often have tongues longer than their bodies.",
+    "imageFilename": "biology-071.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/chameleon.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "36fe361d-fa53-4852-9e75-09150c38b9f1",
+    "category": "biology",
+    "factText": "A worm is both male and female at the same time (a hermaphrodite.)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "8c5dde27-55a5-4e0d-9eb9-a12e1ae13a09",
+    "category": "biology",
+    "factText": "Dolphins and whales are mammals that don't drink water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "4eb85490-4bca-4e7c-b2eb-8c8338d72031",
+    "category": "biology",
+    "factText": "Sheeps, goats and the octopus have almost rectangular-oval pupils in their eyes.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "35ca2716-7d75-456e-8d47-f533cbb1118a",
+    "category": "biology",
+    "factText": "Giraffes could pass out with blood filling their brain when they lower their neck, so they have a sponge-like organ in the head which slowly gathers and releases blood.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "4103f2f5-d48f-42af-a02d-dbbb70f01930",
+    "category": "biology",
+    "factText": "The Golden \"Poison Dart\" frog in South America is the most poisonous vertebrate in the world.",
+    "imageFilename": "biology-076.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/golden-poison-dart-frog.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "33552833-796c-45b9-86f2-48e0c2d242e3",
+    "category": "biology",
+    "factText": "The acceleration rate of a flea's jump is 20 times that of a space shuttle during launch.",
+    "imageFilename": "biology-077.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/flea.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "4ad2d1c0-a2f4-4364-a909-c2babb7387d3",
+    "category": "biology",
+    "factText": "The Brazilian \"railroad worm\" has a head that glows with a red light, and has a green light on its side.",
+    "imageFilename": "biology-078.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/railroad-worm.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "9300c5d3-58e7-4258-a572-cca7a6800c1a",
+    "category": "biology",
+    "factText": "A woodpecker can peck with a force as high as 1,200 g's with each impact - equivalent to a human striking head against a wall at a speed of 25 km (16 mi) an hour each time.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "cad6626e-1cf9-4a13-91bd-7f393eee71b7",
+    "category": "biology",
+    "factText": "A large woodpecker can peck as fast as 20 times a second and up to 12,000 times a day.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg4.html"
+  },
+  {
+    "id": "225da96a-6d05-4033-9d7a-26fd110c9ab7",
+    "category": "biology",
+    "factText": "The world's smallest flowering plant is the Wolffia, whose one full bouquet of flowers can fit on the head of a push-pin.",
+    "imageFilename": "biology-081.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/wolffia.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "013b3787-e54b-41d2-a6c5-92de11954e8b",
+    "category": "biology",
+    "factText": "Rafflesia Arnoldii is the largest flower in world, and can grow as big as an umbrella.",
+    "imageFilename": "biology-082.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/rafflesia-arnoldii.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "52d8cbb5-29f3-48ea-82de-f3816030d3f2",
+    "category": "biology",
+    "factText": "Avocados have the highest fibre and calories of any fruit.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "165de7be-99e6-471b-bbc7-ae43c07b8eb9",
+    "category": "biology",
+    "factText": "Pineapple is actually a giant berry.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "aebe7d3a-c54d-429e-adfd-31afc1753595",
+    "category": "biology",
+    "factText": "Rats can swim for about 1 km (0.5 mi) without rest, and can tread water for three straight days.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "f37397e1-1747-4c95-ab9a-4f4c49795d4d",
+    "category": "biology",
+    "factText": "Our eyes can distinguish as many as 10 million distinct colour variations.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "24847d72-2dc1-440f-a333-973f67a2721c",
+    "category": "biology",
+    "factText": "An average adult human has skin weighing about 3 kg in total.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "2a7c9d99-d95e-43fb-b9bc-97467e13deef",
+    "category": "biology",
+    "factText": "While we're awake, our brain generates enough power to illuminate a light bulb of 25 watts.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "f7b0b44e-e8e4-463a-aff5-7fd64db6eff6",
+    "category": "biology",
+    "factText": "While hibernating, frogs breathe through their skin.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "8313a395-85db-46dd-b4e2-0a7c33091df8",
+    "category": "biology",
+    "factText": "The world's smallest rodent is Pygmy Jerboa - measuring only a couple of inches in length - and can run as fast as a horse.",
+    "imageFilename": "biology-090.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/pygmy-jerboa.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "4af527d3-e556-43e0-bf69-fd36c77b1d18",
+    "category": "biology",
+    "factText": "The world's smallest frog - The Little Grass Frog - is no bigger than a house fly.",
+    "imageFilename": "biology-091.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/little-grass-frog.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "c0dc58c7-e139-4ae0-a8d9-ff6cb658b145",
+    "category": "biology",
+    "factText": "With more than 80,000 arms, the Basket Starfish has the greatest number of arms.",
+    "imageFilename": "biology-092.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/basket-starfish.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "49dc78c5-9daf-4f01-8f1e-d212d69de31c",
+    "category": "biology",
+    "factText": "The electric eel of South America (Electrophorus electricus) can generate over 600 volts, and can paralyze even a horse.",
+    "imageFilename": "biology-093.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/electric-eel.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "df27c93e-dac4-4847-82d8-fa07d581491e",
+    "category": "biology",
+    "factText": "The normal energy used by our brain is 0.1 calories per minute, and could go up to 1.5 during activities such as puzzle-solving.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "47153220-edbf-467b-90ea-1ecde6183b28",
+    "category": "biology",
+    "factText": "While only 2% in weight, the human brain requires 15% of the body's heart work, 20% of oxygen and 25% of all glucose.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "826cb347-473d-4c9c-ac67-55acd217542a",
+    "category": "biology",
+    "factText": "For every 1000 red blood cells in our body, there is only about one white cell.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "b9180d87-dc92-4181-a307-6707f8e3724f",
+    "category": "biology",
+    "factText": "Armadillos spend about 80% of their lives asleep.",
+    "imageFilename": "biology-097.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/armadillo.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "25e0abd5-5e0a-4a49-983d-ac128bde19e5",
+    "category": "biology",
+    "factText": "The human heart has enough pressure to squirt blood up to 30 feet away.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "96213c3d-a184-46f9-8958-fbe2e26b42fe",
+    "category": "biology",
+    "factText": "An Octopus has three hearts.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "d4dd8066-fc15-4048-831f-b028fd468b8e",
+    "category": "biology",
+    "factText": "The Methuselah tree in California, USA, is the oldest living organism (4,800 years old) known today.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg5.html"
+  },
+  {
+    "id": "ff05a94f-7da0-4c7c-aac0-3294d0ef70df",
+    "category": "biology",
+    "factText": "The Giant Burrowing Frog doesn't croak. It hoots like an owl.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "82966612-9a8d-446f-a10e-5bdfe896b30b",
+    "category": "biology",
+    "factText": "Honeybees have remained unchanged in form or structure for 20 million years.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "d89f6a81-d182-4677-85f0-d291fa79efcb",
+    "category": "biology",
+    "factText": "An alligator may go through 2000 to 3000 teeth in a lifetime.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "d739db04-4010-45eb-9d05-508bf06c17e7",
+    "category": "biology",
+    "factText": "Whales were once land mammals that moved to the sea and adapted to marine life.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "8da66cbf-10f6-474d-8357-6c158d76665a",
+    "category": "biology",
+    "factText": "The tongue of a blue whale is bigger than a taxi cab, and can weigh as much as an elephant.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "d326cea2-652c-408a-b44a-dce1ba057264",
+    "category": "biology",
+    "factText": "There are more insects in a single square mile of fertile soil than there are people on the entire earth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "9c50649d-f6d7-482f-bd56-4d067e672c61",
+    "category": "biology",
+    "factText": "The longest recorded distance flown by any chicken is about 92 m (301.5 ft) in 13 seconds.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "83b7af6e-1098-4f91-b9cb-b31caccdd3c4",
+    "category": "biology",
+    "factText": "Elephants can hear through their feet.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "82a20f0c-19f8-4f4b-8fcc-582937da6f9d",
+    "category": "biology",
+    "factText": "Bananas are actually giant herbs - related to the orchid family.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "12e934aa-1cf9-45cb-9a50-c2406631426b",
+    "category": "biology",
+    "factText": "The adult heart pumps about 7,500 litres of blood every day.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "e2020838-172b-46ab-9805-e009f40e5a7d",
+    "category": "biology",
+    "factText": "There are more bacteria and microbes in our body than actual cells that make up the body.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "42e70238-ad43-4a17-8868-bfd0856201d9",
+    "category": "biology",
+    "factText": "An ostrich's eye is bigger than its brain.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "663e191b-4041-46c9-97b6-78c881444a4f",
+    "category": "biology",
+    "factText": "The blue whale can produce the loudest sound produced by an animal - up to 188 decibels - and detected as far away as 853 km (530 mi).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "c6e4b16a-153e-4f54-8414-061178281b78",
+    "category": "biology",
+    "factText": "The giraffe is one of the quietest animals: it has no vocal chords to make any noise.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "446ba93c-e49c-4b8a-a07a-fb65252deec0",
+    "category": "biology",
+    "factText": "A goldfish (like most marine fish) can survive in a tank full of human blood.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "4d4376b4-a1a4-4b53-b68e-85166556c2f6",
+    "category": "biology",
+    "factText": "In seahorses, it's the male who gives birth to the young.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "f57b71ab-74d6-4b06-a442-52e3e55d010f",
+    "category": "biology",
+    "factText": "You shed and regrow your skin every 28 days, that's about 1000 times in a lifetime.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "8bf653fa-63c1-45b8-9115-9dfab9970f41",
+    "category": "biology",
+    "factText": "The shark has to keep moving to stay alive.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "aa92cc32-a827-4ac5-a7df-cfaf6b60f08d",
+    "category": "biology",
+    "factText": "An iguana always lands on its feet.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "0800a301-b015-4518-98c1-71dab69fa412",
+    "category": "biology",
+    "factText": "Fleas can jump 130 times higher than their own height. In human terms, that's a 6 ft tall person jumping 780 ft in the air.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg6.html"
+  },
+  {
+    "id": "a5c75359-dc20-42b8-b770-fca787037cf6",
+    "category": "biology",
+    "factText": "The human eye blinks an average of 4,200,000 times each year.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "6724c204-7c7d-474e-ba25-545f2b6706c6",
+    "category": "biology",
+    "factText": "The liver is the only organ able to regenerate itself completely.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "0f976e53-6ac4-4f54-92e4-09d541d08883",
+    "category": "biology",
+    "factText": "A fish never closes its eyes.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "b86626f2-db58-4df9-9e77-0958792b78b2",
+    "category": "biology",
+    "factText": "Only female mosquitoes bite people.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "5d78ce14-c6e8-4b69-af47-c4d0a01a69b7",
+    "category": "biology",
+    "factText": "The Reticulated Pythons are the world's longest snake and also the longest reptile.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "2b38a661-2067-47fb-9ed3-e3c1cc7acad9",
+    "category": "biology",
+    "factText": "95% of all the animal species on the earth are insects.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "61ead155-3f7a-4705-ad63-53453482eb86",
+    "category": "biology",
+    "factText": "The human brain is 80% water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "7b3677a3-046e-4027-b67c-d5510066dfa5",
+    "category": "biology",
+    "factText": "If you shrunk a car to the size of a cockroach, the roach could outrun the car. Cockroaches can run about 200 scale miles per hour.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "9e130ec0-c541-44b8-81c2-cbf292b08e8e",
+    "category": "biology",
+    "factText": "A lobster has a sense of smell about 1000 times keener than a human.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "b16816e0-844e-49ec-9693-97c5775184ee",
+    "category": "biology",
+    "factText": "95% of all animals are invertebrates (without a backbone or spinal column).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "06f3686c-1757-4f40-b547-23c0583a4a9d",
+    "category": "biology",
+    "factText": "Frogs eat their skin after they shed it.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "76a90b70-215f-4349-a411-88367d5e113a",
+    "category": "biology",
+    "factText": "Porcupines float in water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "ec424c72-6cb0-41e5-976c-9f223c6d9e48",
+    "category": "biology",
+    "factText": "A hedgehog's heart beats 300 times a minute on average.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "dd59d69d-6cb5-411a-8c07-40300aa0d6da",
+    "category": "biology",
+    "factText": "The world's termites outweigh the world's humans 10 to 1.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "abddc18b-24e8-481c-b47a-85cadcb311cb",
+    "category": "biology",
+    "factText": "The average person has over 1,460 dreams a year.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "5163a9fd-f043-41fe-8740-2b57608f39e0",
+    "category": "biology",
+    "factText": "Human thigh bones are stronger than concrete.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "75291fb1-07a7-497c-a98e-1ea995325f97",
+    "category": "biology",
+    "factText": "If a person or an animal is born colorblind, they instantly have excellent night vision.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "7589fa3b-bc98-42a3-a85b-56a5bc8961cd",
+    "category": "biology",
+    "factText": "Elephants are the only land animal that can't jump.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "3645cfde-5e66-45c0-8d53-2aa510333ec3",
+    "category": "biology",
+    "factText": "A teaspoonful of soil may contain 100 million bacteria.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "620a7815-7b29-48f1-bbb4-2bf25a56c93a",
+    "category": "biology",
+    "factText": "Eighty-five percent of all life on Earth is Plankton.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg7.html"
+  },
+  {
+    "id": "e3bee66c-0093-403c-9b7d-282c64d8a376",
+    "category": "biology",
+    "factText": "You can figure out which way is south if you are near a tree stump. The growth rings are wider on the south side.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "7805f318-4d02-4741-8234-abe04485bdb5",
+    "category": "biology",
+    "factText": "Eighty-five percent of all the plants and animals live in the sea.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "e2f17779-16a5-49eb-93a7-3fb8a5925017",
+    "category": "biology",
+    "factText": "Babies are born far sighted - their eyes start to focus properly between 3 to 6 months of age.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "c88fc3a9-7f28-4bbd-84e5-b7476b6b1a6a",
+    "category": "biology",
+    "factText": "Men have more blood in their circulatory system than women and more red blood cells.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "52c91fae-4a0b-4861-a536-b9f7635a351c",
+    "category": "biology",
+    "factText": "Our tongue, like the heart, is an organ that does not fatigue.",
+    "imageFilename": "biology-145.jpg",
+    "imageUrl": "https://www.sciensational.com/common/x/i/img/facts/tongue_09054633.jpg",
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "49ca922e-84a4-4fb6-b427-0973378f1054",
+    "category": "biology",
+    "factText": "Your blood vessels, if laid end to end, would encircle the globe twice over.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "d1ba2eea-d8b7-4378-b496-e919fe15fca4",
+    "category": "biology",
+    "factText": "Some species of Bamboo can grow at the rate of 1 m (3.2 ft)in 24 hours.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "b708ba43-76b2-4dc9-8c91-f8f4a8eead44",
+    "category": "biology",
+    "factText": "A single bacteria cell, given all the food it needs, could divide into a ball of cells the size of the Earth in 24 hours.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "2c44ba5c-a6f4-4383-af94-382692653ef9",
+    "category": "biology",
+    "factText": "The DNA in a single human cell is 37 m (121 ft) long when unravelled.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "d63b5eda-30c2-473d-8464-5222a688dd9d",
+    "category": "biology",
+    "factText": "DNA unravels at 7000 RPM (revolutions per minute).",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "225aa3f2-b7dc-4715-b399-9ca3ce9ad972",
+    "category": "biology",
+    "factText": "The housefly hums in the middle octave, key of F",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "d89fa51f-6c55-428d-9255-1d3e673a1319",
+    "category": "biology",
+    "factText": "From the age of thirty, humans gradually begin to shrink in size.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "a45d7c7e-1d5e-4965-b549-3a31a28df102",
+    "category": "biology",
+    "factText": "The surface area of a human lung is equal to that of a tennis court.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "d1c2e80c-3de1-46fc-85f7-af4ded900d41",
+    "category": "biology",
+    "factText": "The human body contains about 9,600 km (6,000 mi) of blood vessels.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "498f23f9-613b-4333-baed-3dec119c41b9",
+    "category": "biology",
+    "factText": "When you blush, your stomach lining also reddens.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "ff1561dc-90fd-40f7-bdc9-9909fda07407",
+    "category": "biology",
+    "factText": "The human body has fewer muscles in it than a caterpillar.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "9f1f3b9d-1a50-4cc8-a746-0e03ae0e7dca",
+    "category": "biology",
+    "factText": "When you get goosebumps and your hair stands, the hair helps to trap air, making you feel warmer by keeping in your body heat.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "3c4c31a0-4de8-43d9-8fa3-7dc8a96d3804",
+    "category": "biology",
+    "factText": "93% of a water melon is water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "c4b6abda-a57c-44ce-aeaa-7341ed9c7ffe",
+    "category": "biology",
+    "factText": "Snakes are true carnivores because they eat nothing but other animals. They do not eat any type of plant material.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "2977c4cd-7663-4544-9981-9b74925f5236",
+    "category": "biology",
+    "factText": "The world's largest amphibian is the giant salamander. It can grow up to 1.5 m (5 ft) in length.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg8.html"
+  },
+  {
+    "id": "e2498b8e-ea4b-4cce-8523-ae25184590e7",
+    "category": "biology",
+    "factText": "The smallest bone in the human body is the stapes or stirrup bone located in the middle ear. It is approximately 0.28 cm (0.11 in) long.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "ea8272d0-039d-402e-a0bb-cd3bfc3ef980",
+    "category": "biology",
+    "factText": "The Stegosaurus dinosaur measured up to 9.1 m (30 ft) long but had a brain the size of a walnut.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "078a28d2-94bf-4fad-b332-ca36d5cb0e23",
+    "category": "biology",
+    "factText": "It takes approximately 12 hours for food to entirely digest.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "11328481-0d9e-4372-b6ab-4679e78b201e",
+    "category": "biology",
+    "factText": "The longest living cells in the body are brain cells which can live an entire lifetime.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "81d67b50-a8ca-4c62-9eb7-d45fe506a573",
+    "category": "biology",
+    "factText": "The Atlantic Giant Squid's eye can be as large as 40 cm (15.75 in) wide.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "69fd0e00-18dd-4849-8ad2-0bf2c8c1b26e",
+    "category": "biology",
+    "factText": "Chimpanzees are the only animals that can recognize themselves in a mirror.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "1e31bf88-6af4-43ae-8551-6dd6e49f0240",
+    "category": "biology",
+    "factText": "House flies have a lifespan of two weeks.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "38d92a1a-38de-49ff-8fb7-3d515ad1739a",
+    "category": "biology",
+    "factText": "Starfish don't have brains.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "0c3fc7ef-c8c7-4189-b3a2-1f3f2b50cdcc",
+    "category": "biology",
+    "factText": "The average person falls asleep in seven minutes.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "64a3ae6d-d10c-42d8-91eb-70b6458a492c",
+    "category": "biology",
+    "factText": "Shrimp's heart is in its head.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "4f736e74-84a9-41b2-93e0-0c5ad7494137",
+    "category": "biology",
+    "factText": "Emus and kangaroos cannot walk backwards.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "f4ec0dec-6d3d-4691-a68b-a140955a6102",
+    "category": "biology",
+    "factText": "Cats have over one hundred vocal sounds, while dogs only have about ten.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "6ff030a9-14ad-4778-b20a-7666156a19d7",
+    "category": "biology",
+    "factText": "Porcupines float in water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "fd54b86c-cde6-4865-98d8-12fb44f38913",
+    "category": "biology",
+    "factText": "An iguana can stay under water for twenty-eight minutes.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "4eddcbbb-63b4-42a4-9e67-32b231cd0f2e",
+    "category": "biology",
+    "factText": "The common goldfish is the only animal that can see both infra-red and ultra-violet light.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "216b7374-188e-40b9-858c-d8a01860cacb",
+    "category": "biology",
+    "factText": "Our eyeballs remain almost the same size since birth, but our nose and ears never stop growing.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "7ec46584-dec6-44cc-a3ce-620ef34f0a06",
+    "category": "biology",
+    "factText": "Ants cannot chew their food, they move their jaws sideways, like scissors, to extract the juices from the food.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "f74fe820-c352-419d-a060-ce68ab6d9402",
+    "category": "biology",
+    "factText": "Hummingbirds are the only animals able to fly backwards.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "84bd6912-de20-44d8-a167-0d50ef07c92d",
+    "category": "biology",
+    "factText": "Armadillos can walk underwater.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "5d24d1a7-0845-4bc9-9f50-aac7de42fbb8",
+    "category": "biology",
+    "factText": "There are more beetles than any other kind of creature in the world.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg9.html"
+  },
+  {
+    "id": "71e4f5ca-deb4-4c7d-89ef-d3145befb586",
+    "category": "biology",
+    "factText": "Only humans sleep on their backs.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "db6cb8d8-5724-44e2-99c8-9e33e3e5dc1e",
+    "category": "biology",
+    "factText": "The human brain is 80% water.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "0b3e30b8-ab55-40d2-b884-56baa90db469",
+    "category": "biology",
+    "factText": "As an adult, you have more than 6 square metres (20 sq ft) of skin on your body — about the same are as a blanket for a queen-sized bed.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "345210f2-c4ff-41ec-ba56-412d81ffcbb9",
+    "category": "biology",
+    "factText": "Everyone's tongue print is different.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "41e20478-436d-4a9b-816e-874bb8d86781",
+    "category": "biology",
+    "factText": "In your lifetime, you'll shed over 18 kg (40 lb) of skin.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "7168beee-4613-413a-b6e6-78191a88d6aa",
+    "category": "biology",
+    "factText": "15 million blood cells are produced and destroyed in the human body every second.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "8f2d0027-a7a2-4523-93f0-78536eb6af00",
+    "category": "biology",
+    "factText": "The brain uses more than 25% of the oxygen used by the human body.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "ccf543d9-bd69-44a5-9a4b-c5c5052d6dd0",
+    "category": "biology",
+    "factText": "If your mouth was completely dry, you would not be able to distinguish the taste of anything.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "78d09ee9-ae4b-4b0b-a3f1-00ad1da92959",
+    "category": "biology",
+    "factText": "There are more living organisms on the skin of a single human being than there are human beings on the surface of the earth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "227bdcf8-fb19-4460-8039-2696c7900498",
+    "category": "biology",
+    "factText": "The human body has enough fat to produce 7 bars of soap.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "6440a416-35ef-4c13-9068-7b86741e138e",
+    "category": "biology",
+    "factText": "The human head is a quarter of our total length at birth, but only an eighth of our total length by the time we reach adulthood.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "4898d2bb-6d11-4f0b-994f-8bb82a083714",
+    "category": "biology",
+    "factText": "On an average, most people blink about 15,000 times in a 16-hour day (awake.)",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "282a574f-7e6d-423e-a4f6-f550dfa6cf93",
+    "category": "biology",
+    "factText": "Hummingbirds can't walk.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "a4bf4901-ea88-4b58-90ac-1c7e5c81611e",
+    "category": "biology",
+    "factText": "Moths have no stomach.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "e54e441f-80dc-4ef2-8669-40f1f261a1f7",
+    "category": "biology",
+    "factText": "A starfish can turn its stomach inside out.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "4f524159-22e1-4209-b77f-6f6efe286156",
+    "category": "biology",
+    "factText": "The animal with the largest brain in relation to its body is the ant.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "9c5d6020-1f64-4698-bf8d-2daba88dae59",
+    "category": "biology",
+    "factText": "The largest eggs in the world are laid by a shark.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "adc8bd40-be77-4849-8b4e-8216ec9473a0",
+    "category": "biology",
+    "factText": "A crocodile's tongue is attached to the roof of its mouth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "e2755649-b36f-4041-a5af-42b27f214f34",
+    "category": "biology",
+    "factText": "Crocodiles swallow stones to help them dive deeper.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "011f60f7-4282-41c3-b8b8-2557e3de4784",
+    "category": "biology",
+    "factText": "Cheetahs can accelerate from 0 to 70 km/h in 3 seconds.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg10.html"
+  },
+  {
+    "id": "a53faefa-5223-4424-b923-106ebc419cf6",
+    "category": "biology",
+    "factText": "The heart of giraffe is two feet long, and can weigh as much as twenty four pounds.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "53863e4c-a6a4-4816-a526-a162a2499db7",
+    "category": "biology",
+    "factText": "Lobsters have blue blood.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "c4849265-c99d-446b-9887-8e4bd4e753c9",
+    "category": "biology",
+    "factText": "Oxygen, carbon, hydrogen and nitrogen make up 90% of the human body.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "4f7163a0-cef9-43ac-8b6c-585a8c19de1e",
+    "category": "biology",
+    "factText": "A mosquito has 47 teeth.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "a8fee6ab-2a3f-490a-a29b-d71022ea9a24",
+    "category": "biology",
+    "factText": "Shark's teeth are literally as hard as steel.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "81d501c9-3d94-4440-ba77-c43ec5dc5fd5",
+    "category": "biology",
+    "factText": "Seventy percent of the dust in your home consists of shed human skin",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "7381cc9b-955b-4ebd-84ae-46b5ddd9d0f2",
+    "category": "biology",
+    "factText": "Fish are the only vertebrates that outnumber birds.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "0fdddd39-6860-43e0-8f76-95115453edff",
+    "category": "biology",
+    "factText": "A cockroach can live for several weeks without its head.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "fad1f07e-5772-4b0c-bfb7-50d3ffdd5944",
+    "category": "biology",
+    "factText": "The average human produces about a litre of saliva a day -- about 37,854 litres in a lifetime",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "32f8d924-aa7d-4bea-9a84-b9e0e2f00dc1",
+    "category": "biology",
+    "factText": "Elephants have been known to remain standing after they die.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "c39f5d92-8c5f-4574-b32d-b0ef8731d296",
+    "category": "biology",
+    "factText": "Rats multiply so quickly that in 18 months, two rats could have over 1 million descendents.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "13bd35d0-3f65-4261-a55b-7e19136b0e29",
+    "category": "biology",
+    "factText": "Ants do not sleep.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "5af31b82-4964-4444-8f2f-dcabbb1f6dd3",
+    "category": "biology",
+    "factText": "Healthy nails grow about 2 cm each year. Fingernails grow four times as fast as toenails.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "d7f3085a-c4e4-4927-8e02-2f529980e168",
+    "category": "biology",
+    "factText": "20/20 vision means the eye can see normally at 20 feet. 20/15 is better; the eye can see at 20 feet what another eye sees at 15 feet.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "2f1f814f-da4d-4cc9-97eb-ef0b0e604cbb",
+    "category": "biology",
+    "factText": "The ant can lift things 10 times its own weight.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "a2a75bfa-1cd8-4d93-8321-60e07b1ff747",
+    "category": "biology",
+    "factText": "The ears of a cricket are located on the front legs, just below the knee.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "83d2f5e0-f406-42ae-a137-7a8f1b1122f0",
+    "category": "biology",
+    "factText": "Women blink nearly twice as much as men.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "95efd70f-74a8-432b-9a2a-c9e75545fbc8",
+    "category": "biology",
+    "factText": "The right lung takes in more air than the left.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "929fe727-f931-40ca-ad46-6748080ab849",
+    "category": "biology",
+    "factText": "If all major forms of cardiovascular disease were eliminated, human life expectancy would increase by 9.78 years.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  },
+  {
+    "id": "10512b7e-5ee1-4b20-bcb3-87cb9075eef5",
+    "category": "biology",
+    "factText": "Every four days the worlds population increases by one million people.",
+    "imageFilename": null,
+    "imageUrl": null,
+    "sourceUrl": "https://www.sciensational.com/biology-facts-pg11.html"
+  }
+]
