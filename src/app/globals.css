@@ -273,6 +273,29 @@ body {
   line-height: 1.4;
 }
 
+/* ==================== ON THIS DAY ==================== */
+.on-this-day-card {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 5px;
+  border-left: 3px solid #5b728a;
+  text-align: left;
+}
+
+.on-this-day-label {
+  color: #5b728a;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.on-this-day-text {
+  font-size: 15px;
+  color: #999999;
+  line-height: 1.4;
+}
+
 /* ==================== WEATHER ==================== */
 .weather-iframe-container {
   flex: 1;

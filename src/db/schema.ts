@@ -150,6 +150,16 @@ export const scienceFacts = pgTable('science_facts', {
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
 
+// On This Day historical facts
+export const onThisDay = pgTable('on_this_day', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  month: integer('month').notNull(),
+  day: integer('day').notNull(),
+  year: integer('year').notNull(),
+  event: text('event').notNull(),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
 // Type exports for use in queries
 export type Meal = typeof meals.$inferSelect;
 export type NewMeal = typeof meals.$inferInsert;

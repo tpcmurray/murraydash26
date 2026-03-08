@@ -100,6 +100,43 @@ function ScienceFact() {
   );
 }
 
+function OnThisDay() {
+  const [entry, setEntry] = useState<{ year: number; event: string } | null>(null);
+
+  useEffect(() => {
+    async function fetchEntry() {
+      try {
+        const res = await fetch('/api/dashboard/on-this-day');
+        const data = await res.json();
+        setEntry(data.entry || null);
+      } catch (error) {
+        console.error('Error fetching on-this-day:', error);
+      }
+    }
+    fetchEntry();
+
+    // Check every minute for midnight rollover
+    let currentDate = new Date().toDateString();
+    const interval = setInterval(() => {
+      const now = new Date().toDateString();
+      if (now !== currentDate) {
+        currentDate = now;
+        fetchEntry();
+      }
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!entry) return null;
+
+  return (
+    <div className="on-this-day-card">
+      <div className="on-this-day-label">On this day in {entry.year}:</div>
+      <div className="on-this-day-text">{entry.event}</div>
+    </div>
+  );
+}
+
 interface CountdownData {
   id: string;
   name: string;
@@ -647,6 +684,7 @@ export default function Home() {
           <Clock />
           <DateDisplay />
           <ScienceFact />
+          <OnThisDay />
         </div>
       </div>
 
