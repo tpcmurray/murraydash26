@@ -15,6 +15,7 @@ type Countdown = {
 
 const recurrenceOptions = [
   { value: 'daily', label: 'Daily' },
+  { value: 'weekdays', label: 'Weekdays (Mon-Fri)' },
   { value: 'weekly', label: 'Weekly' },
   { value: 'monthly', label: 'Monthly' },
   { value: 'yearly', label: 'Yearly' },
@@ -24,7 +25,7 @@ const recurrenceOptions = [
 const columns: Column<Countdown>[] = [
   { key: 'name', header: 'Name', width: '200px', editable: true },
   { key: 'targetTime', header: 'Target Time (HH:MM)', width: '150px', editable: true },
-  { key: 'targetDate', header: 'Target Date', width: '150px', editable: true },
+  { key: 'targetDate', header: 'Target Date (YYYY-MM-DD)', width: '150px', editable: true },
   { 
     key: 'recurrence', 
     header: 'Recurrence', 

@@ -69,7 +69,7 @@ export const departmentEnum = pgEnum('department', [
   'produce', 'meat', 'dairy', 'bakery', 'frozen', 'canned', 'dry_goods', 'condiments', 'other'
 ]);
 export const mealSlotEnum = pgEnum('meal_slot', ['breakfast', 'lunch', 'dinner']);
-export const recurrenceEnum = pgEnum('recurrence', ['daily', 'weekly', 'monthly', 'yearly', 'once']);
+export const recurrenceEnum = pgEnum('recurrence', ['daily', 'weekly', 'monthly', 'yearly', 'once', 'weekdays']);
 export const scienceCategoryEnum = pgEnum('science_category', ['astronomy', 'mathematics', 'physics', 'chemistry', 'biology']);
 export const unitEnum = pgEnum('unit', ['g', 'kg', 'ml', 'L', 'tsp', 'tbsp', 'cup', 'oz', 'lb', 'piece', 'pinch']);
 
@@ -128,8 +128,8 @@ export const mealReminders = pgTable('meal_reminders', {
 export const countdowns = pgTable('countdowns', {
   id: uuid('id').primaryKey().defaultRandom(),
   name: text('name').notNull(),
-  targetTime: text('target_time').notNull(), // HH:MM for daily, full datetime for others
-  targetDate: date('target_date'), // NULL for daily recurrence
+  targetTime: text('target_time'), // HH:MM for daily/weekdays, NULL for yearly/once
+  targetDate: date('target_date'), // NULL for daily/weekdays recurrence
   recurrence: recurrenceEnum('recurrence').notNull(),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),

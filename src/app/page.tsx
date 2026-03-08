@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { RRule } from "rrule";
 
 // Clock component that updates every second
 function Clock() {
@@ -133,15 +134,30 @@ function Countdowns() {
   }, []);
 
   const getCountdownInfo = (cd: CountdownData): { value: string; urgent: boolean } => {
-    if (cd.recurrence === 'daily') {
+    if (cd.recurrence === 'daily' || cd.recurrence === 'weekdays') {
       // targetTime is HH:MM — compute time until next occurrence today
       const [h, m] = cd.targetTime.split(':').map(Number);
-      const target = new Date(now);
+      
+      let target = new Date(now);
       target.setHours(h, m, 0, 0);
-      if (target <= now) {
-        // Already passed today — show for tomorrow
-        target.setDate(target.getDate() + 1);
+      
+      if (cd.recurrence === 'weekdays') {
+        // Use rrule to find next weekday occurrence
+        const rule = new RRule({
+          freq: RRule.WEEKLY,
+          byweekday: [RRule.MO, RRule.TU, RRule.WE, RRule.TH, RRule.FR],
+          dtstart: target,
+        });
+        const nextOccurrence = rule.after(now, true);
+        if (!nextOccurrence) return { value: '—', urgent: false };
+        target = nextOccurrence;
+      } else {
+        // Daily - just check if today has passed
+        if (target <= now) {
+          target.setDate(target.getDate() + 1);
+        }
       }
+      
       const diffMs = target.getTime() - now.getTime();
       const diffMin = Math.floor(diffMs / 60000);
       const diffHours = Math.floor(diffMin / 60);
@@ -181,9 +197,48 @@ function Countdowns() {
     return <div className="countdown-list" style={{ opacity: 0.5 }}>No countdowns</div>;
   }
 
+  // Sort countdowns by time until next occurrence (closest first)
+  const sortedCountdowns = [...countdowns].sort((a, b) => {
+    const infoA = getCountdownInfo(a);
+    const infoB = getCountdownInfo(b);
+    // Get milliseconds until each countdown
+    const getMs = (cd: CountdownData): number => {
+      if (cd.recurrence === 'daily' || cd.recurrence === 'weekdays') {
+        const [h, m] = cd.targetTime?.split(':').map(Number) || [0, 0];
+        let target = new Date(now);
+        target.setHours(h, m, 0, 0);
+        if (cd.recurrence === 'weekdays') {
+          const rule = new RRule({
+            freq: RRule.WEEKLY,
+            byweekday: [RRule.MO, RRule.TU, RRule.WE, RRule.TH, RRule.FR],
+            dtstart: target,
+          });
+          const next = rule.after(now, true);
+          return next ? next.getTime() - now.getTime() : Infinity;
+        }
+        if (target <= now) target.setDate(target.getDate() + 1);
+        return target.getTime() - now.getTime();
+      }
+      if (!cd.targetDate) return Infinity;
+      let target: Date;
+      if (cd.recurrence === 'yearly') {
+        const [, month, day] = cd.targetDate.split('-').map(Number);
+        target = new Date(now.getFullYear(), month - 1, day);
+        if (target < new Date(now.getFullYear(), now.getMonth(), now.getDate())) {
+          target = new Date(now.getFullYear() + 1, month - 1, day);
+        }
+      } else {
+        target = new Date(cd.targetDate + 'T00:00:00');
+      }
+      const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      return target.getTime() - todayStart.getTime();
+    };
+    return getMs(a) - getMs(b);
+  });
+
   return (
     <div className="countdown-list">
-      {countdowns.map(cd => {
+      {sortedCountdowns.map(cd => {
         const { value, urgent } = getCountdownInfo(cd);
         return (
           <div key={cd.id} className="countdown-item">
@@ -576,15 +631,15 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ==================== CENTER ROW 2: COUNTDOWNS ==================== */}
+      {/* ==================== CENTER ROW 2: REMINDERS ==================== */}
       <div className="panel">
-        <div className="panel-label">Countdowns</div>
+        <div className="panel-label">Reminders</div>
         <div className="panel-content">
-          <Countdowns />
+          <Reminders />
         </div>
       </div>
 
-      {/* ==================== RIGHT ROW 2: DINNER ==================== */}
+      {/* ==================== RIGHT ROW 2: TONIGHT'S DINNER ==================== */}
       <div className="panel">
         <div className="panel-label">Tonight's Dinner</div>
         <div className="panel-content">
@@ -592,11 +647,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ==================== CENTER ROW 3: REMINDERS ==================== */}
+      {/* ==================== CENTER ROW 3: COUNTDOWNS ==================== */}
       <div className="panel">
-        <div className="panel-label">Reminders</div>
+        <div className="panel-label">Countdowns</div>
         <div className="panel-content">
-          <Reminders />
+          <Countdowns />
         </div>
       </div>
 

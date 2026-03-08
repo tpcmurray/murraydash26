@@ -20,15 +20,15 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, targetTime, targetDate, recurrence } = body;
 
-    if (!name || !targetTime || !recurrence) {
-      return NextResponse.json({ error: 'Name, target time, and recurrence are required' }, { status: 400 });
+    if (!name || !recurrence) {
+      return NextResponse.json({ error: 'Name and recurrence are required' }, { status: 400 });
     }
 
     const [newCountdown] = await db
       .insert(countdowns)
       .values({
         name,
-        targetTime,
+        targetTime: targetTime || null,
         targetDate: targetDate || null,
         recurrence,
       })
@@ -47,15 +47,15 @@ export async function PUT(request: Request) {
     const body = await request.json();
     const { id, name, targetTime, targetDate, recurrence } = body;
 
-    if (!id || !name || !targetTime || !recurrence) {
-      return NextResponse.json({ error: 'ID, name, target time, and recurrence are required' }, { status: 400 });
+    if (!id || !name || !recurrence) {
+      return NextResponse.json({ error: 'ID, name, and recurrence are required' }, { status: 400 });
     }
 
     const [updatedCountdown] = await db
       .update(countdowns)
       .set({
         name,
-        targetTime,
+        targetTime: targetTime || null,
         targetDate: targetDate || null,
         recurrence,
         updatedAt: new Date(),
