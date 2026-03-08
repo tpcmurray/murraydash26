@@ -133,48 +133,60 @@ function Countdowns() {
     return () => clearInterval(interval);
   }, []);
 
-  const getCountdownInfo = (cd: CountdownData): { value: string; urgent: boolean } => {
+  const getCountdownInfo = (cd: CountdownData): { value: string; level: string } => {
     if (cd.recurrence === 'daily' || cd.recurrence === 'weekdays') {
       // targetTime is HH:MM — compute time until next occurrence today
       const [h, m] = cd.targetTime.split(':').map(Number);
-      
+
       let target = new Date(now);
       target.setHours(h, m, 0, 0);
-      
+
       if (cd.recurrence === 'weekdays') {
-        // Use rrule to find next weekday occurrence
         const rule = new RRule({
           freq: RRule.WEEKLY,
           byweekday: [RRule.MO, RRule.TU, RRule.WE, RRule.TH, RRule.FR],
           dtstart: target,
         });
         const nextOccurrence = rule.after(now, true);
-        if (!nextOccurrence) return { value: '—', urgent: false };
+        if (!nextOccurrence) return { value: '—', level: 'normal' };
         target = nextOccurrence;
       } else {
-        // Daily - just check if today has passed
         if (target <= now) {
           target.setDate(target.getDate() + 1);
         }
       }
-      
+
       const diffMs = target.getTime() - now.getTime();
-      const diffMin = Math.floor(diffMs / 60000);
+      const diffSec = Math.floor(diffMs / 1000);
+      const diffMin = Math.floor(diffSec / 60);
       const diffHours = Math.floor(diffMin / 60);
       const remMin = diffMin % 60;
-      const urgent = diffMs < 2 * 60 * 60 * 1000; // < 2 hours
-      if (diffHours > 0) {
-        return { value: `${diffHours}h ${remMin}m`, urgent };
+      const remSec = diffSec % 60;
+
+      // Determine urgency level
+      const level = diffMs < 5 * 60 * 1000 ? 'critical'
+        : diffMs < 30 * 60 * 1000 ? 'urgent'
+        : diffMs < 2 * 60 * 60 * 1000 ? 'warning'
+        : 'normal';
+
+      // Format display
+      if (diffMs < 60 * 1000) {
+        return { value: `${remSec}s`, level };
       }
-      return { value: `${diffMin} min`, urgent };
+      if (diffMs < 5 * 60 * 1000) {
+        return { value: `${diffMin}m ${remSec}s`, level };
+      }
+      if (diffHours > 0) {
+        return { value: `${diffHours}h ${remMin}m`, level };
+      }
+      return { value: `${diffMin} min`, level };
     }
 
     // yearly or once — targetDate is a date string
-    if (!cd.targetDate) return { value: '—', urgent: false };
+    if (!cd.targetDate) return { value: '—', level: 'normal' };
 
     let target: Date;
     if (cd.recurrence === 'yearly') {
-      // Use this year's occurrence
       const [, month, day] = cd.targetDate.split('-').map(Number);
       target = new Date(now.getFullYear(), month - 1, day);
       if (target < new Date(now.getFullYear(), now.getMonth(), now.getDate())) {
@@ -187,10 +199,10 @@ function Countdowns() {
     const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     const diffDays = Math.ceil((target.getTime() - todayStart.getTime()) / (1000 * 60 * 60 * 24));
 
-    if (diffDays < 0) return { value: 'passed', urgent: false };
-    if (diffDays === 0) return { value: 'today!', urgent: true };
-    if (diffDays === 1) return { value: 'tomorrow', urgent: true };
-    return { value: `${diffDays} days`, urgent: false };
+    if (diffDays < 0) return { value: 'passed', level: 'normal' };
+    if (diffDays === 0) return { value: 'today!', level: 'urgent' };
+    if (diffDays === 1) return { value: 'tomorrow', level: 'urgent' };
+    return { value: `${diffDays} days`, level: 'normal' };
   };
 
   if (countdowns.length === 0) {
@@ -239,11 +251,11 @@ function Countdowns() {
   return (
     <div className="countdown-list">
       {sortedCountdowns.map(cd => {
-        const { value, urgent } = getCountdownInfo(cd);
+        const { value, level } = getCountdownInfo(cd);
         return (
           <div key={cd.id} className="countdown-item">
             <span className="countdown-name">{cd.name}</span>
-            <span className={`countdown-value ${urgent ? "urgent" : ""}`}>
+            <span className={`countdown-value ${level}`}>
               {value}
             </span>
           </div>

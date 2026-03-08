@@ -313,9 +313,19 @@ body {
   color: #666666;
 }
 
+.countdown-value.warning {
+  font-size: 22px;
+  color: #eab308;
+}
+
 .countdown-value.urgent {
   font-size: 24px;
   color: #e8a54b;
+}
+
+.countdown-value.critical {
+  font-size: 24px;
+  color: #ef4444;
 }
 
 /* ==================== DINNER ==================== */
