@@ -149,31 +149,31 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 **Objective:** Implement CRUD operations for all data entities.
 
 ### Meals Tab
-- [ ] Build meals grid: Name, Category, Prep Notes
-- [ ] Add create/edit/delete functionality
-- [ ] Click meal to open ingredient list and reminders
+- [x] Build meals grid: Name, Category, Prep Notes
+- [x] Add create/edit/delete functionality
+- [x] Click meal to open ingredient list and reminders
 
 ### Ingredients Tab
-- [ ] Build ingredients grid: Name, Storage Type, Department
-- [ ] Add CRUD functionality
+- [x] Build ingredients grid: Name, Storage Type, Department
+- [x] Add CRUD functionality
 
 ### Meal Plan Tab
-- [ ] Build meal plan grid: Date, Meal Slot, Meal
-- [ ] Support variable duration (14, 21, days)
-- [ ] Add CRUD for date/meal assignments
+- [x] Build meal plan grid: Date, Meal Slot, Meal
+- [x] Support variable duration (14, 21, days)
+- [x] Add CRUD for date/meal assignments
 
 ### Meal Ingredients Tab
-- [ ] Build meal-ingredients junction grid
-- [ ] Columns: Meal, Ingredient, Amount, Unit
-- [ ] Add CRUD for ingredient links
+- [x] Build meal-ingredients junction grid
+- [x] Columns: Meal, Ingredient, Amount, Unit
+- [x] Add CRUD for ingredient links
 
 ### Reminders Tab
-- [ ] Build reminders grid: Meal, Reminder Text, Timing Offset, Active
-- [ ] Add CRUD for reminder management
+- [x] Build reminders grid: Meal, Reminder Text, Timing Offset, Active
+- [x] Add CRUD for reminder management
 
 ### Countdowns Tab
-- [ ] Build countdowns grid: Name, Target DateTime, Recurrence Type
-- [ ] Add CRUD for countdown management
+- [x] Build countdowns grid: Name, Target DateTime, Recurrence Type
+- [x] Add CRUD for countdown management
 
 ---
 
@@ -181,8 +181,8 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build auto-generated shopping list view.
 
-- [ ] Create `/app` page
-- [/admin/shopping-list ] Add "Next ___ days" dropdown (default 7)
+- [ ] Create `/app/admin/shopping-list` page
+- [ ] Add "Next ___ days" dropdown (default 7)
 - [ ] Implement aggregation query:
   - [ ] Sum ingredient amounts
   - [ ] Group by ingredient
@@ -196,13 +196,13 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Populate science_facts table with scraped data.
 
-- [ ] Create one-time scraper script
-- [ ] Scrape 5 categories: astronomy, mathematics, physics, chemistry, biology
-- [ ] Handle pagination through category pages
-- [ ] Extract fact text, image URL, category
-- [ ] Download and store images as BYTEA
-- [ ] Store source URLs for attribution
-- [ ] Run script to populate database
+- [x] Create one-time scraper script
+- [x] Scrape 5 categories: astronomy, mathematics, physics, chemistry, biology
+- [x] Handle pagination through category pages
+- [x] Extract fact text, image URL, category
+- [x] Download and store images as BYTEA
+- [x] Store source URLs for attribution
+- [x] Run script to populate database
 
 ---
 

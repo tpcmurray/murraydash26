@@ -27,26 +27,37 @@ export async function GET() {
   }
 }
 
-// POST /api/admin/meal-plan - Create a new meal plan entry
+// POST /api/admin/meal-plan - Create a new meal plan entry (or multiple for duration)
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { date, mealSlot, mealId } = body;
+    const { date, mealSlot, mealId, duration } = body;
 
     if (!date || !mealSlot || !mealId) {
       return NextResponse.json({ error: 'Date, meal slot, and meal are required' }, { status: 400 });
     }
 
-    const [newEntry] = await db
-      .insert(mealPlanEntries)
-      .values({
-        date,
-        mealSlot,
-        mealId,
-      })
-      .returning();
+    const durationDays = duration ? parseInt(duration) : 1;
+    const entries = [];
 
-    return NextResponse.json(newEntry, { status: 201 });
+    for (let i = 0; i < durationDays; i++) {
+      const entryDate = new Date(date);
+      entryDate.setDate(entryDate.getDate() + i);
+      const dateStr = entryDate.toISOString().split('T')[0];
+
+      const [newEntry] = await db
+        .insert(mealPlanEntries)
+        .values({
+          date: dateStr,
+          mealSlot,
+          mealId,
+        })
+        .returning();
+
+      entries.push(newEntry);
+    }
+
+    return NextResponse.json(entries, { status: 201 });
   } catch (error) {
     console.error('Error creating meal plan entry:', error);
     return NextResponse.json({ error: 'Failed to create meal plan entry' }, { status: 500 });

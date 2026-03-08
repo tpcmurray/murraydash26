@@ -24,6 +24,14 @@ const mealSlotOptions = [
   { value: 'dinner', label: 'Dinner' },
 ];
 
+const durationOptions = [
+  { value: '1', label: '1 day' },
+  { value: '7', label: '7 days' },
+  { value: '14', label: '14 days' },
+  { value: '21', label: '21 days' },
+  { value: '28', label: '28 days' },
+];
+
 export default function MealPlanPage() {
   const [entries, setEntries] = useState<MealPlanEntry[]>([]);
   const [meals, setMeals] = useState<Meal[]>([]);
@@ -105,11 +113,15 @@ export default function MealPlanPage() {
     await fetchData();
   };
 
-  const handleAdd = async (row: Partial<MealPlanEntry>) => {
+  const handleAdd = async (row: Partial<MealPlanEntry & { duration?: string }>) => {
+    const { duration, ...entryData } = row as MealPlanEntry & { duration?: string };
     const response = await fetch('/api/admin/meal-plan', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(row),
+      body: JSON.stringify({
+        ...entryData,
+        duration: duration || '1',
+      }),
     });
     if (!response.ok) {
       throw new Error('Failed to create meal plan entry');
@@ -129,6 +141,13 @@ export default function MealPlanPage() {
         onAdd={handleAdd}
         loading={loading}
       />
+      <div className="mt-4 p-4 bg-gray-800 rounded-lg">
+        <h3 className="text-sm font-semibold mb-2">Adding meals with duration:</h3>
+        <p className="text-xs text-gray-400">
+          When adding a new meal plan entry, you can set the duration to automatically create 
+          entries for multiple days. Use the "duration" field with values like 7, 14, or 21 days.
+        </p>
+      </div>
     </div>
   );
 }

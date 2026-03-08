@@ -192,13 +192,92 @@ export function DataGrid<T extends Record<string, unknown>>({
             </tr>
           </thead>
           <tbody>
+            {isAdding && (
+              <tr className="bg-gray-800/50">
+                {columns.map((col) => {
+                  const key = col.key as string;
+                  const value = newRow[key];
+                  return (
+                    <td
+                      key={String(col.key)}
+                      className="px-2 py-2 border border-gray-700"
+                    >
+                      {col.type === 'select' && col.options ? (
+                        <select
+                          value={String(value || '')}
+                          onChange={(e) =>
+                            setNewRow({ ...newRow, [key]: e.target.value })
+                          }
+                          className="w-full px-2 py-1 bg-gray-700 border border-gray-600 rounded text-sm"
+                        >
+                          <option value="">Select...</option>
+                          {col.options.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                              {opt.label}
+                            </option>
+                          ))}
+                        </select>
+                      ) : col.type === 'boolean' ? (
+                        <input
+                          type="checkbox"
+                          checked={Boolean(value)}
+                          onChange={(e) =>
+                            setNewRow({ ...newRow, [key]: e.target.checked })
+                          }
+                          className="w-4 h-4"
+                        />
+                      ) : col.type === 'number' ? (
+                        <input
+                          type="number"
+                          value={String(value || '')}
+                          onChange={(e) =>
+                            setNewRow({ ...newRow, [key]: e.target.value })
+                          }
+                          className="w-full px-2 py-1 bg-gray-700 border border-gray-600 rounded text-sm"
+                        />
+                      ) : (
+                        <input
+                          type="text"
+                          value={String(value || '')}
+                          onChange={(e) =>
+                            setNewRow({ ...newRow, [key]: e.target.value })
+                          }
+                          className="w-full px-2 py-1 bg-gray-700 border border-gray-600 rounded text-sm"
+                        />
+                      )}
+                    </td>
+                  );
+                })}
+                <td className="px-2 py-2 border border-gray-700">
+                  <div className="flex justify-center gap-2">
+                    <button
+                      onClick={handleAdd}
+                      disabled={saving}
+                      className="px-2 py-1 text-xs bg-green-600 hover:bg-green-700 rounded disabled:opacity-50"
+                    >
+                      {saving ? '...' : 'Save'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setIsAdding(false);
+                        setNewRow({});
+                      }}
+                      disabled={saving}
+                      className="px-2 py-1 text-xs bg-gray-600 hover:bg-gray-700 rounded disabled:opacity-50"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            )}
             {loading ? (
               <tr>
                 <td colSpan={columns.length + 1} className="px-3 py-8 text-center text-gray-400">
                   Loading...
                 </td>
               </tr>
-            ) : data.length === 0 ? (
+            ) : data.length === 0 && !isAdding ? (
               <tr>
                 <td colSpan={columns.length + 1} className="px-3 py-8 text-center text-gray-400">
                   No data found
@@ -206,85 +285,6 @@ export function DataGrid<T extends Record<string, unknown>>({
               </tr>
             ) : (
               <>
-                {isAdding && (
-                  <tr className="bg-gray-800/50">
-                    {columns.map((col) => {
-                      const key = col.key as string;
-                      const value = newRow[key];
-                      return (
-                        <td
-                          key={String(col.key)}
-                          className="px-2 py-2 border border-gray-700"
-                        >
-                          {col.type === 'select' && col.options ? (
-                            <select
-                              value={String(value || '')}
-                              onChange={(e) =>
-                                setNewRow({ ...newRow, [key]: e.target.value })
-                              }
-                              className="w-full px-2 py-1 bg-gray-700 border border-gray-600 rounded text-sm"
-                            >
-                              <option value="">Select...</option>
-                              {col.options.map((opt) => (
-                                <option key={opt.value} value={opt.value}>
-                                  {opt.label}
-                                </option>
-                              ))}
-                            </select>
-                          ) : col.type === 'boolean' ? (
-                            <input
-                              type="checkbox"
-                              checked={Boolean(value)}
-                              onChange={(e) =>
-                                setNewRow({ ...newRow, [key]: e.target.checked })
-                              }
-                              className="w-4 h-4"
-                            />
-                          ) : col.type === 'number' ? (
-                            <input
-                              type="number"
-                              value={String(value || '')}
-                              onChange={(e) =>
-                                setNewRow({ ...newRow, [key]: e.target.value })
-                              }
-                              className="w-full px-2 py-1 bg-gray-700 border border-gray-600 rounded text-sm"
-                            />
-                          ) : (
-                            <input
-                              type="text"
-                              value={String(value || '')}
-                              onChange={(e) =>
-                                setNewRow({ ...newRow, [key]: e.target.value })
-                              }
-                              className="w-full px-2 py-1 bg-gray-700 border border-gray-600 rounded text-sm"
-                            />
-                          )}
-                        </td>
-                      );
-                    })}
-                    <td className="px-2 py-2 border border-gray-700">
-                      <div className="flex justify-center gap-2">
-                        <button
-                          onClick={handleAdd}
-                          disabled={saving}
-                          className="px-2 py-1 text-xs bg-green-600 hover:bg-green-700 rounded disabled:opacity-50"
-                        >
-                          {saving ? '...' : 'Save'}
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsAdding(false);
-                            setNewRow({});
-                          }}
-                          disabled={saving}
-                          className="px-2 py-1 text-xs bg-gray-600 hover:bg-gray-700 rounded disabled:opacity-50"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                )}
                 {data.map((row) => (
                   <tr key={String(row[idField])} className="hover:bg-gray-800/50">
                     {columns.map((col) => (

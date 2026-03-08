@@ -5,8 +5,8 @@ import { db } from '@/db';
 
 // Allowed email domains (Terry and Nicole)
 const ALLOWED_EMAILS = [
-  'terrymurray@gmail.com',
-  'nicole.murray@gmail.com',
+  'tpcmurray@gmail.com',
+  'nicolelanamurray@gmail.com',
 ];
 
 export const authOptions: NextAuthOptions = {
@@ -25,18 +25,15 @@ export const authOptions: NextAuthOptions = {
       }
       return false;
     },
-    async session({ session, token }) {
+    async session({ session, user }) {
       // Add user ID to session
-      if (session.user) {
-        session.user.id = token.sub as string;
+      if (session.user && user) {
+        session.user.id = user.id;
       }
       return session;
     },
   },
-  pages: {
-    signIn: '/auth/signin',
-  },
-  session: {
+session: {
     strategy: 'database',
   },
 };
