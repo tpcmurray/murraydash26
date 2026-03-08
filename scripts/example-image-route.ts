@@ -35,7 +35,7 @@ export async function GET(
   else if (filename.endsWith('.gif')) contentType = 'image/gif';
   else if (filename.endsWith('.webp')) contentType = 'image/webp';
 
-  return new NextResponse(fact.imageData, {
+  return new NextResponse(new Uint8Array(fact.imageData), {
     headers: {
       'Content-Type': contentType,
       'Cache-Control': 'public, max-age=86400', // cache for 24h

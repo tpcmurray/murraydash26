@@ -136,11 +136,11 @@ A vibe-coded family information dashboard with a read-only dark-mode display and
 
 **Objective:** Build the tab-based admin layout with authentication.
 
-- [ ] Create `/app/admin/page.tsx` as admin landing
-- [ ] Implement tab navigation (Meals, Ingredients, Meal Plan, Reminders, Countdowns)
-- [ ] Create reusable spreadsheet-style grid component
-- [ ] Add auth guard to all admin routes
-- [ ] Style for functionality (no design polish needed)
+- [x] Create `/app/admin/page.tsx` as admin landing
+- [x] Implement tab navigation (Meals, Ingredients, Meal Plan, Reminders, Countdowns)
+- [x] Create reusable spreadsheet-style grid component
+- [x] Add auth guard to all admin routes
+- [x] Style for functionality (no design polish needed)
 
 ---
 

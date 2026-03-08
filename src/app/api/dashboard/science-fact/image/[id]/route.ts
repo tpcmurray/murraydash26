@@ -27,7 +27,7 @@ export async function GET(
     }
 
     const imageData = result[0].imageData;
-    return new NextResponse(imageData, {
+    return new NextResponse(new Uint8Array(imageData), {
       headers: {
         'Content-Type': 'image/jpeg',
         'Cache-Control': 'public, max-age=86400',

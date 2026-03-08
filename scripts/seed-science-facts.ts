@@ -78,7 +78,7 @@ async function main() {
 
       return {
         id: fact.id,
-        category: fact.category,
+        category: fact.category as 'astronomy' | 'mathematics' | 'physics' | 'chemistry' | 'biology',
         factText: fact.factText,
         imageUrl: fact.imageUrl,
         imageFilename: fact.imageFilename,
