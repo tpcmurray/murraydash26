@@ -1,129 +1,250 @@
 {
   "meals": [
     {
-      "name": "Pancakes",
-      "category": "breakfast",
-      "prepNotes": "Flip when bubbles form on surface",
-      "ingredients": [
-        { "name": "All-purpose flour", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" },
-        { "name": "Milk", "storageType": "fridge", "department": "dairy", "amount": 1.5, "unit": "cup" },
-        { "name": "Eggs", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "piece" },
-        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 3, "unit": "tbsp" },
-        { "name": "Sugar", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tbsp" },
-        { "name": "Baking powder", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tsp" }
-      ]
-    },
-    {
-      "name": "Grilled Cheese Sandwich",
-      "category": "lunch",
-      "prepNotes": "Medium heat, flip once",
-      "ingredients": [
-        { "name": "Bread", "storageType": "pantry", "department": "bakery", "amount": 2, "unit": "piece" },
-        { "name": "Cheddar cheese", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "piece" },
-        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 1, "unit": "tbsp" }
-      ]
-    },
-    {
-      "name": "Spaghetti Bolognese",
+      "name": "Butter Chicken",
       "category": "dinner",
-      "prepNotes": "Simmer sauce for at least 30 minutes",
+      "prepNotes": "Marinate chicken in yogurt overnight. Simmer sauce for at least 30 mins. Serve with rice.",
       "ingredients": [
-        { "name": "Spaghetti", "storageType": "pantry", "department": "dry_goods", "amount": 400, "unit": "g" },
-        { "name": "Ground beef", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
-        { "name": "Tomato sauce", "storageType": "pantry", "department": "canned", "amount": 400, "unit": "ml" },
-        { "name": "Onion", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
-        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" },
-        { "name": "Olive oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" }
+        { "name": "Whole chicken", "storageType": "fridge", "department": "meat", "amount": 2.5, "unit": "kg" },
+        { "name": "Plain yogurt", "storageType": "fridge", "department": "dairy", "amount": 500, "unit": "g" },
+        { "name": "Onions", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 4, "unit": "piece" },
+        { "name": "Ginger root", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Canned crushed tomatoes", "storageType": "pantry", "department": "canned", "amount": 796, "unit": "ml" },
+        { "name": "Tomato paste", "storageType": "pantry", "department": "canned", "amount": 1, "unit": "piece" },
+        { "name": "Chicken broth", "storageType": "pantry", "department": "canned", "amount": 900, "unit": "ml" },
+        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 100, "unit": "g" },
+        { "name": "Heavy cream", "storageType": "fridge", "department": "dairy", "amount": 250, "unit": "ml" },
+        { "name": "Cashews", "storageType": "pantry", "department": "dry_goods", "amount": 100, "unit": "g" },
+        { "name": "Jasmine rice", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" },
+        { "name": "Cumin", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tsp" },
+        { "name": "Turmeric", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Garam masala", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tsp" },
+        { "name": "Kasuri methi", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tbsp" },
+        { "name": "Ginger garlic paste", "storageType": "fridge", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" }
       ]
     },
     {
-      "name": "Caesar Salad",
-      "category": "lunch",
-      "prepNotes": "Toss dressing just before serving",
-      "ingredients": [
-        { "name": "Romaine lettuce", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
-        { "name": "Parmesan cheese", "storageType": "fridge", "department": "dairy", "amount": 0.5, "unit": "cup" },
-        { "name": "Croutons", "storageType": "pantry", "department": "bakery", "amount": 1, "unit": "cup" },
-        { "name": "Caesar dressing", "storageType": "fridge", "department": "condiments", "amount": 0.5, "unit": "cup" }
-      ]
-    },
-    {
-      "name": "Chicken Stir Fry",
+      "name": "Chicken Fried Rice",
       "category": "dinner",
-      "prepNotes": "High heat, keep moving",
+      "prepNotes": "Use day-old rice for best results. High heat, keep stirring. Add eggs last.",
       "ingredients": [
-        { "name": "Chicken breast", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
-        { "name": "Bell peppers", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
-        { "name": "Broccoli", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "cup" },
+        { "name": "Chicken breasts", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Jasmine rice", "storageType": "pantry", "department": "dry_goods", "amount": 3, "unit": "cup" },
+        { "name": "Eggs", "storageType": "fridge", "department": "dairy", "amount": 4, "unit": "piece" },
+        { "name": "Frozen corn", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "cup" },
+        { "name": "Frozen mixed vegetables", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "cup" },
         { "name": "Soy sauce", "storageType": "pantry", "department": "condiments", "amount": 3, "unit": "tbsp" },
-        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
-        { "name": "Rice", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" }
+        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 3, "unit": "tbsp" },
+        { "name": "Sesame oil", "storageType": "pantry", "department": "condiments", "amount": 1, "unit": "tbsp" }
       ]
     },
     {
-      "name": "Oatmeal with Berries",
-      "category": "breakfast",
-      "prepNotes": "Cook for 5 minutes, stir occasionally",
-      "ingredients": [
-        { "name": "Oats", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "cup" },
-        { "name": "Milk", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "cup" },
-        { "name": "Mixed berries", "storageType": "frozen", "department": "frozen", "amount": 0.5, "unit": "cup" },
-        { "name": "Honey", "storageType": "pantry", "department": "condiments", "amount": 1, "unit": "tbsp" }
-      ]
-    },
-    {
-      "name": "Peanut Butter Toast",
-      "category": "breakfast",
-      "prepNotes": "Best with smooth peanut butter",
-      "ingredients": [
-        { "name": "Bread", "storageType": "pantry", "department": "bakery", "amount": 2, "unit": "piece" },
-        { "name": "Peanut butter", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" }
-      ]
-    },
-    {
-      "name": "Tomato Soup",
-      "category": "lunch",
-      "prepNotes": "Serve with grilled cheese",
-      "ingredients": [
-        { "name": "Canned tomatoes", "storageType": "pantry", "department": "canned", "amount": 400, "unit": "g" },
-        { "name": "Onion", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
-        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
-        { "name": "Vegetable broth", "storageType": "pantry", "department": "canned", "amount": 500, "unit": "ml" },
-        { "name": "Heavy cream", "storageType": "fridge", "department": "dairy", "amount": 0.25, "unit": "cup" }
-      ]
-    },
-    {
-      "name": "Fish and Chips",
+      "name": "Chicken Wings",
       "category": "dinner",
-      "prepNotes": "Fry at 375°F for best results",
+      "prepNotes": "Bake at 400°F for 45 mins, flipping halfway. Toss in sauce before serving.",
       "ingredients": [
-        { "name": "Cod fillet", "storageType": "frozen", "department": "frozen", "amount": 400, "unit": "g" },
-        { "name": "Potatoes", "storageType": "pantry", "department": "produce", "amount": 4, "unit": "piece" },
-        { "name": "Flour", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "cup" },
-        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 4, "unit": "cup" }
+        { "name": "Chicken wings", "storageType": "fridge", "department": "meat", "amount": 1, "unit": "kg" },
+        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 50, "unit": "g" },
+        { "name": "Hot sauce", "storageType": "pantry", "department": "condiments", "amount": 0.5, "unit": "cup" },
+        { "name": "Garlic powder", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" }
       ]
     },
     {
-      "name": "Fruit Smoothie",
-      "category": "snack",
-      "prepNotes": "Blend until smooth",
+      "name": "Hamburgers",
+      "category": "dinner",
+      "prepNotes": "Form patties with cold hands. Don't press down while cooking. Rest 5 mins before serving.",
       "ingredients": [
-        { "name": "Banana", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
-        { "name": "Strawberries", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "cup" },
-        { "name": "Yogurt", "storageType": "fridge", "department": "dairy", "amount": 1, "unit": "cup" },
-        { "name": "Milk", "storageType": "fridge", "department": "dairy", "amount": 0.5, "unit": "cup" }
+        { "name": "Ground beef", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Burger buns", "storageType": "pantry", "department": "bakery", "amount": 4, "unit": "piece" },
+        { "name": "Shredded cheddar cheese", "storageType": "fridge", "department": "dairy", "amount": 100, "unit": "g" },
+        { "name": "Tomatoes", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Lettuce", "storageType": "fridge", "department": "produce", "amount": 4, "unit": "piece" },
+        { "name": "Onions", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Mushrooms", "storageType": "fridge", "department": "produce", "amount": 100, "unit": "g" },
+        { "name": "Bacon", "storageType": "fridge", "department": "meat", "amount": 4, "unit": "piece" },
+        { "name": "Ketchup", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Mustard", "storageType": "pantry", "department": "condiments", "amount": 1, "unit": "tbsp" },
+        { "name": "Garlic powder", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Salt", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Pepper", "storageType": "pantry", "department": "dry_goods", "amount": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "name": "French Fries",
+      "category": "dinner",
+      "prepNotes": "Soak cut fries in cold water 30 mins. Pat dry before frying. Double-fry for crispy results.",
+      "ingredients": [
+        { "name": "Frozen french fries", "storageType": "frozen", "department": "frozen", "amount": 500, "unit": "g" },
+        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "cup" },
+        { "name": "Salt", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" }
+      ]
+    },
+    {
+      "name": "Roasted Frozen Vegetables",
+      "category": "dinner",
+      "prepNotes": "Spread on baking sheet in single layer. Roast at 425°F for 20-25 mins, stirring halfway.",
+      "ingredients": [
+        { "name": "Frozen mixed vegetables", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "kg" },
+        { "name": "Olive oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Salt", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Pepper", "storageType": "pantry", "department": "dry_goods", "amount": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "name": "Salad with Chicken",
+      "category": "dinner",
+      "prepNotes": "Grill or pan-fry chicken breast. Slice and place on fresh salad. Top with dressing.",
+      "ingredients": [
+        { "name": "Chicken breasts", "storageType": "fridge", "department": "meat", "amount": 400, "unit": "g" },
+        { "name": "Lettuce", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Tomatoes", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Avocados", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Salad dressing", "storageType": "fridge", "department": "condiments", "amount": 0.5, "unit": "cup" }
+      ]
+    },
+    {
+      "name": "Grilled Salmon",
+      "category": "dinner",
+      "prepNotes": "Pat salmon dry, season, grill skin-side down 4 mins then flip. Serve with roasted veg and potato.",
+      "ingredients": [
+        { "name": "Salmon fillets", "storageType": "fridge", "department": "meat", "amount": 680, "unit": "g" },
+        { "name": "Sweet potato", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Frozen mixed vegetables", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "kg" },
+        { "name": "Olive oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Lemon", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Salt", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Pepper", "storageType": "pantry", "department": "dry_goods", "amount": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "name": "Chicken Alfredo with Penne",
+      "category": "dinner",
+      "prepNotes": "Cook pasta al dente. Make sauce with butter, cream, parmesan. Add broccoli in last 2 mins.",
+      "ingredients": [
+        { "name": "Chicken breasts", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Penne pasta", "storageType": "pantry", "department": "dry_goods", "amount": 450, "unit": "g" },
+        { "name": "Frozen broccoli", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "kg" },
+        { "name": "Butter", "storageType": "fridge", "department": "dairy", "amount": 100, "unit": "g" },
+        { "name": "Heavy cream", "storageType": "fridge", "department": "dairy", "amount": 500, "unit": "ml" },
+        { "name": "Parmesan cheese", "storageType": "fridge", "department": "dairy", "amount": 100, "unit": "g" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" }
+      ]
+    },
+    {
+      "name": "Beef Stir Fry",
+      "category": "dinner",
+      "prepNotes": "Slice beef thin against grain. High heat, cook beef first then remove. Add veg, return beef.",
+      "ingredients": [
+        { "name": "Beef stir fry strips", "storageType": "fridge", "department": "meat", "amount": 700, "unit": "g" },
+        { "name": "Rainbow bell peppers", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" },
+        { "name": "Mushrooms", "storageType": "fridge", "department": "produce", "amount": 100, "unit": "g" },
+        { "name": "Frozen stir fry vegetables", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "piece" },
+        { "name": "Jasmine rice", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" },
+        { "name": "Soy sauce", "storageType": "pantry", "department": "condiments", "amount": 3, "unit": "tbsp" },
+        { "name": "Oyster sauce", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Ginger root", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" },
+        { "name": "Vegetable oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" }
+      ]
+    },
+    {
+      "name": "Pork Chops with Roasted Vegetables",
+      "category": "dinner",
+      "prepNotes": "Season pork chops with paprika and herbs. Pan-sear 4 mins each side. Roast veg at 425°F.",
+      "ingredients": [
+        { "name": "Pork chops", "storageType": "fridge", "department": "meat", "amount": 680, "unit": "g" },
+        { "name": "Frozen mixed vegetables", "storageType": "frozen", "department": "frozen", "amount": 1, "unit": "kg" },
+        { "name": "Olive oil", "storageType": "pantry", "department": "condiments", "amount": 2, "unit": "tbsp" },
+        { "name": "Paprika", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Garlic powder", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Salt", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "tsp" },
+        { "name": "Pepper", "storageType": "pantry", "department": "dry_goods", "amount": 0.5, "unit": "tsp" }
+      ]
+    },
+    {
+      "name": "Instant Pot Chicken Noodle Soup",
+      "category": "dinner",
+      "prepNotes": "Sauté onions, garlic, celery first. Add chicken and broth. Pressure cook 15 mins. Shred chicken, add noodles.",
+      "ingredients": [
+        { "name": "Chicken breasts", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Egg noodles", "storageType": "pantry", "department": "dry_goods", "amount": 500, "unit": "g" },
+        { "name": "Celery", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Carrots", "storageType": "fridge", "department": "produce", "amount": 4, "unit": "piece" },
+        { "name": "Onions", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" },
+        { "name": "Chicken broth", "storageType": "pantry", "department": "canned", "amount": 1800, "unit": "ml" }
+      ]
+    },
+    {
+      "name": "Spaghetti",
+      "category": "dinner",
+      "prepNotes": "Brown ground beef with onions and garlic. Add crushed tomatoes, tomato paste, Italian seasoning. Simmer 20 mins.",
+      "ingredients": [
+        { "name": "Ground beef", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Spaghetti pasta", "storageType": "pantry", "department": "dry_goods", "amount": 450, "unit": "g" },
+        { "name": "Canned crushed tomatoes", "storageType": "pantry", "department": "canned", "amount": 796, "unit": "ml" },
+        { "name": "Tomato paste", "storageType": "pantry", "department": "canned", "amount": 1, "unit": "piece" },
+        { "name": "Onions", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Garlic", "storageType": "fridge", "department": "produce", "amount": 3, "unit": "piece" },
+        { "name": "Italian seasoning", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "tsp" },
+        { "name": "Parmesan cheese", "storageType": "fridge", "department": "dairy", "amount": 50, "unit": "g" }
+      ]
+    },
+    {
+      "name": "Taco Bowl",
+      "category": "dinner",
+      "prepNotes": "Brown ground beef with taco seasoning. Serve over rice with toppings. Let everyone build their own.",
+      "ingredients": [
+        { "name": "Ground beef", "storageType": "fridge", "department": "meat", "amount": 500, "unit": "g" },
+        { "name": "Jasmine rice", "storageType": "pantry", "department": "dry_goods", "amount": 2, "unit": "cup" },
+        { "name": "Taco seasoning", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "piece" },
+        { "name": "Lettuce", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Tomatoes", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Shredded cheddar cheese", "storageType": "fridge", "department": "dairy", "amount": 200, "unit": "g" },
+        { "name": "Sour cream", "storageType": "fridge", "department": "dairy", "amount": 250, "unit": "ml" },
+        { "name": "Limes", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Taco chips", "storageType": "pantry", "department": "dry_goods", "amount": 1, "unit": "piece" }
+      ]
+    },
+    {
+      "name": "Chef Salad",
+      "category": "lunch",
+      "prepNotes": "Layer lettuce, tomatoes, avocados. Top with pre-cooked bacon and hard-boiled eggs.",
+      "ingredients": [
+        { "name": "Lettuce", "storageType": "fridge", "department": "produce", "amount": 1, "unit": "piece" },
+        { "name": "Tomatoes", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Avocados", "storageType": "fridge", "department": "produce", "amount": 2, "unit": "piece" },
+        { "name": "Bacon", "storageType": "fridge", "department": "meat", "amount": 4, "unit": "piece" },
+        { "name": "Eggs", "storageType": "fridge", "department": "dairy", "amount": 2, "unit": "piece" },
+        { "name": "Salad dressing", "storageType": "fridge", "department": "condiments", "amount": 0.25, "unit": "cup" }
       ]
     }
   ],
   "mealPlan": [
-    { "date": "2026-03-08", "mealSlot": "breakfast", "mealName": "Pancakes" },
-    { "date": "2026-03-08", "mealSlot": "lunch", "mealName": "Grilled Cheese Sandwich" },
-    { "date": "2026-03-08", "mealSlot": "dinner", "mealName": "Spaghetti Bolognese" },
-    { "date": "2026-03-09", "mealSlot": "breakfast", "mealName": "Oatmeal with Berries" },
-    { "date": "2026-03-09", "mealSlot": "lunch", "mealName": "Caesar Salad" },
-    { "date": "2026-03-09", "mealSlot": "dinner", "mealName": "Chicken Stir Fry" },
-    { "date": "2026-03-10", "mealSlot": "breakfast", "mealName": "Peanut Butter Toast" },
-    { "date": "2026-03-10", "mealSlot": "lunch", "mealName": "Tomato Soup" },
-    { "date": "2026-03-10", "mealSlot": "dinner", "mealName": "Fish and Chips" }
+    { "date": "2026-03-08", "mealSlot": "dinner", "mealName": "Butter Chicken" },
+    { "date": "2026-03-09", "mealSlot": "dinner", "mealName": "Chicken Fried Rice" },
+    { "date": "2026-03-09", "mealSlot": "dinner", "mealName": "Chicken Wings" },
+    { "date": "2026-03-10", "mealSlot": "dinner", "mealName": "Hamburgers" },
+    { "date": "2026-03-10", "mealSlot": "dinner", "mealName": "French Fries" },
+    { "date": "2026-03-11", "mealSlot": "dinner", "mealName": "Salad with Chicken" },
+    { "date": "2026-03-11", "mealSlot": "dinner", "mealName": "French Fries" },
+    { "date": "2026-03-12", "mealSlot": "dinner", "mealName": "Grilled Salmon" },
+    { "date": "2026-03-12", "mealSlot": "dinner", "mealName": "Roasted Frozen Vegetables" },
+    { "date": "2026-03-12", "mealSlot": "dinner", "mealName": "Grilled Salmon" },
+    { "date": "2026-03-13", "mealSlot": "dinner", "mealName": "Chicken Alfredo with Penne" },
+    { "date": "2026-03-13", "mealSlot": "dinner", "mealName": "Chicken Alfredo with Penne" },
+    { "date": "2026-03-14", "mealSlot": "dinner", "mealName": "Beef Stir Fry" },
+    { "date": "2026-03-15", "mealSlot": "dinner", "mealName": "Pork Chops with Roasted Vegetables" },
+    { "date": "2026-03-16", "mealSlot": "dinner", "mealName": "Chicken Fried Rice" },
+    { "date": "2026-03-16", "mealSlot": "dinner", "mealName": "Chicken Wings" },
+    { "date": "2026-03-17", "mealSlot": "dinner", "mealName": "Hamburgers" },
+    { "date": "2026-03-17", "mealSlot": "dinner", "mealName": "Roasted Frozen Vegetables" },
+    { "date": "2026-03-18", "mealSlot": "dinner", "mealName": "Instant Pot Chicken Noodle Soup" },
+    { "date": "2026-03-19", "mealSlot": "dinner", "mealName": "Grilled Salmon" },
+    { "date": "2026-03-19", "mealSlot": "dinner", "mealName": "Roasted Frozen Vegetables" },
+    { "date": "2026-03-20", "mealSlot": "dinner", "mealName": "Spaghetti" },
+    { "date": "2026-03-21", "mealSlot": "dinner", "mealName": "Taco Bowl" }
   ]
 }
