@@ -160,6 +160,15 @@ export const onThisDay = pgTable('on_this_day', {
   createdAt: timestamp('created_at').defaultNow(),
 });
 
+// Daily riddles
+export const riddles = pgTable('riddles', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  dayOfYear: integer('day_of_year').notNull(),
+  riddle: text('riddle').notNull(),
+  answer: text('answer').notNull(),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
 // Type exports for use in queries
 export type Meal = typeof meals.$inferSelect;
 export type NewMeal = typeof meals.$inferInsert;

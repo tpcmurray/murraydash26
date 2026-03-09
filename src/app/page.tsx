@@ -137,6 +137,52 @@ function OnThisDay() {
   );
 }
 
+type RiddleData = {
+  today: { riddle: string } | null;
+  yesterday: { riddle: string; answer: string } | null;
+};
+
+function Riddle() {
+  const [data, setData] = useState<RiddleData | null>(null);
+
+  useEffect(() => {
+    async function fetchRiddle() {
+      try {
+        const res = await fetch('/api/dashboard/riddle');
+        const json = await res.json();
+        setData(json);
+      } catch (error) {
+        console.error('Error fetching riddle:', error);
+      }
+    }
+    fetchRiddle();
+
+    let currentDate = new Date().toDateString();
+    const interval = setInterval(() => {
+      const now = new Date().toDateString();
+      if (now !== currentDate) {
+        currentDate = now;
+        fetchRiddle();
+      }
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (!data?.today) return null;
+
+  return (
+    <div className="riddle-card">
+      <div className="riddle-label">Riddle of the Day</div>
+      <div className="riddle-text">{data.today.riddle}</div>
+      {data.yesterday && (
+        <div className="riddle-answer">
+          <span className="riddle-answer-label">Yesterday&apos;s answer:</span> {data.yesterday.answer}
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface CountdownData {
   id: string;
   name: string;
@@ -685,6 +731,7 @@ export default function Home() {
           <DateDisplay />
           <ScienceFact />
           <OnThisDay />
+          <Riddle />
         </div>
       </div>
 
