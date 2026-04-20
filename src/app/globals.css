@@ -389,48 +389,75 @@ body {
 }
 
 /* ==================== DINNER ==================== */
-.dinner-content {
+.dinner-panel {
+  grid-column: 2 / 4;
+  grid-row: 2;
+}
+
+.countdowns-panel {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.coming-up-panel {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.dinner-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  height: 100%;
+}
+
+.dinner-box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.dinner-name {
-  font-size: 34px;
-  font-weight: 700;
-  color: #dddddd;
-  text-align: center;
+.dinner-box.dinner-tonight {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
-.dinner-sub {
-  font-size: 20px;
-  color: #777777;
-  margin-top: 4px;
-  text-align: center;
+.dinner-day {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666666;
+  margin-bottom: 6px;
 }
 
-/* ==================== REMINDERS ==================== */
-.reminder-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.dinner-tonight .dinner-day {
+  color: #999999;
 }
 
-.reminder-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+.dinner-meal {
   font-size: 18px;
+  font-weight: 600;
+  color: #cccccc;
+  line-height: 1.3;
 }
 
-.reminder-bullet {
-  flex-shrink: 0;
+.dinner-tonight .dinner-meal {
+  font-size: 20px;
+  color: #eeeeee;
 }
 
-.reminder-item.urgent { color: #e8a54b; }
-.reminder-item.normal { color: #888888; }
-.reminder-item.urgent .reminder-bullet { color: #e8a54b; }
-.reminder-item.normal .reminder-bullet { color: #444444; }
+.dinner-none {
+  opacity: 0.4;
+  font-style: italic;
+}
+
+.dinner-override {
+  color: #e8a54b;
+}
 
 /* ==================== COMING UP ==================== */
 .upcoming-list {

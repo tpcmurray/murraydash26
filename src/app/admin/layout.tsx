@@ -9,7 +9,6 @@ const tabs = [
   { name: 'Ingredients', href: '/admin/ingredients' },
   { name: 'Meal Plan', href: '/admin/meal-plan' },
   { name: 'Meal Ingredients', href: '/admin/meal-ingredients' },
-  { name: 'Reminders', href: '/admin/reminders' },
   { name: 'Countdowns', href: '/admin/countdowns' },
   { name: 'Shopping List', href: '/admin/shopping-list' },
 ];

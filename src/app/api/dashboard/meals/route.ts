@@ -1,15 +1,21 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/db';
 import { mealPlanEntries, meals } from '@/db/schema';
-import { eq, and, isNotNull } from 'drizzle-orm';
+import { eq, and, isNotNull, inArray } from 'drizzle-orm';
 import { sql } from 'drizzle-orm';
 
 export async function GET() {
   try {
     const now = new Date();
-    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 
-    // First, clear any expired overrides (past their expiry time)
+    // Build date strings for today + next 3 days
+    const dates: string[] = [];
+    for (let i = 0; i < 4; i++) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+      dates.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`);
+    }
+
+    // Clear any expired overrides
     await db
       .update(mealPlanEntries)
       .set({
@@ -24,7 +30,7 @@ export async function GET() {
         )
       );
 
-    // Now fetch today's meals, using overrideMealId if set
+    // Fetch dinners for all 4 days
     const result = await db
       .select({
         id: mealPlanEntries.id,
@@ -39,70 +45,59 @@ export async function GET() {
       })
       .from(mealPlanEntries)
       .innerJoin(meals, eq(mealPlanEntries.mealId, meals.id))
-      .where(eq(mealPlanEntries.date, todayStr));
+      .where(
+        and(
+          eq(mealPlanEntries.mealSlot, 'dinner'),
+          inArray(mealPlanEntries.date, dates)
+        )
+      );
 
-    // Process results - if there's an override, fetch that meal's info instead
-    const processedMeals = await Promise.all(
+    // Process overrides
+    const processedDinners = await Promise.all(
       result.map(async (row) => {
         let actualMealName = row.mealName;
-        let actualPrepNotes = row.prepNotes;
         let isOverride = false;
         let overrideNotes = row.overrideNotes;
 
         if (row.overrideMealId) {
           isOverride = true;
           const overrideMeal = await db
-            .select({ name: meals.name, prepNotes: meals.prepNotes })
+            .select({ name: meals.name })
             .from(meals)
             .where(eq(meals.id, row.overrideMealId))
             .limit(1);
-
           if (overrideMeal.length > 0) {
             actualMealName = overrideMeal[0].name;
-            actualPrepNotes = overrideMeal[0].prepNotes;
           }
         } else if (row.overrideNotes) {
-          // Text-only override (free-text meal name stored in overrideNotes)
           isOverride = true;
           actualMealName = row.overrideNotes;
-          actualPrepNotes = null;
           overrideNotes = null;
         }
 
         return {
-          id: row.id,
           date: row.date,
-          mealSlot: row.mealSlot,
-          mealId: row.mealId,
-          mealName: actualMealName,
-          prepNotes: actualPrepNotes,
+          name: actualMealName,
           isOverride,
           overrideNotes,
-          overrideExpiresAt: row.overrideExpiresAt,
         };
       })
     );
 
-    // Find tonight's dinner specifically
-    const dinner = processedMeals.find(r => r.mealSlot === 'dinner');
-
-    return NextResponse.json({
-      meals: processedMeals,
-      dinner: dinner
-        ? { 
-            name: dinner.mealName, 
-            prepNotes: dinner.prepNotes,
-            isOverride: dinner.isOverride,
-            overrideNotes: dinner.overrideNotes,
-            overrideExpiresAt: dinner.overrideExpiresAt,
-          }
-        : null,
+    // Build the 4-day dinner list, ordered by date
+    const dinners = dates.map((dateStr) => {
+      const entry = processedDinners.find((d) => d.date === dateStr);
+      return {
+        date: dateStr,
+        name: entry?.name || null,
+        isOverride: entry?.isOverride || false,
+        overrideNotes: entry?.overrideNotes || null,
+      };
     });
+
+    return NextResponse.json({ dinners });
   } catch (error) {
     console.error('Error fetching meals:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch meals' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to fetch meals' }, { status: 500 });
   }
 }

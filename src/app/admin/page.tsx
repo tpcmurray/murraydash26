@@ -29,12 +29,7 @@ export default function AdminPage() {
           description="Link ingredients to meals with quantities."
           href="/admin/meal-ingredients"
         />
-        <AdminCard
-          title="Reminders"
-          description="Set reminders for meal preparation."
-          href="/admin/reminders"
-        />
-        <AdminCard
+<AdminCard
           title="Countdowns"
           description="Manage countdown timers and events."
           href="/admin/countdowns"

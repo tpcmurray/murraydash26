@@ -348,83 +348,42 @@ function Countdowns() {
   );
 }
 
-function TonightsDinner() {
-  const [dinner, setDinner] = useState<{ 
-    name: string; 
-    prepNotes: string | null;
-    isOverride?: boolean;
-    overrideNotes?: string | null;
-  } | null>(null);
+function Dinner() {
+  const [dinners, setDinners] = useState<{ date: string; name: string | null; isOverride: boolean; overrideNotes: string | null }[]>([]);
 
   useEffect(() => {
-    async function fetchDinner() {
+    async function fetchDinners() {
       try {
         const res = await fetch('/api/dashboard/meals');
         const data = await res.json();
-        setDinner(data.dinner || null);
+        setDinners(data.dinners || []);
       } catch (error) {
-        console.error('Error fetching dinner:', error);
+        console.error('Error fetching dinners:', error);
       }
     }
-    fetchDinner();
-    const poll = setInterval(fetchDinner, 5 * 60 * 1000);
+    fetchDinners();
+    const poll = setInterval(fetchDinners, 5 * 60 * 1000);
     return () => clearInterval(poll);
   }, []);
 
-  if (!dinner) {
-    return (
-      <div className="dinner-content">
-        <div className="dinner-name" style={{ opacity: 0.5, fontSize: '20px' }}>No dinner planned</div>
-      </div>
-    );
+  const formatDayLabel = (dateStr: string, index: number): string => {
+    if (index === 0) return 'Tonight';
+    const d = new Date(dateStr + 'T12:00:00');
+    return d.toLocaleDateString('en-US', { weekday: 'long' });
+  };
+
+  if (dinners.length === 0) {
+    return <div className="dinner-list" style={{ opacity: 0.5 }}>No dinners planned</div>;
   }
 
   return (
-    <div className="dinner-content">
-      {dinner.isOverride && (
-        <div className="text-xs bg-yellow-600 text-white px-2 py-1 rounded mb-2 inline-block">
-          Special Override
-        </div>
-      )}
-      <div className="dinner-name">{dinner.name}</div>
-      {dinner.overrideNotes && (
-        <div className="dinner-sub">{dinner.overrideNotes}</div>
-      )}
-      {!dinner.isOverride && dinner.prepNotes && (
-        <div className="dinner-sub">{dinner.prepNotes}</div>
-      )}
-    </div>
-  );
-}
-
-function Reminders() {
-  const [reminders, setReminders] = useState<{ id: string; text: string; mealName: string; urgent: boolean }[]>([]);
-
-  useEffect(() => {
-    async function fetchReminders() {
-      try {
-        const res = await fetch('/api/dashboard/reminders');
-        const data = await res.json();
-        setReminders(data.reminders || []);
-      } catch (error) {
-        console.error('Error fetching reminders:', error);
-      }
-    }
-    fetchReminders();
-    const poll = setInterval(fetchReminders, 5 * 60 * 1000);
-    return () => clearInterval(poll);
-  }, []);
-
-  if (reminders.length === 0) {
-    return <div className="reminder-list" style={{ opacity: 0.5 }}>No reminders</div>;
-  }
-
-  return (
-    <div className="reminder-list">
-      {reminders.map(item => (
-        <div key={item.id} className={`reminder-item ${item.urgent ? "urgent" : "normal"}`}>
-          <span className="reminder-bullet">●</span>
-          <span>{item.text}</span>
+    <div className="dinner-list">
+      {dinners.map((d, i) => (
+        <div key={d.date} className={`dinner-box ${i === 0 ? 'dinner-tonight' : ''}`}>
+          <div className="dinner-day">{formatDayLabel(d.date, i)}</div>
+          <div className={`dinner-meal ${!d.name ? 'dinner-none' : ''} ${d.isOverride ? 'dinner-override' : ''}`}>
+            {d.name || '—'}
+          </div>
         </div>
       ))}
     </div>
@@ -743,24 +702,16 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ==================== CENTER ROW 2: REMINDERS ==================== */}
-      <div className="panel">
-        <div className="panel-label">Reminders</div>
+      {/* ==================== CENTER+RIGHT ROW 2: DINNER ==================== */}
+      <div className="panel dinner-panel">
+        <div className="panel-label">Dinner</div>
         <div className="panel-content">
-          <Reminders />
-        </div>
-      </div>
-
-      {/* ==================== RIGHT ROW 2: TONIGHT'S DINNER ==================== */}
-      <div className="panel">
-        <div className="panel-label">Tonight's Dinner</div>
-        <div className="panel-content">
-          <TonightsDinner />
+          <Dinner />
         </div>
       </div>
 
       {/* ==================== CENTER ROW 3: COUNTDOWNS ==================== */}
-      <div className="panel">
+      <div className="panel countdowns-panel">
         <div className="panel-label">Countdowns</div>
         <div className="panel-content">
           <Countdowns />
@@ -768,7 +719,7 @@ export default function Home() {
       </div>
 
       {/* ==================== RIGHT ROW 3: COMING UP ==================== */}
-      <div className="panel">
+      <div className="panel coming-up-panel">
         <div className="panel-label">Coming Up</div>
         <div className="panel-content">
           <ComingUp />

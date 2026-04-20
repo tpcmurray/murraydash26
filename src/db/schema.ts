@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, timestamp, date, decimal, boolean, pgEnum, primaryKey, integer, customType } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp, date, decimal, pgEnum, primaryKey, integer, customType } from 'drizzle-orm/pg-core';
 
 // Custom type for bytea (binary data for images)
 const bytea = customType<{ data: Buffer }>({
@@ -117,17 +117,6 @@ export const mealPlanEntries = pgTable('meal_plan_entries', {
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
-// Meal Reminders table
-export const mealReminders = pgTable('meal_reminders', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  mealId: uuid('meal_id').references(() => meals.id, { onDelete: 'cascade' }).notNull(),
-  reminderText: text('reminder_text').notNull(),
-  timingOffset: text('timing_offset').notNull(), // e.g., "-1 day", "-12 hours", "morning_of"
-  active: boolean('active').default(true),
-  createdAt: timestamp('created_at').defaultNow(),
-  updatedAt: timestamp('updated_at').defaultNow(),
-});
-
 // Countdowns table
 export const countdowns = pgTable('countdowns', {
   id: uuid('id').primaryKey().defaultRandom(),
@@ -178,8 +167,6 @@ export type MealIngredient = typeof mealIngredients.$inferSelect;
 export type NewMealIngredient = typeof mealIngredients.$inferInsert;
 export type MealPlanEntry = typeof mealPlanEntries.$inferSelect;
 export type NewMealPlanEntry = typeof mealPlanEntries.$inferInsert;
-export type MealReminder = typeof mealReminders.$inferSelect;
-export type NewMealReminder = typeof mealReminders.$inferInsert;
 export type Countdown = typeof countdowns.$inferSelect;
 export type NewCountdown = typeof countdowns.$inferInsert;
 export type ScienceFact = typeof scienceFacts.$inferSelect;
