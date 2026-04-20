@@ -56,7 +56,7 @@ body {
   padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
   background: rgba(255, 255, 255, 0.02);
 }
 
@@ -66,7 +66,10 @@ body {
   color: #555555;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 10px;
+  margin: -25px 0 10px 8px;
+  padding: 0 6px;
+  background: #0f0f0f;
+  align-self: flex-start;
   flex-shrink: 0;
 }
 
