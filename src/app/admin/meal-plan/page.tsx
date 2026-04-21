@@ -1,52 +1,55 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { DataGrid, type Column } from '@/components/admin/DataGrid';
 
-type MealPlanEntry = {
+type Recipe = {
   id: string;
-  date: string;
-  mealSlot: string;
-  mealId: string;
-  overrideNotes: string | null;
-  overrideExpiresAt: string | null;
-  mealName: string;
-  createdAt: string;
-  updatedAt: string;
+  title: string;
 };
 
-type Meal = {
+type CycleEntry = {
   id: string;
-  name: string;
+  cycleDay: number;
+  recipeId: string;
+  recipeTitle: string;
 };
 
-const mealSlotOptions = [
-  { value: 'breakfast', label: 'Breakfast' },
-  { value: 'lunch', label: 'Lunch' },
-  { value: 'dinner', label: 'Dinner' },
-];
+type Override = {
+  id: string;
+  overrideNotes: string;
+  expiresAt: string;
+};
 
-export default function MealPlanPage() {
-  const [entries, setEntries] = useState<MealPlanEntry[]>([]);
-  const [meals, setMeals] = useState<Meal[]>([]);
+const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+export default function MealCyclePage() {
+  const [cycleEntries, setCycleEntries] = useState<CycleEntry[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [settings, setSettings] = useState<Record<string, string>>({});
+  const [override, setOverride] = useState<Override | null>(null);
   const [loading, setLoading] = useState(true);
   const [overrideText, setOverrideText] = useState('');
   const [overrideSaving, setOverrideSaving] = useState(false);
+  const [saving, setSaving] = useState<number | null>(null);
+
+  const cycleLength = parseInt(settings['cycle_length'] || '14');
+  const cycleStartDate = settings['cycle_start_date'] || '2026-04-19';
 
   const fetchData = async () => {
     try {
-      const [entriesRes, mealsRes] = await Promise.all([
-        fetch('/api/admin/meal-plan'),
-        fetch('/api/admin/meals'),
+      const [cycleRes, recipesRes, settingsRes, overrideRes] = await Promise.all([
+        fetch('/api/admin/meal-cycle'),
+        fetch('/api/admin/recipes'),
+        fetch('/api/admin/settings'),
+        fetch('/api/admin/dinner-override'),
       ]);
 
-      if (entriesRes.ok) {
-        const data = await entriesRes.json();
-        setEntries(data);
-      }
-      if (mealsRes.ok) {
-        const data = await mealsRes.json();
-        setMeals(data);
+      if (cycleRes.ok) setCycleEntries(await cycleRes.json());
+      if (recipesRes.ok) setRecipes(await recipesRes.json());
+      if (settingsRes.ok) setSettings(await settingsRes.json());
+      if (overrideRes.ok) {
+        const data = await overrideRes.json();
+        setOverride(data);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -55,26 +58,69 @@ export default function MealPlanPage() {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  useEffect(() => { fetchData(); }, []);
 
-  // Find today's dinner entry
-  const now = new Date();
-  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  const todayDinner = entries.find(e => e.date === todayStr && e.mealSlot === 'dinner');
-  const hasActiveOverride = todayDinner?.overrideNotes != null;
+  // Get the day-of-week label for each cycle day
+  const getDayLabel = (cycleDay: number): string => {
+    const start = new Date(cycleStartDate + 'T12:00:00');
+    const d = new Date(start.getFullYear(), start.getMonth(), start.getDate() + (cycleDay - 1));
+    return DAY_NAMES[d.getDay()];
+  };
+
+  // Get today's planned meal name from cycle
+  const getTodayMeal = (): string | null => {
+    const today = new Date();
+    const start = new Date(cycleStartDate + 'T12:00:00');
+    const diffDays = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+    const todayCycleDay = ((diffDays % cycleLength) + cycleLength) % cycleLength + 1;
+    const entry = cycleEntries.find((e) => e.cycleDay === todayCycleDay);
+    return entry?.recipeTitle || null;
+  };
+
+  const handleAssign = async (cycleDay: number, recipeId: string) => {
+    setSaving(cycleDay);
+    try {
+      const existing = cycleEntries.find((e) => e.cycleDay === cycleDay);
+
+      if (!recipeId) {
+        // Clear assignment
+        if (existing) {
+          await fetch(`/api/admin/meal-cycle?id=${existing.id}`, { method: 'DELETE' });
+        }
+      } else if (existing) {
+        // Update
+        await fetch('/api/admin/meal-cycle', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: existing.id, cycleDay, recipeId }),
+        });
+      } else {
+        // Create
+        await fetch('/api/admin/meal-cycle', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cycleDay, recipeId }),
+        });
+      }
+
+      await fetchData();
+    } catch (error) {
+      console.error('Error updating cycle:', error);
+    } finally {
+      setSaving(null);
+    }
+  };
 
   const handleSetOverride = async () => {
     if (!overrideText.trim()) return;
     setOverrideSaving(true);
     try {
-      const response = await fetch('/api/admin/meal-plan', {
-        method: 'PUT',
+      const res = await fetch('/api/admin/dinner-override', {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'setTonightOverride', overrideText: overrideText.trim() }),
+        body: JSON.stringify({ overrideNotes: overrideText.trim() }),
       });
-      if (response.ok) {
+      if (res.ok) {
         setOverrideText('');
         await fetchData();
       }
@@ -88,14 +134,8 @@ export default function MealPlanPage() {
   const handleClearOverride = async () => {
     setOverrideSaving(true);
     try {
-      const response = await fetch('/api/admin/meal-plan', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'clearTonightOverride' }),
-      });
-      if (response.ok) {
-        await fetchData();
-      }
+      await fetch('/api/admin/dinner-override', { method: 'DELETE' });
+      await fetchData();
     } catch (error) {
       console.error('Error clearing override:', error);
     } finally {
@@ -103,87 +143,28 @@ export default function MealPlanPage() {
     }
   };
 
-  const mealOptions = meals.map(m => ({ value: m.id, label: m.name }));
+  if (loading) return <p className="text-gray-400">Loading...</p>;
 
-  const columns: Column<MealPlanEntry>[] = [
-    { key: 'date', header: 'Date', width: '120px', editable: true },
-    {
-      key: 'mealSlot',
-      header: 'Meal Slot',
-      width: '120px',
-      editable: true,
-      type: 'select',
-      options: mealSlotOptions,
-    },
-    {
-      key: 'mealId',
-      header: 'Meal',
-      width: '180px',
-      render: (row) => row.mealName || '',
-    },
-  ];
-
-  const handleSave = async (row: MealPlanEntry) => {
-    const response = await fetch('/api/admin/meal-plan', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        id: row.id,
-        date: row.date,
-        mealSlot: row.mealSlot,
-        mealId: row.mealId,
-      }),
-    });
-    if (!response.ok) {
-      throw new Error('Failed to update meal plan entry');
-    }
-    await fetchData();
-  };
-
-  const handleDelete = async (id: string) => {
-    const response = await fetch(`/api/admin/meal-plan?id=${id}`, {
-      method: 'DELETE',
-    });
-    if (!response.ok) {
-      throw new Error('Failed to delete meal plan entry');
-    }
-    await fetchData();
-  };
-
-  const handleAdd = async (row: Partial<MealPlanEntry & { duration?: string }>) => {
-    const { duration, ...entryData } = row as MealPlanEntry & { duration?: string };
-    const response = await fetch('/api/admin/meal-plan', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        ...entryData,
-        duration: duration || '1',
-      }),
-    });
-    if (!response.ok) {
-      throw new Error('Failed to create meal plan entry');
-    }
-    await fetchData();
-  };
+  const todayMeal = getTodayMeal();
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-6">Meal Plan</h2>
+      <h2 className="text-2xl font-bold mb-6">Meal Cycle</h2>
 
       {/* Tonight's Dinner Override */}
       <div className="mb-6 p-4 bg-gray-800 rounded-lg border border-gray-700">
         <h3 className="text-lg font-semibold mb-3">Tonight&apos;s Dinner Override</h3>
-        {!todayDinner ? (
-          <p className="text-sm text-gray-400">No dinner planned for today.</p>
-        ) : hasActiveOverride ? (
+        {override ? (
           <div className="flex items-center gap-4">
-            <div>
-              <span className="text-sm text-gray-400">Planned: </span>
-              <span className="text-sm line-through text-gray-500">{todayDinner.mealName}</span>
-            </div>
+            {todayMeal && (
+              <div>
+                <span className="text-sm text-gray-400">Planned: </span>
+                <span className="text-sm line-through text-gray-500">{todayMeal}</span>
+              </div>
+            )}
             <div>
               <span className="text-sm text-gray-400">Override: </span>
-              <span className="text-sm text-yellow-400 font-medium">{todayDinner.overrideNotes}</span>
+              <span className="text-sm text-yellow-400 font-medium">{override.overrideNotes}</span>
             </div>
             <span className="text-xs text-gray-500">(clears at midnight)</span>
             <button
@@ -196,9 +177,11 @@ export default function MealPlanPage() {
           </div>
         ) : (
           <div>
-            <div className="text-sm text-gray-400 mb-2">
-              Planned: <span className="text-gray-200">{todayDinner.mealName}</span>
-            </div>
+            {todayMeal && (
+              <div className="text-sm text-gray-400 mb-2">
+                Planned: <span className="text-gray-200">{todayMeal}</span>
+              </div>
+            )}
             <div className="flex items-center gap-3">
               <input
                 type="text"
@@ -221,15 +204,85 @@ export default function MealPlanPage() {
         )}
       </div>
 
-      <DataGrid
-        data={entries}
-        columns={columns}
-        idField="id"
-        onSave={handleSave}
-        onDelete={handleDelete}
-        onAdd={handleAdd}
-        loading={loading}
-      />
+      {/* Cycle Grid */}
+      <div className="space-y-2">
+        {Array.from({ length: cycleLength }, (_, i) => i + 1).map((cycleDay) => {
+          const entry = cycleEntries.find((e) => e.cycleDay === cycleDay);
+          const dayLabel = getDayLabel(cycleDay);
+          const isSaving = saving === cycleDay;
+
+          return (
+            <div
+              key={cycleDay}
+              className={`flex items-center gap-4 p-3 rounded border ${
+                dayLabel === 'Sun' ? 'bg-gray-750 border-gray-600' : 'bg-gray-800 border-gray-700'
+              }`}
+            >
+              <div className="w-20 flex-shrink-0">
+                <span className="text-sm font-bold text-gray-400">Day {cycleDay}</span>
+              </div>
+              <div className="w-12 flex-shrink-0">
+                <span className={`text-sm font-medium ${dayLabel === 'Sun' ? 'text-yellow-400' : 'text-gray-500'}`}>
+                  {dayLabel}
+                </span>
+              </div>
+              <select
+                value={entry?.recipeId || ''}
+                onChange={(e) => handleAssign(cycleDay, e.target.value)}
+                disabled={isSaving}
+                className="flex-1 max-w-md px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm disabled:opacity-50"
+              >
+                <option value="">-- No meal --</option>
+                {recipes.map((r) => (
+                  <option key={r.id} value={r.id}>{r.title}</option>
+                ))}
+              </select>
+              {isSaving && <span className="text-xs text-gray-400">Saving...</span>}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Cycle Settings */}
+      <div className="mt-8 p-4 bg-gray-800 rounded-lg border border-gray-700">
+        <h3 className="text-lg font-semibold mb-3">Cycle Settings</h3>
+        <div className="flex gap-6">
+          <div>
+            <label className="block text-xs text-gray-400 mb-1">Start Date</label>
+            <input
+              type="date"
+              value={cycleStartDate}
+              onChange={async (e) => {
+                await fetch('/api/admin/settings', {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ key: 'cycle_start_date', value: e.target.value }),
+                });
+                fetchData();
+              }}
+              className="px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm"
+            />
+          </div>
+          <div>
+            <label className="block text-xs text-gray-400 mb-1">Cycle Length (days)</label>
+            <input
+              type="number"
+              min={7}
+              max={28}
+              value={cycleLength}
+              onChange={async (e) => {
+                await fetch('/api/admin/settings', {
+                  method: 'PUT',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ key: 'cycle_length', value: e.target.value }),
+                });
+                fetchData();
+              }}
+              className="w-20 px-3 py-2 bg-gray-700 border border-gray-600 rounded text-sm"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

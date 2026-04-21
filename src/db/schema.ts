@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, timestamp, date, decimal, pgEnum, primaryKey, integer, customType } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp, date, pgEnum, primaryKey, integer, customType } from 'drizzle-orm/pg-core';
 
 // Custom type for bytea (binary data for images)
 const bytea = customType<{ data: Buffer }>({
@@ -63,66 +63,64 @@ export const verificationTokens = pgTable(
 );
 
 // Enums
-export const categoryEnum = pgEnum('category', ['breakfast', 'lunch', 'dinner', 'snack']);
-export const storageTypeEnum = pgEnum('storage_type', ['frozen', 'fridge', 'pantry']);
-export const departmentEnum = pgEnum('department', [
-  'produce', 'meat', 'dairy', 'bakery', 'frozen', 'canned', 'dry_goods', 'condiments', 'other'
+export const ingredientCategoryEnum = pgEnum('ingredient_category', [
+  'produce', 'bread', 'meat_fish', 'dairy', 'frozen', 'isle', 'pantry'
 ]);
-export const mealSlotEnum = pgEnum('meal_slot', ['breakfast', 'lunch', 'dinner']);
+export const unitEnum = pgEnum('unit', ['g', 'kg', 'ml', 'L', 'tsp', 'tbsp', 'cup', 'oz', 'lb', 'piece', 'pinch']);
 export const recurrenceEnum = pgEnum('recurrence', ['daily', 'weekly', 'monthly', 'yearly', 'once', 'weekdays']);
 export const scienceCategoryEnum = pgEnum('science_category', ['astronomy', 'mathematics', 'physics', 'chemistry', 'biology']);
-export const unitEnum = pgEnum('unit', ['g', 'kg', 'ml', 'L', 'tsp', 'tbsp', 'cup', 'oz', 'lb', 'piece', 'pinch']);
 
-// Meals table
-export const meals = pgTable('meals', {
+// Recipe ingredient type (stored as JSON in recipes.ingredients)
+export type RecipeIngredient = {
+  name: string;
+  amount: number;
+  unit: string;
+  category: 'produce' | 'bread' | 'meat_fish' | 'dairy' | 'frozen' | 'isle' | 'pantry';
+};
+
+// Recipes table
+export const recipes = pgTable('recipes', {
   id: uuid('id').primaryKey().defaultRandom(),
-  name: text('name').notNull(),
-  category: categoryEnum('category').notNull(),
-  prepNotes: text('prep_notes'),
+  title: text('title').notNull(),
+  image: bytea('image'),
+  imageContentType: text('image_content_type'),
+  servings: integer('servings').notNull().default(4),
+  ingredients: text('ingredients').notNull().default('[]'), // JSON string of RecipeIngredient[]
+  sundayPrep: text('sunday_prep'),
+  miseEnPlace: text('mise_en_place'),
+  cookingInstructions: text('cooking_instructions'),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
 });
 
-// Ingredients table
-export const ingredients = pgTable('ingredients', {
+// Meal cycle table (rotating schedule)
+export const mealCycle = pgTable('meal_cycle', {
   id: uuid('id').primaryKey().defaultRandom(),
-  name: text('name').notNull(),
-  storageType: storageTypeEnum('storage_type').notNull(),
-  department: departmentEnum('department').notNull(),
-  createdAt: timestamp('created_at').defaultNow(),
-  updatedAt: timestamp('updated_at').defaultNow(),
-});
-
-// Meal Ingredients junction table
-export const mealIngredients = pgTable('meal_ingredients', {
-  id: uuid('id').primaryKey().defaultRandom(),
-  mealId: uuid('meal_id').references(() => meals.id, { onDelete: 'cascade' }).notNull(),
-  ingredientId: uuid('ingredient_id').references(() => ingredients.id, { onDelete: 'restrict' }).notNull(),
-  amount: decimal('amount', { precision: 10, scale: 2 }).notNull(),
-  unit: unitEnum('unit').notNull(),
+  cycleDay: integer('cycle_day').notNull(), // 1-based (1 to cycle_length)
+  recipeId: uuid('recipe_id').references(() => recipes.id, { onDelete: 'cascade' }).notNull(),
   createdAt: timestamp('created_at').defaultNow(),
 });
 
-// Meal Plan Entries table
-export const mealPlanEntries = pgTable('meal_plan_entries', {
+// App settings (key-value store for cycle config etc.)
+export const appSettings = pgTable('app_settings', {
+  key: text('key').primaryKey(),
+  value: text('value').notNull(),
+});
+
+// Dinner override (single-row table for tonight's override)
+export const dinnerOverride = pgTable('dinner_override', {
   id: uuid('id').primaryKey().defaultRandom(),
-  date: date('date').notNull(),
-  mealSlot: mealSlotEnum('meal_slot').notNull(),
-  mealId: uuid('meal_id').references(() => meals.id, { onDelete: 'cascade' }).notNull(),
-  // Override fields for temporary changes (e.g., company coming)
-  overrideMealId: uuid('override_meal_id').references(() => meals.id, { onDelete: 'cascade' }),
-  overrideNotes: text('override_notes'),
-  overrideExpiresAt: timestamp('override_expires_at'),
+  overrideNotes: text('override_notes').notNull(),
+  expiresAt: timestamp('expires_at').notNull(),
   createdAt: timestamp('created_at').defaultNow(),
-  updatedAt: timestamp('updated_at').defaultNow(),
 });
 
 // Countdowns table
 export const countdowns = pgTable('countdowns', {
   id: uuid('id').primaryKey().defaultRandom(),
   name: text('name').notNull(),
-  targetTime: text('target_time'), // HH:MM for daily/weekdays, NULL for yearly/once
-  targetDate: date('target_date'), // NULL for daily/weekdays recurrence
+  targetTime: text('target_time'),
+  targetDate: date('target_date'),
   recurrence: recurrenceEnum('recurrence').notNull(),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
@@ -132,9 +130,9 @@ export const scienceFacts = pgTable('science_facts', {
   id: uuid('id').primaryKey().defaultRandom(),
   category: scienceCategoryEnum('category').notNull(),
   factText: text('fact_text').notNull(),
-  imageUrl: text('image_url'),                // original URL from sciensational.com
-  imageFilename: text('image_filename'),      // local filename in data/images/
-  imageData: bytea('image_data'),             // binary image stored in DB as backup
+  imageUrl: text('image_url'),
+  imageFilename: text('image_filename'),
+  imageData: bytea('image_data'),
   sourceUrl: text('source_url'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
@@ -158,15 +156,11 @@ export const riddles = pgTable('riddles', {
   createdAt: timestamp('created_at').defaultNow(),
 });
 
-// Type exports for use in queries
-export type Meal = typeof meals.$inferSelect;
-export type NewMeal = typeof meals.$inferInsert;
-export type Ingredient = typeof ingredients.$inferSelect;
-export type NewIngredient = typeof ingredients.$inferInsert;
-export type MealIngredient = typeof mealIngredients.$inferSelect;
-export type NewMealIngredient = typeof mealIngredients.$inferInsert;
-export type MealPlanEntry = typeof mealPlanEntries.$inferSelect;
-export type NewMealPlanEntry = typeof mealPlanEntries.$inferInsert;
+// Type exports
+export type Recipe = typeof recipes.$inferSelect;
+export type NewRecipe = typeof recipes.$inferInsert;
+export type MealCycleEntry = typeof mealCycle.$inferSelect;
+export type NewMealCycleEntry = typeof mealCycle.$inferInsert;
 export type Countdown = typeof countdowns.$inferSelect;
 export type NewCountdown = typeof countdowns.$inferInsert;
 export type ScienceFact = typeof scienceFacts.$inferSelect;

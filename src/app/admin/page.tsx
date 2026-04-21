@@ -10,34 +10,34 @@ export default function AdminPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <AdminCard
-          title="Meals"
-          description="Add, edit, or remove meals from the database."
-          href="/admin/meals"
+          title="Recipes"
+          description="Add, edit, or remove recipes with ingredients and instructions."
+          href="/admin/recipes"
         />
         <AdminCard
-          title="Ingredients"
-          description="Manage ingredient inventory and storage types."
-          href="/admin/ingredients"
-        />
-        <AdminCard
-          title="Meal Plan"
-          description="Schedule meals for specific dates and meal slots."
+          title="Meal Cycle"
+          description="Assign recipes to your rotating meal schedule."
           href="/admin/meal-plan"
         />
         <AdminCard
-          title="Meal Ingredients"
-          description="Link ingredients to meals with quantities."
-          href="/admin/meal-ingredients"
+          title="Today's Recipe"
+          description="View the full recipe for tonight's dinner."
+          href="/admin/todays-recipe"
         />
-<AdminCard
-          title="Countdowns"
-          description="Manage countdown timers and events."
-          href="/admin/countdowns"
+        <AdminCard
+          title="Sunday Prep"
+          description="All prep steps for the upcoming week's meals."
+          href="/admin/sunday-prep"
         />
         <AdminCard
           title="Shopping List"
-          description="Generate shopping list from meal plan."
+          description="View the shopping list for the upcoming week."
           href="/admin/shopping-list"
+        />
+        <AdminCard
+          title="Countdowns"
+          description="Manage countdown timers and events."
+          href="/admin/countdowns"
         />
       </div>
     </div>

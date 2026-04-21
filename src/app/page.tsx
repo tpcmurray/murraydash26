@@ -349,7 +349,7 @@ function Countdowns() {
 }
 
 function Dinner() {
-  const [dinners, setDinners] = useState<{ date: string; name: string | null; isOverride: boolean; overrideNotes: string | null }[]>([]);
+  const [dinners, setDinners] = useState<{ date: string; name: string | null; isOverride: boolean; overrideNotes: string | null; imageUrl: string | null }[]>([]);
 
   useEffect(() => {
     async function fetchDinners() {
@@ -384,6 +384,9 @@ function Dinner() {
           <div className={`dinner-meal ${!d.name ? 'dinner-none' : ''} ${d.isOverride ? 'dinner-override' : ''}`}>
             {d.name || '—'}
           </div>
+          {d.imageUrl && (
+            <img src={d.imageUrl} alt="" className="dinner-image" />
+          )}
         </div>
       ))}
     </div>

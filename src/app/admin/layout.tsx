@@ -5,12 +5,12 @@ import { usePathname } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
 
 const tabs = [
-  { name: 'Meals', href: '/admin/meals' },
-  { name: 'Ingredients', href: '/admin/ingredients' },
-  { name: 'Meal Plan', href: '/admin/meal-plan' },
-  { name: 'Meal Ingredients', href: '/admin/meal-ingredients' },
-  { name: 'Countdowns', href: '/admin/countdowns' },
+  { name: 'Recipes', href: '/admin/recipes' },
+  { name: 'Meal Cycle', href: '/admin/meal-plan' },
+  { name: 'Today\'s Recipe', href: '/admin/todays-recipe' },
+  { name: 'Sunday Prep', href: '/admin/sunday-prep' },
   { name: 'Shopping List', href: '/admin/shopping-list' },
+  { name: 'Countdowns', href: '/admin/countdowns' },
 ];
 
 export default function AdminLayout({

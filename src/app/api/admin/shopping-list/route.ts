@@ -1,49 +1,102 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/db';
-import { mealPlanEntries, mealIngredients, ingredients } from '@/db/schema';
-import { eq, and, gte, sql, asc } from 'drizzle-orm';
+import { mealCycle, recipes, appSettings } from '@/db/schema';
+import { eq, inArray } from 'drizzle-orm';
+import { getUpcomingSundayRange, getCycleDaysForDateRange, formatDateStr, parseLocalDate } from '@/lib/cycle';
+import type { RecipeIngredient } from '@/db/schema';
 
-// GET /api/admin/shopping-list - Get shopping list for next N days
-export async function GET(request: Request) {
+const CATEGORY_ORDER: string[] = ['produce', 'bread', 'meat_fish', 'dairy', 'frozen', 'isle', 'pantry'];
+
+// GET /api/admin/shopping-list - Shopping list for upcoming Sunday-Saturday
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url);
-    const days = parseInt(searchParams.get('days') || '7');
-    
-    // Calculate date range
-    const today = new Date();
-    const startDate = today.toISOString().split('T')[0];
-    const endDate = new Date(today.getTime() + days * 24 * 60 * 60 * 1000)
-      .toISOString()
-      .split('T')[0];
+    // Load cycle settings
+    const settings = await db.select().from(appSettings);
+    const settingsMap: Record<string, string> = {};
+    for (const s of settings) settingsMap[s.key] = s.value;
 
-    // Query meal plan entries for the date range, join with meal ingredients
-    // and aggregate by ingredient
-    const result = await db
+    const cycleStartDate = parseLocalDate(settingsMap['cycle_start_date'] || '2026-04-19');
+    const cycleLength = parseInt(settingsMap['cycle_length'] || '14');
+
+    const now = new Date();
+    const { sunday, saturday } = getUpcomingSundayRange(now);
+
+    // Get cycle days for the Sunday-Saturday range
+    const cycleDays = getCycleDaysForDateRange(sunday, saturday, cycleStartDate, cycleLength);
+    const uniqueCycleDays = [...new Set(cycleDays)];
+
+    // Get all recipes assigned to those cycle days
+    const cycleEntries = await db
       .select({
-        ingredientId: ingredients.id,
-        ingredientName: ingredients.name,
-        department: ingredients.department,
-        unit: mealIngredients.unit,
-        totalAmount: sql<number>`SUM(${mealIngredients.amount})`,
+        cycleDay: mealCycle.cycleDay,
+        recipeId: mealCycle.recipeId,
       })
-      .from(mealPlanEntries)
-      .innerJoin(mealIngredients, eq(mealPlanEntries.mealId, mealIngredients.mealId))
-      .innerJoin(ingredients, eq(mealIngredients.ingredientId, ingredients.id))
-      .where(
-        and(
-          gte(mealPlanEntries.date, startDate),
-          sql`${mealPlanEntries.date} <= ${endDate}`
-        )
-      )
-      .groupBy(ingredients.id, ingredients.name, ingredients.department, mealIngredients.unit)
-      .orderBy(asc(ingredients.department), asc(ingredients.name));
+      .from(mealCycle)
+      .where(inArray(mealCycle.cycleDay, uniqueCycleDays));
 
-    return NextResponse.json({ shoppingList: result });
+    // Count how many times each recipe appears in the week
+    const recipeCount: Record<string, number> = {};
+    for (const dayNum of cycleDays) {
+      const entries = cycleEntries.filter((e) => e.cycleDay === dayNum);
+      for (const entry of entries) {
+        recipeCount[entry.recipeId] = (recipeCount[entry.recipeId] || 0) + 1;
+      }
+    }
+
+    const recipeIds = Object.keys(recipeCount);
+    if (recipeIds.length === 0) {
+      return NextResponse.json({
+        shoppingList: [],
+        dateRange: { start: formatDateStr(sunday), end: formatDateStr(saturday) },
+      });
+    }
+
+    // Fetch recipe ingredients and titles
+    const recipeRows = await db
+      .select({ id: recipes.id, title: recipes.title, ingredients: recipes.ingredients })
+      .from(recipes)
+      .where(inArray(recipes.id, recipeIds));
+
+    // Aggregate ingredients across all recipes (accounting for repeats)
+    const aggregated: Record<string, { name: string; amount: number; unit: string; category: string; meals: Set<string> }> = {};
+
+    for (const recipe of recipeRows) {
+      const ingredientsList: RecipeIngredient[] = JSON.parse(recipe.ingredients || '[]');
+      const count = recipeCount[recipe.id] || 1;
+
+      for (const ing of ingredientsList) {
+        const key = `${ing.name.toLowerCase()}|${ing.unit}`;
+        if (aggregated[key]) {
+          aggregated[key].amount += ing.amount * count;
+          aggregated[key].meals.add(recipe.title);
+        } else {
+          aggregated[key] = {
+            name: ing.name,
+            amount: ing.amount * count,
+            unit: ing.unit,
+            category: ing.category,
+            meals: new Set([recipe.title]),
+          };
+        }
+      }
+    }
+
+    // Sort by category order, then by name
+    const shoppingList = Object.values(aggregated)
+      .map(({ meals, ...rest }) => ({ ...rest, meals: [...meals] }))
+      .sort((a, b) => {
+        const catA = CATEGORY_ORDER.indexOf(a.category);
+        const catB = CATEGORY_ORDER.indexOf(b.category);
+        if (catA !== catB) return catA - catB;
+        return a.name.localeCompare(b.name);
+      });
+
+    return NextResponse.json({
+      shoppingList,
+      dateRange: { start: formatDateStr(sunday), end: formatDateStr(saturday) },
+    });
   } catch (error) {
     console.error('Error fetching shopping list:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch shopping list' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Failed to fetch shopping list' }, { status: 500 });
   }
 }
