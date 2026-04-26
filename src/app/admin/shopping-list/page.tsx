@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 type ShoppingItem = {
+  key: string;
   name: string;
   amount: number;
   unit: string;
@@ -35,7 +36,16 @@ export default function ShoppingListPage() {
       if (response.ok) {
         const data = await response.json();
         setShoppingList(data.shoppingList || []);
-        setDateRange(data.dateRange || null);
+        const newRange = data.dateRange || null;
+        setDateRange(newRange);
+
+        if (newRange) {
+          const checksRes = await fetch(`/api/admin/shopping-list-checks?weekStart=${newRange.start}`);
+          if (checksRes.ok) {
+            const checksList: string[] = await checksRes.json();
+            setChecked(new Set(checksList));
+          }
+        }
       }
     } catch (error) {
       console.error('Error fetching shopping list:', error);
@@ -63,18 +73,31 @@ export default function ShoppingListPage() {
     ? `${formatDate(dateRange.start)} - ${formatDate(dateRange.end)}`
     : '';
 
-  const itemKey = (item: ShoppingItem, idx: number) => `${item.name}-${item.unit}-${idx}`;
-
-  const toggleCheck = (key: string) => {
+  const toggleCheck = async (key: string) => {
+    if (!dateRange) return;
+    const willBeChecked = !checked.has(key);
     setChecked((prev) => {
       const next = new Set(prev);
-      if (next.has(key)) next.delete(key);
-      else next.add(key);
+      if (willBeChecked) next.add(key);
+      else next.delete(key);
       return next;
     });
+    try {
+      await fetch('/api/admin/shopping-list-checks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ weekStart: dateRange.start, itemKey: key, checked: willBeChecked }),
+      });
+    } catch {}
   };
 
-  const clearChecked = () => setChecked(new Set());
+  const clearChecked = async () => {
+    if (!dateRange) return;
+    setChecked(new Set());
+    try {
+      await fetch(`/api/admin/shopping-list-checks?weekStart=${dateRange.start}`, { method: 'DELETE' });
+    } catch {}
+  };
 
   return (
     <div className="max-w-4xl">
@@ -119,19 +142,18 @@ export default function ShoppingListPage() {
                   {categoryLabels[cat] || cat}
                 </h3>
                 <ul className="space-y-1">
-                  {items.map((item, idx) => {
-                    const key = itemKey(item, idx);
-                    const isChecked = checked.has(key);
+                  {items.map((item) => {
+                    const isChecked = checked.has(item.key);
                     return (
                       <li
-                        key={key}
+                        key={item.key}
                         className={`flex items-center gap-3 cursor-pointer select-none ${isChecked ? 'opacity-40' : ''}`}
-                        onClick={() => toggleCheck(key)}
+                        onClick={() => toggleCheck(item.key)}
                       >
                         <input
                           type="checkbox"
                           checked={isChecked}
-                          onChange={() => toggleCheck(key)}
+                          onChange={() => toggleCheck(item.key)}
                           className="w-4 h-4 flex-shrink-0 accent-green-500"
                           onClick={(e) => e.stopPropagation()}
                         />

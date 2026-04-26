@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 type ShoppingItem = {
+  key: string;
   name: string;
   amount: number;
   unit: string;
@@ -24,20 +25,17 @@ const categoryLabels: Record<string, string> = {
 const categoryOrder = ['produce', 'bread', 'meat_fish', 'dairy', 'frozen', 'isle', 'pantry'];
 
 const LIST_CACHE_KEY = 'shopping-list-cache';
-const checksKeyFor = (range: { start: string; end: string }) =>
-  `shopping-list-checked-${range.start}-${range.end}`;
+const checksCacheKeyFor = (weekStart: string) => `shopping-list-checked-${weekStart}`;
 
 export default function CookbookShoppingListPage() {
   const [shoppingList, setShoppingList] = useState<ShoppingItem[]>([]);
   const [dateRange, setDateRange] = useState<{ start: string; end: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [checked, setChecked] = useState<Set<string>>(new Set());
-  const [hydrated, setHydrated] = useState(false);
   const [offline, setOffline] = useState(false);
 
-  // Initial load: hydrate from cache, then refresh from network
   useEffect(() => {
-    // Hydrate from cache synchronously
+    // Hydrate from cache first for fast paint
     try {
       const cachedRaw = localStorage.getItem(LIST_CACHE_KEY);
       if (cachedRaw) {
@@ -46,59 +44,42 @@ export default function CookbookShoppingListPage() {
           setShoppingList(cached.shoppingList);
           setDateRange(cached.dateRange || null);
           if (cached.dateRange) {
-            const checksRaw = localStorage.getItem(checksKeyFor(cached.dateRange));
+            const checksRaw = localStorage.getItem(checksCacheKeyFor(cached.dateRange.start));
             if (checksRaw) setChecked(new Set(JSON.parse(checksRaw)));
           }
           setLoading(false);
         }
       }
-    } catch {
-      // Ignore cache errors
-    }
-    setHydrated(true);
+    } catch {}
 
-    // Refresh from network
+    // Refresh shopping list and checks from server
     fetch('/api/admin/shopping-list')
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error('fetch failed'))))
-      .then((data) => {
+      .then(async (data) => {
         setShoppingList(data.shoppingList || []);
         const newRange = data.dateRange || null;
+        setDateRange(newRange);
         try {
           localStorage.setItem(LIST_CACHE_KEY, JSON.stringify(data));
         } catch {}
 
-        // If the date range changed, load that range's checks (or empty if none)
-        setDateRange((prev) => {
-          const rangeChanged =
-            !prev || !newRange ||
-            prev.start !== newRange.start ||
-            prev.end !== newRange.end;
-          if (rangeChanged && newRange) {
-            try {
-              const checksRaw = localStorage.getItem(checksKeyFor(newRange));
-              setChecked(checksRaw ? new Set(JSON.parse(checksRaw)) : new Set());
-            } catch {
-              setChecked(new Set());
+        if (newRange) {
+          try {
+            const checksRes = await fetch(`/api/admin/shopping-list-checks?weekStart=${newRange.start}`);
+            if (checksRes.ok) {
+              const checksList: string[] = await checksRes.json();
+              setChecked(new Set(checksList));
+              try {
+                localStorage.setItem(checksCacheKeyFor(newRange.start), JSON.stringify(checksList));
+              } catch {}
             }
-          }
-          return newRange;
-        });
+          } catch {}
+        }
         setOffline(false);
       })
-      .catch(() => {
-        // Offline or fetch failed — keep cached view
-        setOffline(true);
-      })
+      .catch(() => setOffline(true))
       .finally(() => setLoading(false));
   }, []);
-
-  // Persist checked state to localStorage whenever it changes
-  useEffect(() => {
-    if (!hydrated || !dateRange) return;
-    try {
-      localStorage.setItem(checksKeyFor(dateRange), JSON.stringify([...checked]));
-    } catch {}
-  }, [checked, dateRange, hydrated]);
 
   const groupedItems = shoppingList.reduce((acc, item) => {
     const cat = item.category || 'pantry';
@@ -116,18 +97,41 @@ export default function CookbookShoppingListPage() {
     ? `${formatDate(dateRange.start)} - ${formatDate(dateRange.end)}`
     : '';
 
-  const itemKey = (item: ShoppingItem, idx: number) => `${item.name}-${item.unit}-${idx}`;
+  const toggleCheck = async (key: string) => {
+    if (!dateRange) return;
+    const willBeChecked = !checked.has(key);
 
-  const toggleCheck = (key: string) => {
+    // Optimistic UI + cache update
     setChecked((prev) => {
       const next = new Set(prev);
-      if (next.has(key)) next.delete(key);
-      else next.add(key);
+      if (willBeChecked) next.add(key);
+      else next.delete(key);
+      try {
+        localStorage.setItem(checksCacheKeyFor(dateRange.start), JSON.stringify([...next]));
+      } catch {}
       return next;
     });
+
+    // Server sync (best effort)
+    try {
+      await fetch('/api/admin/shopping-list-checks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ weekStart: dateRange.start, itemKey: key, checked: willBeChecked }),
+      });
+    } catch {}
   };
 
-  const clearChecked = () => setChecked(new Set());
+  const clearChecked = async () => {
+    if (!dateRange) return;
+    setChecked(new Set());
+    try {
+      localStorage.setItem(checksCacheKeyFor(dateRange.start), JSON.stringify([]));
+    } catch {}
+    try {
+      await fetch(`/api/admin/shopping-list-checks?weekStart=${dateRange.start}`, { method: 'DELETE' });
+    } catch {}
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -172,19 +176,18 @@ export default function CookbookShoppingListPage() {
                     {categoryLabels[cat] || cat}
                   </h3>
                   <ul className="space-y-2">
-                    {items.map((item, idx) => {
-                      const key = itemKey(item, idx);
-                      const isChecked = checked.has(key);
+                    {items.map((item) => {
+                      const isChecked = checked.has(item.key);
                       return (
                         <li
-                          key={key}
+                          key={item.key}
                           className={`flex items-center gap-3 cursor-pointer select-none py-1 ${isChecked ? 'opacity-40' : ''}`}
-                          onClick={() => toggleCheck(key)}
+                          onClick={() => toggleCheck(item.key)}
                         >
                           <input
                             type="checkbox"
                             checked={isChecked}
-                            onChange={() => toggleCheck(key)}
+                            onChange={() => toggleCheck(item.key)}
                             className="w-5 h-5 flex-shrink-0 accent-green-500"
                             onClick={(e) => e.stopPropagation()}
                           />

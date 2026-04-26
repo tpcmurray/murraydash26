@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, timestamp, date, pgEnum, primaryKey, integer, customType } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp, date, pgEnum, primaryKey, integer, customType, unique } from 'drizzle-orm/pg-core';
 
 // Custom type for bytea (binary data for images)
 const bytea = customType<{ data: Buffer }>({
@@ -146,6 +146,20 @@ export const onThisDay = pgTable('on_this_day', {
   event: text('event').notNull(),
   createdAt: timestamp('created_at').defaultNow(),
 });
+
+// Shopping list checks (per-week persistence of which items have been checked off)
+export const shoppingListChecks = pgTable(
+  'shopping_list_checks',
+  {
+    id: uuid('id').primaryKey().defaultRandom(),
+    weekStart: date('week_start').notNull(),
+    itemKey: text('item_key').notNull(),
+    createdAt: timestamp('created_at').defaultNow(),
+  },
+  (t) => ({
+    weekItemUnique: unique('shopping_list_checks_week_item_unique').on(t.weekStart, t.itemKey),
+  }),
+);
 
 // Daily riddles
 export const riddles = pgTable('riddles', {

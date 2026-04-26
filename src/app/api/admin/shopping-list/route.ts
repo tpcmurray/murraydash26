@@ -58,7 +58,7 @@ export async function GET() {
       .where(inArray(recipes.id, recipeIds));
 
     // Aggregate ingredients across all recipes (accounting for repeats)
-    const aggregated: Record<string, { name: string; amount: number; unit: string; category: string; meals: Set<string> }> = {};
+    const aggregated: Record<string, { key: string; name: string; amount: number; unit: string; category: string; meals: Set<string> }> = {};
 
     for (const recipe of recipeRows) {
       const ingredientsList: RecipeIngredient[] = JSON.parse(recipe.ingredients || '[]');
@@ -71,6 +71,7 @@ export async function GET() {
           aggregated[key].meals.add(recipe.title);
         } else {
           aggregated[key] = {
+            key,
             name: ing.name,
             amount: ing.amount * count,
             unit: ing.unit,
