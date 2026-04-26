@@ -87,6 +87,16 @@ export default function RecipeView({ recipe }: { recipe: Recipe }) {
         </table>
       </section>
 
+      {/* Sunday Prep */}
+      {recipe.sundayPrep && (
+        <section className="mb-8">
+          <h4 className="text-xl font-semibold mb-3 border-b border-gray-700 pb-2 print:text-black print:border-gray-300">
+            Sunday Prep
+          </h4>
+          <p className="text-gray-300 whitespace-pre-line print:text-black">{recipe.sundayPrep}</p>
+        </section>
+      )}
+
       {/* Mise en Place */}
       {recipe.miseEnPlace && (
         <section className="mb-8">
