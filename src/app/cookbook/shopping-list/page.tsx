@@ -10,6 +10,15 @@ type ShoppingItem = {
   unit: string;
   category: string;
   meals: string[];
+  isCustom?: boolean;
+  customId?: string;
+};
+
+type CustomItem = {
+  id: string;
+  weekStart: string;
+  name: string;
+  category: string;
 };
 
 const categoryLabels: Record<string, string> = {
@@ -28,20 +37,37 @@ const LIST_CACHE_KEY = 'shopping-list-cache';
 const checksCacheKeyFor = (weekStart: string) => `shopping-list-checked-${weekStart}`;
 
 export default function CookbookShoppingListPage() {
-  const [shoppingList, setShoppingList] = useState<ShoppingItem[]>([]);
+  const [mealItems, setMealItems] = useState<ShoppingItem[]>([]);
+  const [customItems, setCustomItems] = useState<CustomItem[]>([]);
   const [dateRange, setDateRange] = useState<{ start: string; end: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [checked, setChecked] = useState<Set<string>>(new Set());
   const [offline, setOffline] = useState(false);
+  const [addName, setAddName] = useState('');
+  const [addCategory, setAddCategory] = useState('isle');
+  const [adding, setAdding] = useState(false);
+
+  const customAsItems: ShoppingItem[] = customItems.map((c) => ({
+    key: `custom-${c.id}`,
+    name: c.name,
+    amount: 0,
+    unit: '',
+    category: c.category,
+    meals: [],
+    isCustom: true,
+    customId: c.id,
+  }));
+
+  const shoppingList = [...mealItems, ...customAsItems];
 
   useEffect(() => {
-    // Hydrate from cache first for fast paint
+    // Hydrate from cache
     try {
       const cachedRaw = localStorage.getItem(LIST_CACHE_KEY);
       if (cachedRaw) {
         const cached = JSON.parse(cachedRaw);
         if (cached?.shoppingList) {
-          setShoppingList(cached.shoppingList);
+          setMealItems(cached.shoppingList);
           setDateRange(cached.dateRange || null);
           if (cached.dateRange) {
             const checksRaw = localStorage.getItem(checksCacheKeyFor(cached.dateRange.start));
@@ -52,11 +78,11 @@ export default function CookbookShoppingListPage() {
       }
     } catch {}
 
-    // Refresh shopping list and checks from server
+    // Refresh meal items
     fetch('/api/admin/shopping-list')
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error('fetch failed'))))
       .then(async (data) => {
-        setShoppingList(data.shoppingList || []);
+        setMealItems(data.shoppingList || []);
         const newRange = data.dateRange || null;
         setDateRange(newRange);
         try {
@@ -64,16 +90,22 @@ export default function CookbookShoppingListPage() {
         } catch {}
 
         if (newRange) {
-          try {
-            const checksRes = await fetch(`/api/admin/shopping-list-checks?weekStart=${newRange.start}`);
-            if (checksRes.ok) {
-              const checksList: string[] = await checksRes.json();
-              setChecked(new Set(checksList));
-              try {
-                localStorage.setItem(checksCacheKeyFor(newRange.start), JSON.stringify(checksList));
-              } catch {}
-            }
-          } catch {}
+          const [checksRes, customRes] = await Promise.all([
+            fetch(`/api/admin/shopping-list-checks?weekStart=${newRange.start}`).catch(() => null),
+            fetch(`/api/admin/shopping-list-custom?weekStart=${newRange.start}`).catch(() => null),
+          ]);
+
+          if (checksRes?.ok) {
+            const checksList: string[] = await checksRes.json();
+            setChecked(new Set(checksList));
+            try {
+              localStorage.setItem(checksCacheKeyFor(newRange.start), JSON.stringify(checksList));
+            } catch {}
+          }
+          if (customRes?.ok) {
+            const list: CustomItem[] = await customRes.json();
+            setCustomItems(list);
+          }
         }
         setOffline(false);
       })
@@ -100,8 +132,6 @@ export default function CookbookShoppingListPage() {
   const toggleCheck = async (key: string) => {
     if (!dateRange) return;
     const willBeChecked = !checked.has(key);
-
-    // Optimistic UI + cache update
     setChecked((prev) => {
       const next = new Set(prev);
       if (willBeChecked) next.add(key);
@@ -111,8 +141,6 @@ export default function CookbookShoppingListPage() {
       } catch {}
       return next;
     });
-
-    // Server sync (best effort)
     try {
       await fetch('/api/admin/shopping-list-checks', {
         method: 'POST',
@@ -122,16 +150,48 @@ export default function CookbookShoppingListPage() {
     } catch {}
   };
 
-  const clearChecked = async () => {
+  const addCustomItem = async () => {
+    if (!dateRange || !addName.trim() || adding) return;
+    setAdding(true);
+    try {
+      const res = await fetch('/api/admin/shopping-list-custom', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ weekStart: dateRange.start, name: addName.trim(), category: addCategory }),
+      });
+      if (res.ok) {
+        const created: CustomItem = await res.json();
+        setCustomItems((prev) => [...prev, created]);
+        setAddName('');
+      }
+    } catch {} finally {
+      setAdding(false);
+    }
+  };
+
+  const removeCustomItem = async (id: string) => {
+    setCustomItems((prev) => prev.filter((c) => c.id !== id));
+    try {
+      await fetch(`/api/admin/shopping-list-custom?id=${id}`, { method: 'DELETE' });
+    } catch {}
+  };
+
+  const clearAll = async () => {
     if (!dateRange) return;
     setChecked(new Set());
+    setCustomItems([]);
     try {
       localStorage.setItem(checksCacheKeyFor(dateRange.start), JSON.stringify([]));
     } catch {}
     try {
-      await fetch(`/api/admin/shopping-list-checks?weekStart=${dateRange.start}`, { method: 'DELETE' });
+      await Promise.all([
+        fetch(`/api/admin/shopping-list-checks?weekStart=${dateRange.start}`, { method: 'DELETE' }),
+        fetch(`/api/admin/shopping-list-custom?weekStart=${dateRange.start}`, { method: 'DELETE' }),
+      ]);
     } catch {}
   };
+
+  const clearCount = checked.size + customItems.length;
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -150,20 +210,48 @@ export default function CookbookShoppingListPage() {
               </p>
             )}
           </div>
-          {checked.size > 0 && (
+          {clearCount > 0 && (
             <button
-              onClick={clearChecked}
+              onClick={clearAll}
               className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded text-sm flex-shrink-0"
             >
-              Clear ({checked.size})
+              Clear ({clearCount})
             </button>
           )}
+        </div>
+
+        {/* Add custom item */}
+        <div className="mb-6 flex gap-2">
+          <input
+            type="text"
+            value={addName}
+            onChange={(e) => setAddName(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && addCustomItem()}
+            placeholder="Add item..."
+            className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded text-sm"
+          />
+          <select
+            value={addCategory}
+            onChange={(e) => setAddCategory(e.target.value)}
+            className="px-2 py-2 bg-gray-800 border border-gray-700 rounded text-sm"
+          >
+            {categoryOrder.map((c) => (
+              <option key={c} value={c}>{categoryLabels[c]}</option>
+            ))}
+          </select>
+          <button
+            onClick={addCustomItem}
+            disabled={!addName.trim() || adding}
+            className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:opacity-50 rounded text-sm"
+          >
+            +
+          </button>
         </div>
 
         {loading ? (
           <p className="text-gray-400">Loading...</p>
         ) : shoppingList.length === 0 ? (
-          <p className="text-gray-400">No meals assigned to this week&apos;s cycle days.</p>
+          <p className="text-gray-400">No items. Add one above or assign meals in the cycle.</p>
         ) : (
           <div className="space-y-4">
             {categoryOrder.map((cat) => {
@@ -191,17 +279,28 @@ export default function CookbookShoppingListPage() {
                             className="w-5 h-5 flex-shrink-0 accent-green-500"
                             onClick={(e) => e.stopPropagation()}
                           />
-                          <div className={`flex flex-wrap items-baseline gap-x-2 ${isChecked ? 'line-through' : ''}`}>
+                          <div className={`flex-1 flex flex-wrap items-baseline gap-x-2 ${isChecked ? 'line-through' : ''}`}>
                             <span>{item.name}</span>
-                            <span className="text-gray-400 text-sm">
-                              {item.amount % 1 === 0 ? item.amount : item.amount.toFixed(2)} {item.unit}
-                            </span>
+                            {!item.isCustom && (
+                              <span className="text-gray-400 text-sm">
+                                {item.amount % 1 === 0 ? item.amount : item.amount.toFixed(2)} {item.unit}
+                              </span>
+                            )}
                             {item.meals?.length > 0 && (
                               <span className="text-gray-500 text-xs">
                                 ({item.meals.join(', ')})
                               </span>
                             )}
                           </div>
+                          {item.isCustom && item.customId && (
+                            <button
+                              onClick={(e) => { e.stopPropagation(); removeCustomItem(item.customId!); }}
+                              className="text-gray-500 hover:text-red-400 px-2 text-lg leading-none flex-shrink-0"
+                              aria-label="Remove"
+                            >
+                              ×
+                            </button>
+                          )}
                         </li>
                       );
                     })}

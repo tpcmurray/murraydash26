@@ -9,6 +9,15 @@ type ShoppingItem = {
   unit: string;
   category: string;
   meals: string[];
+  isCustom?: boolean;
+  customId?: string;
+};
+
+type CustomItem = {
+  id: string;
+  weekStart: string;
+  name: string;
+  category: string;
 };
 
 const categoryLabels: Record<string, string> = {
@@ -24,26 +33,50 @@ const categoryLabels: Record<string, string> = {
 const categoryOrder = ['produce', 'bread', 'meat_fish', 'dairy', 'frozen', 'isle', 'pantry'];
 
 export default function ShoppingListPage() {
-  const [shoppingList, setShoppingList] = useState<ShoppingItem[]>([]);
+  const [mealItems, setMealItems] = useState<ShoppingItem[]>([]);
+  const [customItems, setCustomItems] = useState<CustomItem[]>([]);
   const [dateRange, setDateRange] = useState<{ start: string; end: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [checked, setChecked] = useState<Set<string>>(new Set());
+  const [addName, setAddName] = useState('');
+  const [addCategory, setAddCategory] = useState('isle');
+  const [adding, setAdding] = useState(false);
 
-  const fetchShoppingList = async () => {
+  const customAsItems: ShoppingItem[] = customItems.map((c) => ({
+    key: `custom-${c.id}`,
+    name: c.name,
+    amount: 0,
+    unit: '',
+    category: c.category,
+    meals: [],
+    isCustom: true,
+    customId: c.id,
+  }));
+
+  const shoppingList = [...mealItems, ...customAsItems];
+
+  const fetchAll = async () => {
     setLoading(true);
     try {
       const response = await fetch('/api/admin/shopping-list');
       if (response.ok) {
         const data = await response.json();
-        setShoppingList(data.shoppingList || []);
+        setMealItems(data.shoppingList || []);
         const newRange = data.dateRange || null;
         setDateRange(newRange);
 
         if (newRange) {
-          const checksRes = await fetch(`/api/admin/shopping-list-checks?weekStart=${newRange.start}`);
+          const [checksRes, customRes] = await Promise.all([
+            fetch(`/api/admin/shopping-list-checks?weekStart=${newRange.start}`),
+            fetch(`/api/admin/shopping-list-custom?weekStart=${newRange.start}`),
+          ]);
           if (checksRes.ok) {
             const checksList: string[] = await checksRes.json();
             setChecked(new Set(checksList));
+          }
+          if (customRes.ok) {
+            const list: CustomItem[] = await customRes.json();
+            setCustomItems(list);
           }
         }
       }
@@ -54,9 +87,8 @@ export default function ShoppingListPage() {
     }
   };
 
-  useEffect(() => { fetchShoppingList(); }, []);
+  useEffect(() => { fetchAll(); }, []);
 
-  // Group by category
   const groupedItems = shoppingList.reduce((acc, item) => {
     const cat = item.category || 'pantry';
     if (!acc[cat]) acc[cat] = [];
@@ -91,13 +123,45 @@ export default function ShoppingListPage() {
     } catch {}
   };
 
-  const clearChecked = async () => {
-    if (!dateRange) return;
-    setChecked(new Set());
+  const addCustomItem = async () => {
+    if (!dateRange || !addName.trim() || adding) return;
+    setAdding(true);
     try {
-      await fetch(`/api/admin/shopping-list-checks?weekStart=${dateRange.start}`, { method: 'DELETE' });
+      const res = await fetch('/api/admin/shopping-list-custom', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ weekStart: dateRange.start, name: addName.trim(), category: addCategory }),
+      });
+      if (res.ok) {
+        const created: CustomItem = await res.json();
+        setCustomItems((prev) => [...prev, created]);
+        setAddName('');
+      }
+    } catch {} finally {
+      setAdding(false);
+    }
+  };
+
+  const removeCustomItem = async (id: string) => {
+    setCustomItems((prev) => prev.filter((c) => c.id !== id));
+    try {
+      await fetch(`/api/admin/shopping-list-custom?id=${id}`, { method: 'DELETE' });
     } catch {}
   };
+
+  const clearAll = async () => {
+    if (!dateRange) return;
+    setChecked(new Set());
+    setCustomItems([]);
+    try {
+      await Promise.all([
+        fetch(`/api/admin/shopping-list-checks?weekStart=${dateRange.start}`, { method: 'DELETE' }),
+        fetch(`/api/admin/shopping-list-custom?weekStart=${dateRange.start}`, { method: 'DELETE' }),
+      ]);
+    } catch {}
+  };
+
+  const clearCount = checked.size + customItems.length;
 
   return (
     <div className="max-w-4xl">
@@ -109,12 +173,12 @@ export default function ShoppingListPage() {
           )}
         </div>
         <div className="flex gap-3">
-          {checked.size > 0 && (
+          {clearCount > 0 && (
             <button
-              onClick={clearChecked}
+              onClick={clearAll}
               className="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded text-sm"
             >
-              Clear Checked ({checked.size})
+              Clear ({clearCount})
             </button>
           )}
           <button
@@ -126,10 +190,38 @@ export default function ShoppingListPage() {
         </div>
       </div>
 
+      {/* Add custom item */}
+      <div className="mb-6 flex gap-2 print:hidden">
+        <input
+          type="text"
+          value={addName}
+          onChange={(e) => setAddName(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && addCustomItem()}
+          placeholder="Add item..."
+          className="flex-1 max-w-xs px-3 py-2 bg-gray-800 border border-gray-700 rounded text-sm"
+        />
+        <select
+          value={addCategory}
+          onChange={(e) => setAddCategory(e.target.value)}
+          className="px-2 py-2 bg-gray-800 border border-gray-700 rounded text-sm"
+        >
+          {categoryOrder.map((c) => (
+            <option key={c} value={c}>{categoryLabels[c]}</option>
+          ))}
+        </select>
+        <button
+          onClick={addCustomItem}
+          disabled={!addName.trim() || adding}
+          className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:opacity-50 rounded text-sm"
+        >
+          +
+        </button>
+      </div>
+
       {loading ? (
         <div className="text-gray-400">Loading...</div>
       ) : shoppingList.length === 0 ? (
-        <div className="text-gray-400">No meals assigned to this week&apos;s cycle days.</div>
+        <div className="text-gray-400">No items. Add one above or assign meals in the cycle.</div>
       ) : (
         <div className="space-y-6 print:space-y-4">
           {categoryOrder.map((cat) => {
@@ -160,13 +252,24 @@ export default function ShoppingListPage() {
                         <span className={`print:text-black ${isChecked ? 'line-through' : ''}`}>
                           {item.name}
                         </span>
-                        <span className={`text-gray-400 print:text-gray-600 ${isChecked ? 'line-through' : ''}`}>
-                          {item.amount % 1 === 0 ? item.amount : item.amount.toFixed(2)} {item.unit}
-                        </span>
+                        {!item.isCustom && (
+                          <span className={`text-gray-400 print:text-gray-600 ${isChecked ? 'line-through' : ''}`}>
+                            {item.amount % 1 === 0 ? item.amount : item.amount.toFixed(2)} {item.unit}
+                          </span>
+                        )}
                         {item.meals?.length > 0 && (
                           <span className={`text-gray-500 text-sm print:text-gray-400 ${isChecked ? 'line-through' : ''}`}>
                             ({item.meals.join(', ')})
                           </span>
+                        )}
+                        {item.isCustom && item.customId && (
+                          <button
+                            onClick={(e) => { e.stopPropagation(); removeCustomItem(item.customId!); }}
+                            className="ml-auto text-gray-500 hover:text-red-400 px-2 text-lg leading-none flex-shrink-0 print:hidden"
+                            aria-label="Remove"
+                          >
+                            ×
+                          </button>
                         )}
                       </li>
                     );

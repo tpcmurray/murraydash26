@@ -161,6 +161,15 @@ export const shoppingListChecks = pgTable(
   }),
 );
 
+// Shopping list custom items (one-off additions like dish detergent, scoped per week)
+export const shoppingListCustomItems = pgTable('shopping_list_custom_items', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  weekStart: date('week_start').notNull(),
+  name: text('name').notNull(),
+  category: text('category').notNull().default('isle'),
+  createdAt: timestamp('created_at').defaultNow(),
+});
+
 // Daily riddles
 export const riddles = pgTable('riddles', {
   id: uuid('id').primaryKey().defaultRandom(),
