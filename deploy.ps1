@@ -30,7 +30,7 @@ cd $APP_DIR
 sudo /usr/local/bin/docker compose up -d --build
 echo 'Running schema sync...'
 sleep 3
-sudo /usr/local/bin/docker compose exec -T web sh -c 'echo y | npx drizzle-kit push' || echo 'WARN: schema sync failed; run manually if needed'
+sudo /usr/local/bin/docker compose exec -T web sh -c 'yes | npx drizzle-kit push' || echo 'WARN: schema sync failed; run manually if needed'
 echo 'Cleaning up...'
 rm -rf /tmp/murraydash26-main /tmp/murraydash.tar.gz /tmp/murraydash.env.bak
 echo 'Deploy complete!'
