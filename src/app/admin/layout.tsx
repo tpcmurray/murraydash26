@@ -42,8 +42,8 @@ export default function AdminLayout({
       </header>
 
       {/* Tab Navigation */}
-      <nav className="bg-gray-800 border-b border-gray-700 px-6">
-        <div className="flex gap-1">
+      <nav className="bg-gray-800 border-b border-gray-700 px-4 sm:px-6 overflow-x-auto">
+        <div className="flex gap-1 whitespace-nowrap">
           {tabs.map((tab) => {
             const isActive = pathname === tab.href || pathname.startsWith(tab.href + '/');
             return (
@@ -64,7 +64,7 @@ export default function AdminLayout({
       </nav>
 
       {/* Main Content */}
-      <main className="p-6" style={{ height: 'calc(100vh - 130px)', overflowY: 'auto' }}>
+      <main className="p-4 sm:p-6">
         {children}
       </main>
     </div>
