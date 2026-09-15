@@ -644,24 +644,23 @@ export default function Home() {
       <div className="right-col">
         <div className="row-top">
           <Clock />
-          <Weather />
-        </div>
-
-        <div className="row-fun">
-          <div className="fun-stack">
-            <ScienceFact />
-            <OnThisDay />
-          </div>
           <Riddle />
         </div>
 
-        <div className="row-dinner">
-          <Dinner />
+        <div className="fun-stack">
+          <ScienceFact />
+          <OnThisDay />
         </div>
 
         <div className="row-bottom">
           <Countdowns />
           <ComingUp />
+        </div>
+
+        <Weather />
+
+        <div className="row-dinner">
+          <Dinner />
         </div>
       </div>
     </div>
