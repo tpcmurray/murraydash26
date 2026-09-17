@@ -47,16 +47,42 @@ function formatTimeRange(startStr: string, endStr: string): string {
   return `${formatTime(startStr)} – ${formatTime(endStr)}`;
 }
 
+// ==================== DATA FRESHNESS ====================
+
+// Every panel refreshes through the hooks below, which record the time of the
+// last fetch that succeeded. The clock card shows that time once it is old
+// enough to matter, so a kiosk that has lost its network looks stale instead
+// of quietly wrong.
+const STALE_AFTER_MS = 10 * 60 * 1000;
+const pageLoadedAt = Date.now();
+let lastSuccessfulFetch: number | null = null;
+
+async function getJson<T>(url: string): Promise<T> {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`${url} responded ${res.status}`);
+  return res.json();
+}
+
+// Runs a refresh, recording success; failures are logged and leave state as is
+async function runRefresh(fn: () => Promise<void>) {
+  try {
+    await fn();
+    lastSuccessfulFetch = Date.now();
+  } catch (error) {
+    console.error("Refresh failed:", error);
+  }
+}
+
 // Runs fn on mount and again whenever the local calendar date rolls over
-function useDailyRefresh(fn: () => void) {
+function useDailyRefresh(fn: () => Promise<void>) {
   useEffect(() => {
-    fn();
+    runRefresh(fn);
     let currentDate = new Date().toDateString();
     const interval = setInterval(() => {
       const now = new Date().toDateString();
       if (now !== currentDate) {
         currentDate = now;
-        fn();
+        runRefresh(fn);
       }
     }, 60000);
     return () => clearInterval(interval);
@@ -64,11 +90,44 @@ function useDailyRefresh(fn: () => void) {
   }, []);
 }
 
-// Runs fn on mount and every `ms` after
-function usePolling(fn: () => void, ms: number) {
+function StaleNotice() {
+  const [now, setNow] = useState<number | null>(null);
+
   useEffect(() => {
-    fn();
-    const interval = setInterval(fn, ms);
+    const tick = () => setNow(Date.now());
+    tick();
+    const interval = setInterval(tick, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  if (now === null) return null;
+  const reference = lastSuccessfulFetch ?? pageLoadedAt;
+  if (now - reference < STALE_AFTER_MS) return null;
+
+  const time = new Date(reference).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  return <div className="stale-notice">{lastSuccessfulFetch ? `Last updated ${time}` : `No data since ${time}`}</div>;
+}
+
+// The local calendar date, re-read every minute. Null until mounted so server
+// and first client render agree. Panels derive "today" from this rather than
+// from when their data last arrived, so stale data ages out at midnight even
+// when the network is down.
+function useToday(): string | null {
+  const [today, setToday] = useState<string | null>(null);
+  useEffect(() => {
+    const tick = () => setToday(localDateStr(new Date()));
+    tick();
+    const interval = setInterval(tick, 60000);
+    return () => clearInterval(interval);
+  }, []);
+  return today;
+}
+
+// Runs fn on mount and every `ms` after
+function usePolling(fn: () => Promise<void>, ms: number) {
+  useEffect(() => {
+    runRefresh(fn);
+    const interval = setInterval(() => runRefresh(fn), ms);
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -79,6 +138,13 @@ function funTextClass(text: string): string {
   if (text.length > 220) return "fun-text fun-text-xs";
   if (text.length > 160) return "fun-text fun-text-sm";
   return "fun-text";
+}
+
+// Long riddles shrink rather than truncate; a cut-off riddle is unsolvable
+function riddleTextClass(text: string): string {
+  if (text.length > 150) return "riddle-text riddle-text-xs";
+  if (text.length > 80) return "riddle-text riddle-text-sm";
+  return "riddle-text";
 }
 
 // ==================== CLOCK ====================
@@ -114,6 +180,7 @@ function Clock() {
       </div>
       <div className="clock-weekday">{time.toLocaleDateString("en-US", { weekday: "long" })}</div>
       <div className="clock-date">{time.toLocaleDateString("en-US", { month: "long", day: "numeric" })}</div>
+      <StaleNotice />
     </section>
   );
 }
@@ -136,14 +203,9 @@ function ScienceFact() {
   const [fact, setFact] = useState<{ category: string; text: string; imageUrl: string | null } | null>(null);
 
   useDailyRefresh(async () => {
-    try {
-      const res = await fetch("/api/dashboard/science-fact");
-      const data = await res.json();
-      if (data.fact) {
-        setFact({ category: data.fact.category, text: data.fact.text, imageUrl: data.fact.imageUrl });
-      }
-    } catch (error) {
-      console.error("Error fetching science fact:", error);
+    const data = await getJson<{ fact?: { category: string; text: string; imageUrl: string | null } }>("/api/dashboard/science-fact");
+    if (data.fact) {
+      setFact({ category: data.fact.category, text: data.fact.text, imageUrl: data.fact.imageUrl });
     }
   });
 
@@ -164,13 +226,8 @@ function OnThisDay() {
   const [entry, setEntry] = useState<{ year: number; event: string } | null>(null);
 
   useDailyRefresh(async () => {
-    try {
-      const res = await fetch("/api/dashboard/on-this-day");
-      const data = await res.json();
-      setEntry(data.entry || null);
-    } catch (error) {
-      console.error("Error fetching on-this-day:", error);
-    }
+    const data = await getJson<{ entry?: { year: number; event: string } | null }>("/api/dashboard/on-this-day");
+    setEntry(data.entry || null);
   });
 
   return (
@@ -192,18 +249,15 @@ function Riddle() {
   const [data, setData] = useState<RiddleData | null>(null);
 
   useDailyRefresh(async () => {
-    try {
-      const res = await fetch("/api/dashboard/riddle");
-      setData(await res.json());
-    } catch (error) {
-      console.error("Error fetching riddle:", error);
-    }
+    setData(await getJson<RiddleData>("/api/dashboard/riddle"));
   });
 
   return (
     <section className="card riddle-card">
       <div className="card-label riddle-label">Riddle of the day</div>
-      <div className={data?.today ? "riddle-text" : "riddle-text fun-muted"}>{data?.today ? data.today.riddle : "Loading…"}</div>
+      <div className={data?.today ? riddleTextClass(data.today.riddle) : "riddle-text fun-muted"}>
+        {data?.today ? data.today.riddle : "Loading…"}
+      </div>
       {data?.yesterday && (
         <>
           <div className="riddle-divider" />
@@ -230,20 +284,26 @@ function Dinner() {
   const [dinners, setDinners] = useState<DinnerEntry[]>([]);
 
   usePolling(async () => {
-    try {
-      const res = await fetch("/api/dashboard/meals");
-      const data = await res.json();
-      setDinners(data.dinners || []);
-    } catch (error) {
-      console.error("Error fetching dinners:", error);
-    }
+    const data = await getJson<{ dinners?: DinnerEntry[] }>("/api/dashboard/meals");
+    setDinners(data.dinners || []);
   }, 5 * 60 * 1000);
 
-  const tonight = dinners[0];
-  const upcoming = dinners.slice(1, 4);
+  // Slots are keyed by real calendar date, so data fetched on an earlier day
+  // never gets relabelled as "Tonight"
+  const todayStr = useToday();
+  const byDate = new Map(dinners.map((d) => [d.date, d]));
+  const dates = todayStr
+    ? [0, 1, 2, 3].map((i) => {
+        const d = new Date(todayStr + "T12:00:00");
+        d.setDate(d.getDate() + i);
+        return localDateStr(d);
+      })
+    : [];
+  const tonight = dates[0] ? byDate.get(dates[0]) : undefined;
+  const upcoming = dates.slice(1).map((date) => ({ date, entry: byDate.get(date) }));
 
-  const dayLabel = (d: DinnerEntry) => new Date(d.date + "T12:00:00").toLocaleDateString("en-US", { weekday: "long" });
-  const nameClass = (d: DinnerEntry) => (d.isOverride ? "dinner-override" : d.name ? "" : "dinner-none");
+  const dayLabel = (date: string) => new Date(date + "T12:00:00").toLocaleDateString("en-US", { weekday: "long" });
+  const nameClass = (d: DinnerEntry | undefined) => (d?.isOverride ? "dinner-override" : d?.name ? "" : "dinner-none");
 
   return (
     <>
@@ -255,20 +315,18 @@ function Dinner() {
         )}
         <div className="dinner-tonight-text">
           <div className="card-label">Tonight</div>
-          <div className={`dinner-tonight-name ${tonight ? nameClass(tonight) : "dinner-none"}`}>
-            {tonight ? tonight.name || "Not planned yet" : "—"}
-          </div>
+          <div className={`dinner-tonight-name ${nameClass(tonight)}`}>{tonight?.name || "Not planned yet"}</div>
         </div>
       </section>
-      {upcoming.map((d) => (
-        <section key={d.date} className="card dinner-tile">
-          {d.imageUrl ? (
-            <img src={d.imageUrl} alt="" className="dinner-tile-image" />
+      {upcoming.map(({ date, entry }) => (
+        <section key={date} className="card dinner-tile">
+          {entry?.imageUrl ? (
+            <img src={entry.imageUrl} alt="" className="dinner-tile-image" />
           ) : (
             <div className="dinner-tile-image dinner-image-empty" />
           )}
-          <div className="card-label dinner-tile-day">{dayLabel(d)}</div>
-          <div className={`dinner-tile-name ${nameClass(d)}`}>{d.name || "Not planned yet"}</div>
+          <div className="card-label dinner-tile-day">{dayLabel(date)}</div>
+          <div className={`dinner-tile-name ${nameClass(entry)}`}>{entry?.name || "Not planned yet"}</div>
         </section>
       ))}
     </>
@@ -361,13 +419,8 @@ function Countdowns() {
   const [now, setNow] = useState<Date | null>(null);
 
   usePolling(async () => {
-    try {
-      const res = await fetch("/api/dashboard/countdowns");
-      const data = await res.json();
-      setCountdowns(data.countdowns || []);
-    } catch (error) {
-      console.error("Error fetching countdowns:", error);
-    }
+    const data = await getJson<{ countdowns?: CountdownData[] }>("/api/dashboard/countdowns");
+    setCountdowns(data.countdowns || []);
   }, 5 * 60 * 1000);
 
   useEffect(() => {
@@ -442,25 +495,23 @@ function ComingUp() {
   const [events, setEvents] = useState<UpcomingEvent[]>([]);
 
   usePolling(async () => {
-    try {
-      const res = await fetch("/api/dashboard/coming-up");
-      const data = await res.json();
-      setEvents(data.events || []);
-    } catch (error) {
-      console.error("Error fetching coming up:", error);
-    }
+    const data = await getJson<{ events?: UpcomingEvent[] }>("/api/dashboard/coming-up");
+    setEvents(data.events || []);
   }, 5 * 60 * 1000);
 
-  // Only events after today, judged in the browser's timezone
-  const todayStr = localDateStr(new Date());
-  const upcoming = events
-    .map((e) => {
-      const startDate = e.allDay ? new Date(e.start + "T00:00:00") : new Date(e.start);
-      return { ...e, dateStr: localDateStr(startDate), startDate };
-    })
-    .filter((e) => e.dateStr > todayStr)
-    .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
-    .slice(0, 5);
+  // Only events after today, judged in the browser's timezone and re-checked
+  // every minute so yesterday's list empties out even if refreshes are failing
+  const todayStr = useToday();
+  const upcoming = todayStr
+    ? events
+        .map((e) => {
+          const startDate = e.allDay ? new Date(e.start + "T00:00:00") : new Date(e.start);
+          return { ...e, dateStr: localDateStr(startDate), startDate };
+        })
+        .filter((e) => e.dateStr > todayStr)
+        .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+        .slice(0, 5)
+    : [];
 
   return (
     <section className="card coming-up-card">
@@ -503,28 +554,24 @@ interface CalendarEvent {
 function Calendar() {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState(true);
-  // Set on the client only, so server and first client render match
-  const [todayStr, setTodayStr] = useState<string | null>(null);
+  const todayStr = useToday();
   const [nowPct, setNowPct] = useState<number | null>(null);
 
+  // On failure the previous events are kept; they are filtered by today's
+  // date at render time, and the clock card flags how old the data is
   usePolling(async () => {
     try {
-      const response = await fetch("/api/dashboard/calendar");
-      const data = await response.json();
+      const data = await getJson<{ events?: CalendarEvent[] }>("/api/dashboard/calendar");
       setEvents(data.events || []);
-    } catch (error) {
-      console.error("Error fetching calendar:", error);
-      setEvents([]);
     } finally {
       setLoading(false);
     }
   }, 5 * 60 * 1000);
 
-  // Track the local date and the position of the "now" line
+  // Track the position of the "now" line
   useEffect(() => {
     const tick = () => {
       const now = new Date();
-      setTodayStr(localDateStr(now));
       const hours = now.getHours() + now.getMinutes() / 60;
       setNowPct(hours >= START_HOUR && hours <= END_HOUR ? ((hours - START_HOUR) / TOTAL_HOURS) * 100 : null);
     };
@@ -634,9 +681,49 @@ function Calendar() {
   );
 }
 
+// ==================== DAILY RELOAD ====================
+
+const RELOAD_HOUR = 3; // local time
+const RELOAD_RETRY_MS = 10 * 60 * 1000;
+
+// Reload the page once a day so a wedged kiosk tab recovers on its own. The
+// server is checked first: reloading during a network outage would leave the
+// kiosk stuck on a browser error page with no one there to press refresh.
+function useDailyReload() {
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+
+    const msUntilReloadHour = () => {
+      const now = new Date();
+      const next = new Date(now);
+      next.setHours(RELOAD_HOUR, 0, 0, 0);
+      if (next <= now) next.setDate(next.getDate() + 1);
+      return next.getTime() - now.getTime();
+    };
+
+    const attempt = async () => {
+      try {
+        const res = await fetch("/api/dashboard/countdowns", { cache: "no-store" });
+        if (res.ok) {
+          window.location.reload();
+          return;
+        }
+      } catch {
+        // offline; fall through and try again later
+      }
+      timer = setTimeout(attempt, RELOAD_RETRY_MS);
+    };
+
+    timer = setTimeout(attempt, msUntilReloadHour());
+    return () => clearTimeout(timer);
+  }, []);
+}
+
 // ==================== PAGE ====================
 
 export default function Home() {
+  useDailyReload();
+
   return (
     <div className="dashboard">
       <Calendar />
